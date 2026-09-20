@@ -7,7 +7,7 @@ function About() {
       name: "Armando Cabrera",
       role: "Team Role",
       roleClass: "pink-role",
-      image: "../../public/armando.jpeg",
+      image: "/armando.jpeg",
       fallback: "AC",
       icon: "💻",
       bio: "Software Engineering student contributing to the design, development, and management of the project.",
@@ -19,7 +19,7 @@ function About() {
       name: "Anaiah E. Quinn",
       role: "Team Role",
       roleClass: "purple-role",
-      image: "../../public/anaiah.jpg",
+      image: "/anaiah.jpg",
       fallback: "T2",
       icon: "👥",
       bio: "Software Engineering student contributing to the system requirements, software architecture, and development of the project",
@@ -189,7 +189,7 @@ function About() {
               <div className="event-photo-placeholder">
 
                 {/* <span>🎉</span> */}
-                <img src="../../public/pay-dirt-pete-posed.png" alt="Event Photo" width="100%" height="100%" />
+                <img src="/pay-dirt-pete-posed.png" alt="Event Photo" width="100%" height="100%" />
 
                 {/* <p>
                   Add a team or event photo here
