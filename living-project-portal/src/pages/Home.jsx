@@ -164,11 +164,7 @@ function Home() {
             Planning a social gathering can quickly become complicated.
             Dates, guests, food, responsibilities, budgets, locations,
             and conversations often end up spread across several different
-            tools.
-          </p>
-
-          <p>
-            Our project explores how one collaborative platform could bring
+            tools. Our project explores how one collaborative platform could bring
             those pieces together and make the process easier for everyone.
           </p>
 

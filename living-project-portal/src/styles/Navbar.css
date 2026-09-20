@@ -458,3 +458,47 @@
   }
 
 }
+
+.navbar-link-disabled {
+  cursor: not-allowed;
+
+  opacity: 0.48;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  filter: grayscale(0.35);
+}
+
+
+.navbar-link-disabled svg {
+  color: #9a9aa7;
+}
+
+
+.coming-soon-badge {
+  margin-left: 2px;
+
+  padding:
+    3px 7px;
+
+  color: #c57800;
+
+  background:
+    #fff1ce;
+
+  border:
+    1px solid
+    #ffe0a1;
+
+  border-radius: 999px;
+
+  font-size: 0.56rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}

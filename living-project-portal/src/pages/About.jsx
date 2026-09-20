@@ -10,25 +10,25 @@ function About() {
       image: "../../public/armando.jpeg",
       fallback: "AC",
       icon: "💻",
-      bio: "Computer Science and Software Engineering student contributing to the design, development, and management of the project.",
+      bio: "Software Engineering student contributing to the design, development, and management of the project.",
       responsibility:
-        "Responsible for [insert your primary project responsibility here].",
+        "Responsible for the Project Charter.",
     },
 
     {
-      name: "Team Member 2",
+      name: "Anaiah E. Quinn",
       role: "Team Role",
       roleClass: "purple-role",
-      image: "/images/team/member2.png",
+      image: "../../public/anaiah.jpg",
       fallback: "T2",
       icon: "👥",
-      bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
+      bio: "Software Engineering student contributing to the system requirements, software architecture, and development of the project",
       responsibility:
-        "Responsible for [insert primary project responsibility here].",
+        "Responsible for the Business Strategy",
     },
 
     {
-      name: "Team Member 3",
+      name: "Miguel E. Renteria",
       role: "Team Role",
       roleClass: "blue-role",
       image: "/images/team/member3.png",
@@ -40,12 +40,24 @@ function About() {
     },
 
     {
-      name: "Team Member 4",
+      name: "Gabriel Trevino",
       role: "Team Role",
       roleClass: "orange-role",
       image: "/images/team/member4.png",
       fallback: "T4",
       icon: "🎨",
+      bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
+      responsibility:
+        "Responsible for [insert primary project responsibility here].",
+    },
+
+    {
+      name: "Angel J. Bautista",
+      role: "Team Role",
+      roleClass: "green-role",
+      image: "/images/team/member5.png",
+      fallback: "T5",
+      icon: "📋",
       bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
       responsibility:
         "Responsible for [insert primary project responsibility here].",
@@ -91,7 +103,7 @@ function About() {
               gatherings.
             </p> */}
 
-            <div className="about-quick-values">
+            {/* <div className="about-quick-values">
 
               <div className="quick-value">
                 <div className="quick-icon pink-quick">
@@ -125,7 +137,7 @@ function About() {
               <div className="quick-divider"></div>
 
 
-              {/* <div className="quick-value">
+              <div className="quick-value">
                 <div className="quick-icon orange-quick">
                   🚀
                 </div>
@@ -135,9 +147,9 @@ function About() {
                   <br />
                   Things Ahead
                 </strong>
-              </div> */}
+              </div>
 
-            </div>
+            </div> */}
 
           </div>
 
@@ -222,7 +234,7 @@ function About() {
       {/* ======================================
           MISSION / VISION / VALUES
       ======================================= */}
-      <section className="about-principles-section">
+      {/* <section className="about-principles-section">
 
         <div className="about-principles">
 
@@ -290,7 +302,7 @@ function About() {
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* ======================================
@@ -365,11 +377,11 @@ function About() {
                   {member.name}
                 </h3>
 
-                <span
+                {/* <span
                   className={`member-role ${member.roleClass}`}
                 >
                   {member.role}
-                </span>
+                </span> */}
 
                 <p>
                   {member.bio}

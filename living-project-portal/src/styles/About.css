@@ -787,9 +787,32 @@
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(6, 1fr);
 
   gap: 22px;
+}
+
+/* First row: 3 cards */
+.about-member-card:nth-child(1) {
+  grid-column: span 2;
+}
+
+.about-member-card:nth-child(2) {
+  grid-column: span 2;
+}
+
+.about-member-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+
+/* Second row: 2 centered cards */
+.about-member-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.about-member-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 
@@ -892,6 +915,16 @@
       135deg,
       #fff0d6,
       #fff5de
+    );
+}
+
+.about-member-card:nth-child(5)
+.member-image-background {
+  background:
+    linear-gradient(
+      135deg,
+      #dff8ef,
+      #e8fbf5
     );
 }
 
@@ -999,6 +1032,7 @@
   color: var(--about-navy);
 
   font-size: 1.35rem;
+  text-align: center;
 }
 
 
@@ -1044,6 +1078,12 @@
   background: #fff0d7;
 }
 
+.green-role {
+  color: #168b70;
+
+  background: #def7ef;
+}
+
 
 .member-content > p {
   min-height: 115px;
@@ -1064,6 +1104,8 @@
   border-top:
     1px solid
     #eee8ea;
+    
+  text-align: center;
 }
 
 

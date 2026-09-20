@@ -8,6 +8,9 @@ import About from "./pages/About";
 import Sprint1 from "./pages/Sprint1";
 import Sprint2 from "./pages/Sprint2";
 import NotFound from "./pages/NotFound";
+import ProjectCharter from "./pages/sprint1/ProjectCharter";
+import BusinessStrategy from "./pages/sprint1/BusinessStrategy";
+import MarketResearch from "./pages/sprint1/MarketResearch";
 
 function App() {
   return (
@@ -20,9 +23,14 @@ function App() {
           <Route path="/about" element={<About />} />
 
           <Route path="/sprint-1" element={<Sprint1 />} />
-          <Route path="/sprint-2" element={<Sprint2 />} />
+          <Route path="/sprint-1/project-charter" element={<ProjectCharter />}/>
+          <Route path="/sprint-1/business-strategy" element={<BusinessStrategy />}/>
+          <Route path="/sprint-1/market-research" element={<MarketResearch />}/>
+
+          {/* <Route path="/sprint-2" element={<Sprint2 />} /> */}
 
           <Route path="*" element={<NotFound />} />
+          
         </Routes>
       </main>
 

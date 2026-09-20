@@ -1,123 +1,74 @@
 import { Link } from "react-router-dom";
 
 import {
+  BookOpen,
+  BarChart3,
+  Users,
+  ArrowRight,
+  CalendarDays,
   Target,
   Search,
-  ClipboardList,
-  Trophy,
-  Users,
-  MessageSquareText,
-  Lightbulb,
-  CalendarDays,
   CheckCircle2,
-  ArrowRight,
-  MapPin,
-  Sparkles,
   PartyPopper,
+  Sparkles,
 } from "lucide-react";
 
 import "../styles/Sprint1.css";
 
 function Sprint1() {
-  const sprintSteps = [
+  const sprintSections = [
     {
       number: "01",
-      title: "Goals",
+      title: "Project Charter",
+      subtitle: "What are we building?",
       description:
-        "Define the problem, establish our objectives, and align the team around what we wanted to learn.",
-      icon: Target,
-      className: "step-pink",
+        "Define Festivo, establish the project objective, determine scope, identify constraints and assumptions, and define what success means.",
+      icon: BookOpen,
+      className: "timeline-pink",
+      link: "/sprint-1/project-charter",
     },
     {
       number: "02",
-      title: "Research",
+      title: "Business Strategy",
+      subtitle: "Why does the project matter?",
       description:
-        "Interview potential users and explore how people currently plan parties, events, and social gatherings.",
-      icon: Search,
-      className: "step-purple",
+        "Connect the project to a broader strategy, define a measurable business objective, justify the need, and establish the business scope.",
+      icon: BarChart3,
+      className: "timeline-purple",
+      link: "/sprint-1/business-strategy",
     },
     {
       number: "03",
-      title: "Planning",
+      title: "Market Research",
+      subtitle: "What did potential users tell us?",
       description:
-        "Organize our findings, identify patterns, and begin shaping the direction of our proposed solution.",
-      icon: ClipboardList,
-      className: "step-blue",
-    },
-    {
-      number: "04",
-      title: "Outcome",
-      description:
-        "Finish the sprint with a clearer problem definition, shared direction, and stronger foundation for Sprint 2.",
-      icon: Trophy,
-      className: "step-orange",
-    },
-  ];
-
-  const findings = [
-    {
-      icon: CalendarDays,
-      title: "Scheduling Matters",
-      description:
-        "Coordinating a date and time that works for everyone can become one of the earliest challenges when planning an event.",
-      color: "finding-pink",
-    },
-    {
-      icon: MessageSquareText,
-      title: "Information Gets Scattered",
-      description:
-        "Event details are commonly spread across conversations, messages, notes, and other tools.",
-      color: "finding-purple",
-    },
-    {
+        "Examine the event-planning problems identified through research and use those findings to validate the need for a centralized solution.",
       icon: Users,
-      title: "Coordination Is Important",
-      description:
-        "Planners need an easier way to coordinate guests, responsibilities, contributions, and changing plans.",
-      color: "finding-blue",
+      className: "timeline-blue",
+      link: "/sprint-1/market-research",
     },
-    {
-      icon: Lightbulb,
-      title: "Flexibility Is Valuable",
-      description:
-        "Backup plans and the ability to adapt are important when availability, food, locations, or other details change.",
-      color: "finding-orange",
-    },
-  ];
-
-  const deliverables = [
-    "Initial problem statement",
-    "Five user interviews",
-    "Interview findings and analysis",
-    "Identified user pain points",
-    "Initial project direction",
-    "Sprint 1 documentation",
   ];
 
   return (
-    <div className="sprint-one-page">
+    <div className="sprint1-page">
 
-      {/* =========================================
+      {/* ===================================
           HERO
-      ========================================== */}
-      <section className="sprint-one-hero">
+      ==================================== */}
+      <section className="sprint1-hero">
 
-        {/* CONFETTI */}
-        <span className="s1-confetti s1-confetti-1"></span>
-        <span className="s1-confetti s1-confetti-2"></span>
-        <span className="s1-confetti s1-confetti-3"></span>
-        <span className="s1-confetti s1-confetti-4"></span>
-        <span className="s1-confetti s1-confetti-5"></span>
-        <span className="s1-confetti s1-confetti-6"></span>
-        <span className="s1-confetti s1-confetti-7"></span>
-        <span className="s1-confetti s1-confetti-8"></span>
+        <span className="s1-confetti s1-c1"></span>
+        <span className="s1-confetti s1-c2"></span>
+        <span className="s1-confetti s1-c3"></span>
+        <span className="s1-confetti s1-c4"></span>
+        <span className="s1-confetti s1-c5"></span>
+        <span className="s1-confetti s1-c6"></span>
 
-        <div className="sprint-one-hero-container">
+        <div className="sprint1-hero-container">
 
-          {/* HERO COPY */}
-          <div className="sprint-one-hero-copy">
+          <div className="sprint1-hero-copy">
 
-            <span className="sprint-one-label">
+            <span className="sprint1-eyebrow">
               SPRINT 01
             </span>
 
@@ -128,32 +79,26 @@ function Sprint1() {
             </h1>
 
             <p>
-              Our first sprint focused on understanding the event-planning
-              problem, learning from potential users, and using those
-              insights to establish a stronger direction for the project.
+              Sprint 1 established the foundation for Festivo by defining
+              what the project is, connecting it to a business strategy,
+              and validating the problem through market and user research.
             </p>
 
-            <div className="sprint-one-meta">
+            <div className="sprint1-hero-tags">
 
               <div>
                 <CalendarDays size={17} />
-                <span>
-                  Sprint 1
-                </span>
+                Foundation Sprint
               </div>
 
               <div>
-                <Users size={17} />
-                <span>
-                  5 User Interviews
-                </span>
+                <Target size={17} />
+                Project Definition
               </div>
 
               <div>
-                <MapPin size={17} />
-                <span>
-                  Foundation Phase
-                </span>
+                <Search size={17} />
+                Research & Validation
               </div>
 
             </div>
@@ -161,60 +106,33 @@ function Sprint1() {
           </div>
 
 
-          {/* VISUAL ROAD */}
-          <div className="sprint-road-visual">
+          {/* ROAD VISUAL */}
+          <div className="sprint1-road">
 
-            <div className="road-background"></div>
+            <div className="road-shape"></div>
 
-            <div className="road-stop road-stop-one">
-
-              <div className="road-pin pink-pin">
-                <Target size={21} />
-              </div>
-
-              <span>
-                Understand
-              </span>
-
+            <div className="road-marker marker-one">
+              <span>1</span>
+              <p>Define</p>
             </div>
 
-
-            <div className="road-stop road-stop-two">
-
-              <div className="road-pin orange-pin">
-                <Search size={21} />
-              </div>
-
-              <span>
-                Explore
-              </span>
-
+            <div className="road-marker marker-two">
+              <span>2</span>
+              <p>Strategize</p>
             </div>
 
-
-            <div className="road-stop road-stop-three">
-
-              <div className="road-pin purple-pin">
-                <ClipboardList size={21} />
-              </div>
-
-              <span>
-                Plan
-              </span>
-
+            <div className="road-marker marker-three">
+              <span>3</span>
+              <p>Research</p>
             </div>
-
 
             <div className="road-finish">
-
-              <PartyPopper size={42} />
-
-              <span>
+              <PartyPopper size={40} />
+              <p>
                 Strong
                 <br />
                 Start!
-              </span>
-
+              </p>
             </div>
 
           </div>
@@ -224,568 +142,220 @@ function Sprint1() {
       </section>
 
 
-      {/* =========================================
-          TIMELINE OVERVIEW
-      ========================================== */}
-      <section className="sprint-timeline-section">
+      {/* ===================================
+          INTRO
+      ==================================== */}
+      <section className="sprint1-intro">
 
-        <div className="sprint-section-heading">
+        <div className="sprint1-section-heading">
 
-          <span className="sprint-section-label">
-            OUR PROCESS
+          <span className="sprint1-eyebrow">
+            THE FOUNDATION
           </span>
 
           <h2>
-            How Sprint 1
-            <span> unfolded.</span>
+            Three pieces shaped our
+            <span> first sprint.</span>
           </h2>
 
           <p>
-            We approached the sprint as a sequence: establish what we
-            needed to understand, gather evidence, organize what we
-            learned, and use those findings to guide the project.
+            Each stage answered a different question about Festivo:
+            what are we building, why should we build it, and what
+            evidence supports the need?
           </p>
 
         </div>
 
+      </section>
 
-        <div className="sprint-timeline">
 
-          <div className="timeline-connector"></div>
+      {/* ===================================
+          INTERACTIVE TIMELINE
+      ==================================== */}
+      <section className="sprint1-timeline-section">
 
-          {sprintSteps.map((step) => {
-            const Icon = step.icon;
+        <div className="sprint1-timeline">
+
+          <div className="timeline-line"></div>
+
+          {sprintSections.map((section) => {
+            const Icon = section.icon;
 
             return (
               <article
-                className={`timeline-step ${step.className}`}
-                key={step.number}
+                className={`sprint1-timeline-card ${section.className}`}
+                key={section.title}
               >
 
-                <div className="timeline-number">
-                  {step.number}
+                <div className="timeline-step-number">
+                  {section.number}
                 </div>
 
-                <div className="timeline-icon">
-                  <Icon
-                    size={28}
-                    strokeWidth={2}
-                  />
+                <div className="timeline-card-icon">
+                  <Icon size={31} />
                 </div>
 
-                <h3>
-                  {step.title}
-                </h3>
-
-                <p>
-                  {step.description}
-                </p>
-
-              </article>
-            );
-          })}
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================
-          GOALS
-      ========================================== */}
-      <section className="sprint-content-section">
-
-        <div className="sprint-content-wrapper">
-
-          <div className="sprint-content-heading">
-
-            <div className="content-heading-icon pink-content-icon">
-              <Target size={27} />
-            </div>
-
-            <div>
-
-              <span>
-                STEP 01
-              </span>
-
-              <h2>
-                Setting Our Goals
-              </h2>
-
-            </div>
-
-          </div>
-
-
-          <div className="sprint-two-column">
-
-            <div className="sprint-copy">
-
-              <h3>
-                What were we trying to understand?
-              </h3>
-
-              <p>
-                Before thinking about features or implementation, our team
-                needed to better understand the actual process people go
-                through when organizing parties and social gatherings.
-              </p>
-
-              <p>
-                Sprint 1 helped us establish the problem space and avoid
-                designing a solution based only on our own assumptions.
-              </p>
-
-            </div>
-
-
-            <div className="goal-card">
-
-              <span className="mini-card-label">
-                SPRINT GOALS
-              </span>
-
-              <div className="goal-item">
-                <CheckCircle2 size={20} />
-                <p>
-                  Understand how people currently plan events.
-                </p>
-              </div>
-
-              <div className="goal-item">
-                <CheckCircle2 size={20} />
-                <p>
-                  Identify common planning frustrations.
-                </p>
-              </div>
-
-              <div className="goal-item">
-                <CheckCircle2 size={20} />
-                <p>
-                  Compare different users' planning processes.
-                </p>
-              </div>
-
-              <div className="goal-item">
-                <CheckCircle2 size={20} />
-                <p>
-                  Identify opportunities for a centralized solution.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================
-          RESEARCH
-      ========================================== */}
-      <section className="sprint-research-section">
-
-        <div className="sprint-content-wrapper">
-
-          <div className="sprint-content-heading">
-
-            <div className="content-heading-icon purple-content-icon">
-              <Search size={27} />
-            </div>
-
-            <div>
-
-              <span>
-                STEP 02
-              </span>
-
-              <h2>
-                Exploring Through
-                <span> Research.</span>
-              </h2>
-
-            </div>
-
-          </div>
-
-
-          <div className="research-highlight">
-
-            <div className="research-number">
-              <span>5</span>
-
-              <p>
-                User
-                <br />
-                Interviews
-              </p>
-            </div>
-
-
-            <div className="research-copy">
-
-              <h3>
-                Learning from real planning experiences
-              </h3>
-
-              <p>
-                Our team interviewed five individuals about their
-                experiences planning parties, events, and social
-                gatherings.
-              </p>
-
-              <p>
-                Rather than asking whether they would use a specific app,
-                the interviews focused on their existing behavior: what
-                they planned, how they organized information, what they
-                considered important, and which parts of the process were
-                the most difficult.
-              </p>
-
-            </div>
-
-
-            <div className="research-note">
-
-              <Sparkles size={24} />
-
-              <span>
-                Ask about the
-                <strong>
-                  problem
-                </strong>
-                before designing the
-                <strong>
-                  solution.
-                </strong>
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div className="research-questions">
-
-            <div className="research-question-card">
-
-              <span>
-                01
-              </span>
-
-              <p>
-                How do people currently plan parties and events?
-              </p>
-
-            </div>
-
-
-            <div className="research-question-card">
-
-              <span>
-                02
-              </span>
-
-              <p>
-                How do they keep track of all the moving pieces?
-              </p>
-
-            </div>
-
-
-            <div className="research-question-card">
-
-              <span>
-                03
-              </span>
-
-              <p>
-                What makes an event feel successful or unsuccessful?
-              </p>
-
-            </div>
-
-
-            <div className="research-question-card">
-
-              <span>
-                04
-              </span>
-
-              <p>
-                Which parts of the planning process are most difficult?
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================
-          FINDINGS
-      ========================================== */}
-      <section className="sprint-findings-section">
-
-        <div className="sprint-section-heading">
-
-          <span className="sprint-section-label">
-            WHAT WE LEARNED
-          </span>
-
-          <h2>
-            Patterns started to
-            <span> emerge.</span>
-          </h2>
-
-          <p>
-            While every person approached event planning differently,
-            several recurring themes appeared across the interviews.
-          </p>
-
-        </div>
-
-
-        <div className="finding-grid">
-
-          {findings.map((finding) => {
-            const Icon = finding.icon;
-
-            return (
-              <article
-                className={`finding-card ${finding.color}`}
-                key={finding.title}
-              >
-
-                <div className="finding-icon">
-                  <Icon
-                    size={26}
-                    strokeWidth={2}
-                  />
-                </div>
-
-                <h3>
-                  {finding.title}
-                </h3>
-
-                <p>
-                  {finding.description}
-                </p>
-
-              </article>
-            );
-          })}
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================
-          PLANNING
-      ========================================== */}
-      <section className="sprint-planning-section">
-
-        <div className="sprint-content-wrapper">
-
-          <div className="sprint-content-heading">
-
-            <div className="content-heading-icon blue-content-icon">
-              <ClipboardList size={27} />
-            </div>
-
-            <div>
-
-              <span>
-                STEP 03
-              </span>
-
-              <h2>
-                Turning Insights Into
-                <span> Direction.</span>
-              </h2>
-
-            </div>
-
-          </div>
-
-
-          <div className="planning-board">
-
-            <div className="planning-column">
-
-              <span className="planning-column-label">
-                WE HEARD
-              </span>
-
-              <div className="planning-note pink-note">
-                Scheduling groups can be difficult.
-              </div>
-
-              <div className="planning-note orange-note">
-                Information becomes scattered.
-              </div>
-
-              <div className="planning-note purple-note">
-                Responsibilities aren't always clear.
-              </div>
-
-            </div>
-
-
-            <div className="planning-arrow">
-              <ArrowRight size={35} />
-            </div>
-
-
-            <div className="planning-column">
-
-              <span className="planning-column-label">
-                SO WE STARTED EXPLORING
-              </span>
-
-              <div className="planning-result">
-                <CheckCircle2 size={20} />
-                Centralized event information
-              </div>
-
-              <div className="planning-result">
-                <CheckCircle2 size={20} />
-                Easier collaboration
-              </div>
-
-              <div className="planning-result">
-                <CheckCircle2 size={20} />
-                Better task visibility
-              </div>
-
-              <div className="planning-result">
-                <CheckCircle2 size={20} />
-                Flexible planning tools
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =========================================
-          OUTCOME + DELIVERABLES
-      ========================================== */}
-      <section className="sprint-outcome-section">
-
-        <div className="sprint-outcome-wrapper">
-
-          <div className="outcome-copy">
-
-            <span className="sprint-section-label light-label">
-              STEP 04 · OUTCOME
-            </span>
-
-            <h2>
-              A clearer direction and a
-              <span> stronger foundation.</span>
-            </h2>
-
-            <p>
-              Sprint 1 did not give us every answer — and that wasn't the
-              goal. It gave our team a better understanding of the people
-              we're designing for and a more informed foundation for the
-              decisions that follow.
-            </p>
-
-          </div>
-
-
-          <div className="deliverable-card">
-
-            <div className="deliverable-heading">
-
-              <div>
-                <CheckCircle2 size={27} />
-              </div>
-
-              <div>
-                <span>
-                  SPRINT 1
+                <span className="timeline-subtitle">
+                  {section.subtitle}
                 </span>
 
                 <h3>
-                  Key Deliverables
+                  {section.title}
                 </h3>
-              </div>
 
-            </div>
+                <p>
+                  {section.description}
+                </p>
 
-
-            <div className="deliverable-list">
-
-              {deliverables.map((deliverable) => (
-                <div
-                  className="deliverable-item"
-                  key={deliverable}
+                <Link
+                  to={section.link}
+                  className="timeline-link"
                 >
-                  <CheckCircle2 size={18} />
+                  Explore
 
-                  <span>
-                    {deliverable}
-                  </span>
-                </div>
-              ))}
+                  <ArrowRight size={17} />
+                </Link>
 
-            </div>
-
-          </div>
+              </article>
+            );
+          })}
 
         </div>
 
       </section>
 
 
-      {/* =========================================
-          REFLECTION
-      ========================================== */}
-      <section className="sprint-reflection-section">
+      {/* ===================================
+          WHAT WE ACCOMPLISHED
+      ==================================== */}
+      <section className="sprint1-accomplished-section">
 
-        <div className="reflection-card">
+        <div className="sprint1-section-heading">
 
-          <div className="reflection-decoration">
-            ✦
-          </div>
-
-          <span className="sprint-section-label">
-            LOOKING AHEAD
+          <span className="sprint1-eyebrow">
+            WHAT WE ACCOMPLISHED
           </span>
 
           <h2>
-            Sprint 1 gave us the
-            <span> starting point.</span>
+            Building the
+            <span> big picture.</span>
+          </h2>
+
+        </div>
+
+
+        <div className="accomplishment-grid">
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon pink-accomplishment">
+              <Target size={25} />
+            </div>
+
+            <h3>
+              Defined the Project
+            </h3>
+
+            <p>
+              Established Festivo's purpose, objective, initial scope,
+              assumptions, constraints, and success criteria.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon purple-accomplishment">
+              <BarChart3 size={25} />
+            </div>
+
+            <h3>
+              Built the Strategy
+            </h3>
+
+            <p>
+              Connected the project to a measurable business objective
+              and documented why a centralized solution provides value.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon blue-accomplishment">
+              <Users size={25} />
+            </div>
+
+            <h3>
+              Researched User Needs
+            </h3>
+
+            <p>
+              Used research findings to identify recurring issues involving
+              scheduling, organization, and digital event planning.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon orange-accomplishment">
+              <CheckCircle2 size={25} />
+            </div>
+
+            <h3>
+              Established Scope
+            </h3>
+
+            <p>
+              Determined what belongs in the first version of Festivo,
+              what remains outside the project, and what may come later.
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      {/* ===================================
+          CLOSING
+      ==================================== */}
+      <section className="sprint1-closing-section">
+
+        <div className="sprint1-closing-card">
+
+          <Sparkles
+            className="closing-spark"
+            size={35}
+          />
+
+          <span className="sprint1-eyebrow">
+            THE RESULT
+          </span>
+
+          <h2>
+            Research today.
+            <span> Better events tomorrow.</span>
           </h2>
 
           <p>
-            The next step is to use what we learned to refine our
-            requirements, prioritize the problems worth solving, and
-            continue shaping the Party Planner experience.
+            Sprint 1 gave our team a shared understanding of Festivo,
+            the problem it addresses, and the boundaries of the first
+            version of the project.
           </p>
 
-
           <Link
-            to="/sprint-2"
-            className="next-sprint-button"
+            to="/sprint-1/project-charter"
+            className="sprint1-primary-button"
           >
-            Continue to Sprint 2
+            Start With the Project Charter
 
-            <ArrowRight size={19} />
+            <ArrowRight size={18} />
           </Link>
 
         </div>
