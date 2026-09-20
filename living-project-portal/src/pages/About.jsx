@@ -43,12 +43,12 @@ function About() {
       name: "Gabriel Trevino",
       role: "Team Role",
       roleClass: "orange-role",
-      image: "/images/team/member4.png",
+      image: "../../public/gabriel.jpg",
       fallback: "T4",
       icon: "🎨",
-      bio: "Software Engineering student contributing to the design and development of the project.",
+      bio: "Software Engineering graduate student concentrating in Cybersecurity. Currently developing my skills in programming, software development, and computer security. Contributing to the planning and development by helping define the project scope, requirements, and core features of the application.",
       responsibility:
-        "Responsible for [insert primary project responsibility here].",
+        "Responsible for the Project Charter.",
     },
 
     {

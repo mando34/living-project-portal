@@ -348,7 +348,7 @@ function Home() {
             </Link>
 
 
-            <Link
+            {/* <Link
               to="/sprint-2"
               className="journey-card"
             >
@@ -378,7 +378,42 @@ function Home() {
                 →
               </span>
 
-            </Link>
+            </Link> */}
+
+            <div className="journey-card journey-card-disabled">
+
+              <div className="journey-number">
+                02
+              </div>
+
+              <div>
+
+                <div className="journey-label-row">
+                  <span className="journey-label">
+                    SPRINT TWO
+                  </span>
+
+                  <span className="journey-coming-soon">
+                    Coming Soon
+                  </span>
+                </div>
+
+                <h3>
+                  Turning Research Into Direction
+                </h3>
+
+                <p>
+                  Sprint 2 content will be added after the next phase
+                  of the project is completed.
+                </p>
+
+              </div>
+
+              <span className="journey-lock">
+                🔒
+              </span>
+
+            </div>
 
 
             <div className="journey-card coming-soon">
@@ -404,8 +439,11 @@ function Home() {
 
               </div>
 
-              <span className="journey-arrow">
+              {/* <span className="journey-arrow">
                 ✦
+              </span> */}
+              <span className="journey-lock">
+                🔒
               </span>
 
             </div>
