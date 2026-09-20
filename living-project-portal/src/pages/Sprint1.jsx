@@ -1,153 +1,368 @@
+import { Link } from "react-router-dom";
+
+import {
+  BookOpen,
+  BarChart3,
+  Users,
+  ArrowRight,
+  CalendarDays,
+  Target,
+  Search,
+  CheckCircle2,
+  PartyPopper,
+  Sparkles,
+} from "lucide-react";
+
+import "../styles/Sprint1.css";
+
 function Sprint1() {
+  const sprintSections = [
+    {
+      number: "01",
+      title: "Project Charter",
+      subtitle: "What are we building?",
+      description:
+        "Define Festivo, establish the project objective, determine scope, identify constraints and assumptions, and define what success means.",
+      icon: BookOpen,
+      className: "timeline-pink",
+      link: "/sprint-1/project-charter",
+    },
+    {
+      number: "02",
+      title: "Business Strategy",
+      subtitle: "Why does the project matter?",
+      description:
+        "Connect the project to a broader strategy, define a measurable business objective, justify the need, and establish the business scope.",
+      icon: BarChart3,
+      className: "timeline-purple",
+      link: "/sprint-1/business-strategy",
+    },
+    {
+      number: "03",
+      title: "Market Research",
+      subtitle: "What did potential users tell us?",
+      description:
+        "Examine the event-planning problems identified through research and use those findings to validate the need for a centralized solution.",
+      icon: Users,
+      className: "timeline-blue",
+      link: "/sprint-1/market-research",
+    },
+  ];
+
   return (
-    <section className="section page-section">
+    <div className="sprint1-page">
 
-      <div className="sprint-header">
+      {/* ===================================
+          HERO
+      ==================================== */}
+      <section className="sprint1-hero">
 
-        <span className="sprint-label">
-          Sprint 01
-        </span>
+        <span className="s1-confetti s1-c1"></span>
+        <span className="s1-confetti s1-c2"></span>
+        <span className="s1-confetti s1-c3"></span>
+        <span className="s1-confetti s1-c4"></span>
+        <span className="s1-confetti s1-c5"></span>
+        <span className="s1-confetti s1-c6"></span>
 
-        <h1>
-          Understanding the Problem
-        </h1>
+        <div className="sprint1-hero-container">
 
-        <p>
-          During Sprint 1, our team focused on understanding how people
-          currently plan parties and social gatherings and identifying
-          common problems within the planning process.
-        </p>
+          <div className="sprint1-hero-copy">
 
-      </div>
+            <span className="sprint1-eyebrow">
+              SPRINT 01
+            </span>
 
+            <h1>
+              From Ideas
+              <br />
+              to <span>Direction.</span>
+            </h1>
 
-      <div className="content-block">
-
-        <h2>
-          Sprint Overview
-        </h2>
-
-        <p>
-          Provide a short explanation of what the team intended to
-          accomplish during this sprint.
-        </p>
-
-      </div>
-
-
-      <div className="content-block">
-
-        <h2>
-          Sprint Goals
-        </h2>
-
-        <ul>
-          <li>Understand the current event-planning process.</li>
-
-          <li>
-            Identify common difficulties experienced by event planners.
-          </li>
-
-          <li>
-            Interview potential users.
-          </li>
-
-          <li>
-            Identify patterns and potential opportunities.
-          </li>
-        </ul>
-
-      </div>
-
-
-      <div className="content-block">
-
-        <h2>
-          User Research
-        </h2>
-
-        <p>
-          Our team interviewed individuals with different experiences
-          planning birthdays, social gatherings, group events, and
-          collaborative celebrations.
-        </p>
-
-      </div>
-
-
-      <div className="content-block">
-
-        <h2>
-          What We Learned
-        </h2>
-
-        <div className="insight-grid">
-
-          <div className="insight-card">
-            <h3>Scheduling</h3>
             <p>
-              Finding a date and time that works for multiple people can
-              become difficult.
+              Sprint 1 established the foundation for Festivo by defining
+              what the project is, connecting it to a business strategy,
+              and validating the problem through market and user research.
             </p>
+
+            <div className="sprint1-hero-tags">
+
+              <div>
+                <CalendarDays size={17} />
+                Foundation Sprint
+              </div>
+
+              <div>
+                <Target size={17} />
+                Project Definition
+              </div>
+
+              <div>
+                <Search size={17} />
+                Research & Validation
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="insight-card">
-            <h3>Communication</h3>
-            <p>
-              Planning information is often spread between messages,
-              conversations, and notes.
-            </p>
-          </div>
 
-          <div className="insight-card">
-            <h3>Responsibilities</h3>
-            <p>
-              Planners need a clear way to understand who is responsible
-              for specific tasks.
-            </p>
-          </div>
+          {/* ROAD VISUAL */}
+          <div className="sprint1-road">
 
-          <div className="insight-card">
-            <h3>Contingency Planning</h3>
-            <p>
-              Backup plans are important when guests, locations, food, or
-              other arrangements change.
-            </p>
+            <div className="road-shape"></div>
+
+            <div className="road-marker marker-one">
+              <span>1</span>
+              <p>Define</p>
+            </div>
+
+            <div className="road-marker marker-two">
+              <span>2</span>
+              <p>Strategize</p>
+            </div>
+
+            <div className="road-marker marker-three">
+              <span>3</span>
+              <p>Research</p>
+            </div>
+
+            <div className="road-finish">
+              <PartyPopper size={40} />
+              <p>
+                Strong
+                <br />
+                Start!
+              </p>
+            </div>
+
           </div>
 
         </div>
-      </div>
+
+      </section>
 
 
-      <div className="content-block">
+      {/* ===================================
+          INTRO
+      ==================================== */}
+      <section className="sprint1-intro">
 
-        <h2>
-          Sprint Deliverables
-        </h2>
+        <div className="sprint1-section-heading">
 
-        <p>
-          Documents, diagrams, interview results, presentations, or other
-          work produced during this sprint can be linked or displayed
-          here.
-        </p>
+          <span className="sprint1-eyebrow">
+            THE FOUNDATION
+          </span>
 
-      </div>
+          <h2>
+            Three pieces shaped our
+            <span> first sprint.</span>
+          </h2>
+
+          <p>
+            Each stage answered a different question about Festivo:
+            what are we building, why should we build it, and what
+            evidence supports the need?
+          </p>
+
+        </div>
+
+      </section>
 
 
-      <div className="content-block">
+      {/* ===================================
+          INTERACTIVE TIMELINE
+      ==================================== */}
+      <section className="sprint1-timeline-section">
 
-        <h2>
-          Reflection
-        </h2>
+        <div className="sprint1-timeline">
 
-        <p>
-          Explain what went well, what the team learned, and what will
-          change going into Sprint 2.
-        </p>
+          <div className="timeline-line"></div>
 
-      </div>
+          {sprintSections.map((section) => {
+            const Icon = section.icon;
 
-    </section>
+            return (
+              <article
+                className={`sprint1-timeline-card ${section.className}`}
+                key={section.title}
+              >
+
+                <div className="timeline-step-number">
+                  {section.number}
+                </div>
+
+                <div className="timeline-card-icon">
+                  <Icon size={31} />
+                </div>
+
+                <span className="timeline-subtitle">
+                  {section.subtitle}
+                </span>
+
+                <h3>
+                  {section.title}
+                </h3>
+
+                <p>
+                  {section.description}
+                </p>
+
+                <Link
+                  to={section.link}
+                  className="timeline-link"
+                >
+                  Explore
+
+                  <ArrowRight size={17} />
+                </Link>
+
+              </article>
+            );
+          })}
+
+        </div>
+
+      </section>
+
+
+      {/* ===================================
+          WHAT WE ACCOMPLISHED
+      ==================================== */}
+      <section className="sprint1-accomplished-section">
+
+        <div className="sprint1-section-heading">
+
+          <span className="sprint1-eyebrow">
+            WHAT WE ACCOMPLISHED
+          </span>
+
+          <h2>
+            Building the
+            <span> big picture.</span>
+          </h2>
+
+        </div>
+
+
+        <div className="accomplishment-grid">
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon pink-accomplishment">
+              <Target size={25} />
+            </div>
+
+            <h3>
+              Defined the Project
+            </h3>
+
+            <p>
+              Established Festivo's purpose, objective, initial scope,
+              assumptions, constraints, and success criteria.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon purple-accomplishment">
+              <BarChart3 size={25} />
+            </div>
+
+            <h3>
+              Built the Strategy
+            </h3>
+
+            <p>
+              Connected the project to a measurable business objective
+              and documented why a centralized solution provides value.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon blue-accomplishment">
+              <Users size={25} />
+            </div>
+
+            <h3>
+              Researched User Needs
+            </h3>
+
+            <p>
+              Used research findings to identify recurring issues involving
+              scheduling, organization, and digital event planning.
+            </p>
+
+          </article>
+
+
+          <article className="accomplishment-card">
+
+            <div className="accomplishment-icon orange-accomplishment">
+              <CheckCircle2 size={25} />
+            </div>
+
+            <h3>
+              Established Scope
+            </h3>
+
+            <p>
+              Determined what belongs in the first version of Festivo,
+              what remains outside the project, and what may come later.
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      {/* ===================================
+          CLOSING
+      ==================================== */}
+      <section className="sprint1-closing-section">
+
+        <div className="sprint1-closing-card">
+
+          <Sparkles
+            className="closing-spark"
+            size={35}
+          />
+
+          <span className="sprint1-eyebrow">
+            THE RESULT
+          </span>
+
+          <h2>
+            Research today.
+            <span> Better events tomorrow.</span>
+          </h2>
+
+          <p>
+            Sprint 1 gave our team a shared understanding of Festivo,
+            the problem it addresses, and the boundaries of the first
+            version of the project.
+          </p>
+
+          <Link
+            to="/sprint-1/project-charter"
+            className="sprint1-primary-button"
+          >
+            Start With the Project Charter
+
+            <ArrowRight size={18} />
+          </Link>
+
+        </div>
+
+      </section>
+
+    </div>
   );
 }
 

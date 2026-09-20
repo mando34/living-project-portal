@@ -1,0 +1,480 @@
+/* ==========================================
+   PARTY PLANNER FOOTER
+========================================== */
+
+.main-footer {
+  --footer-navy: #111538;
+  --footer-pink: #ff3e91;
+  --footer-muted: #68687a;
+  --footer-border: #e9e3e1;
+
+  width: 100%;
+
+  padding:
+    45px 25px 30px;
+
+  background:
+    #fffaf8;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.footer-container {
+  width: 100%;
+
+  max-width: 1260px;
+
+  margin: auto;
+
+  padding:
+    40px 40px 22px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  border:
+    1px solid
+    var(--footer-border);
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(17, 21, 56, 0.05);
+}
+
+
+/* ==========================================
+   MAIN ROW
+========================================== */
+
+.footer-main {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto 1.5fr 1fr 0.75fr;
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding-bottom: 28px;
+}
+
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.footer-brand-area {
+  min-width: 180px;
+}
+
+
+.footer-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    var(--footer-navy);
+
+  text-decoration: none;
+
+  font-size: 1.15rem;
+
+  font-weight: 900;
+
+  letter-spacing: -0.025em;
+}
+
+
+.footer-brand strong {
+  color:
+    var(--footer-pink);
+}
+
+
+.footer-logo {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff3e91,
+      #ff73b2
+    );
+
+  border-radius: 12px;
+
+  transform:
+    rotate(-5deg);
+}
+
+
+.footer-brand-area p {
+  margin:
+    10px 0 0;
+
+  color:
+    var(--footer-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.footer-divider {
+  width: 1px;
+
+  height: 75px;
+
+  background:
+    var(--footer-border);
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.footer-navigation {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+
+.footer-navigation a {
+  position: relative;
+
+  color:
+    var(--footer-navy);
+
+  text-decoration: none;
+
+  font-size: 0.84rem;
+
+  font-weight: 650;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.footer-navigation a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -6px;
+
+  width: 0;
+
+  height: 2px;
+
+  background:
+    var(--footer-pink);
+
+  border-radius: 20px;
+
+  transition:
+    width 0.2s ease;
+}
+
+
+.footer-navigation a:hover {
+  color:
+    var(--footer-pink);
+}
+
+
+.footer-navigation a:hover::after {
+  width: 100%;
+}
+
+
+/* ==========================================
+   SOCIALS
+========================================== */
+
+.footer-socials {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 9px;
+}
+
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--footer-navy);
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    var(--footer-border);
+
+  border-radius: 50%;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.footer-socials a:hover {
+  color:
+    #ffffff;
+
+  background:
+    var(--footer-pink);
+
+  border-color:
+    var(--footer-pink);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* ==========================================
+   FOOTER MESSAGE
+========================================== */
+
+.footer-message {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  color:
+    var(--footer-navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+
+  line-height: 1.05;
+
+  transform:
+    rotate(-3deg);
+}
+
+
+.footer-message span {
+  font-size: 1rem;
+}
+
+
+.footer-message strong {
+  font-size: 1.5rem;
+
+  font-weight: 500;
+}
+
+
+.footer-message svg {
+  margin-top: 6px;
+
+  color:
+    var(--footer-pink);
+}
+
+
+/* ==========================================
+   BOTTOM BAR
+========================================== */
+
+.footer-bottom {
+  padding-top: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-top:
+    1px solid
+    var(--footer-border);
+
+  color:
+    var(--footer-muted);
+
+  font-size: 0.76rem;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+.footer-built {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.footer-built svg {
+  color:
+    var(--footer-pink);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  .footer-main {
+    grid-template-columns:
+      1fr 1.5fr 1fr;
+  }
+
+
+  .footer-divider {
+    display: none;
+  }
+
+
+  .footer-message {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+  .footer-container {
+    padding:
+      35px 28px 22px;
+  }
+
+
+  .footer-main {
+    grid-template-columns:
+      1fr;
+
+    text-align: center;
+
+    justify-items: center;
+  }
+
+
+  .footer-brand-area {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .footer-navigation {
+    flex-wrap: wrap;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+  .main-footer {
+    padding:
+      30px 15px 20px;
+  }
+
+
+  .footer-container {
+    padding:
+      32px 20px 20px;
+
+    border-radius: 20px;
+  }
+
+
+  .footer-navigation {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 18px;
+  }
+
+
+  .footer-navigation a {
+    text-align: center;
+  }
+
+
+  .footer-built {
+    align-items: flex-start;
+  }
+
+}
