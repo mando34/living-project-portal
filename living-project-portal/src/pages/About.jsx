@@ -7,7 +7,7 @@ function About() {
       name: "Armando Cabrera",
       role: "Team Role",
       roleClass: "pink-role",
-      image: "../../public/armando.jpeg",
+      image: "/armando.jpeg",
       fallback: "AC",
       icon: "💻",
       bio: "Software Engineering student contributing to the design, development, and management of the project.",
@@ -19,7 +19,7 @@ function About() {
       name: "Anaiah E. Quinn",
       role: "Team Role",
       roleClass: "purple-role",
-      image: "../../public/anaiah.jpg",
+      image: "/anaiah.jpg",
       fallback: "T2",
       icon: "👥",
       bio: "Software Engineering student contributing to the system requirements, software architecture, and development of the project",
@@ -31,7 +31,7 @@ function About() {
       name: "Miguel E. Renteria",
       role: "Team Role",
       roleClass: "blue-role",
-      image: "../../public/miguel.jpg",
+      image: "/miguel.jpg",
       fallback: "T3",
       icon: "⚙️",
       bio: "Software Engineering student contributing to system requirements, software architecture, and project development.",
@@ -43,7 +43,7 @@ function About() {
       name: "Gabriel Trevino",
       role: "Team Role",
       roleClass: "orange-role",
-      image: "../../public/gabriel.jpg",
+      image: "/gabriel.jpg",
       fallback: "T4",
       icon: "🎨",
       bio: "Software Engineering graduate student concentrating in Cybersecurity. Currently developing my skills in programming, software development, and computer security. Contributing to the planning and development by helping define the project scope, requirements, and core features of the application.",
@@ -189,7 +189,7 @@ function About() {
               <div className="event-photo-placeholder">
 
                 {/* <span>🎉</span> */}
-                <img src="../../public/pay-dirt-pete-posed.png" alt="Event Photo" width="100%" height="100%" />
+                <img src="/pay-dirt-pete-posed.png" alt="Event Photo" width="100%" height="100%" />
 
                 {/* <p>
                   Add a team or event photo here
