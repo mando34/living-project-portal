@@ -785,7 +785,7 @@ function MarketResearch() {
       <div className="planning-chart-image-wrapper">
 
         <img
-          src="../../public/market-research-graph.png"
+          src="/market-research-graph.png"
           alt="Bar chart showing responses for factors participants consider when planning events"
           className="planning-chart-image"
         />
