@@ -31,12 +31,12 @@ function About() {
       name: "Miguel E. Renteria",
       role: "Team Role",
       roleClass: "blue-role",
-      image: "/images/team/member3.png",
+      image: "../../public/miguel.jpg",
       fallback: "T3",
       icon: "⚙️",
-      bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
+      bio: "Software Engineering student contributing to system requirements, software architecture, and project development.",
       responsibility:
-        "Responsible for [insert primary project responsibility here].",
+        "Responsible for the Market Research.",
     },
 
     {
@@ -46,7 +46,7 @@ function About() {
       image: "/images/team/member4.png",
       fallback: "T4",
       icon: "🎨",
-      bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
+      bio: "Software Engineering student contributing to the design and development of the project.",
       responsibility:
         "Responsible for [insert primary project responsibility here].",
     },
