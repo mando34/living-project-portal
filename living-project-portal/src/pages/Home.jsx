@@ -416,7 +416,7 @@ function Home() {
             </div>
 
 
-            <div className="journey-card coming-soon">
+            <div className="journey-card coming-soon journey-card-disabled">
 
               <div className="journey-number">
                 03
