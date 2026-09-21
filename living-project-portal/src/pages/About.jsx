@@ -55,12 +55,12 @@ function About() {
       name: "Angel J. Bautista",
       role: "Team Role",
       roleClass: "green-role",
-      image: "/images/team/member5.png",
+      image: "../../public/angel.jpg",
       fallback: "T5",
       icon: "📋",
-      bio: "Add a short biography explaining this team member's background, interests, and contribution to the project.",
+      bio: "Software Engineering student contributing to the design and analysis of market sentiment of the project.",
       responsibility:
-        "Responsible for [insert primary project responsibility here].",
+        "Responsible for the Market Research.",
     },
   ];
 
