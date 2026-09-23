@@ -55,7 +55,7 @@ function About() {
       name: "Angel J. Bautista",
       role: "Team Role",
       roleClass: "green-role",
-      image: "../../public/angel.jpg",
+      image: "/angel.jpg",
       fallback: "T5",
       icon: "📋",
       bio: "Software Engineering student contributing to the design and analysis of market sentiment of the project.",
