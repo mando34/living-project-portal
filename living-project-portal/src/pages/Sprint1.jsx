@@ -374,7 +374,7 @@ function Sprint1() {
             </div>
 
             <a
-              href="../public/documents/sprint-1/Project Charter.pdf"
+              href="/documents/sprint-1/Project Charter.pdf"
               download
               className="sprint-download-button"
               aria-label="Download Project Charter PDF"
@@ -410,7 +410,7 @@ function Sprint1() {
             </div>
 
             <a
-              href="../public/documents/sprint-1/Business Strategy.pdf"
+              href="/documents/sprint-1/Business Strategy.pdf"
               download
               className="sprint-download-button"
               aria-label="Download Business Strategy PDF"
@@ -446,7 +446,7 @@ function Sprint1() {
             </div>
 
             <a
-              href="../public/documents/sprint-1/Phase 1 Market Research.pdf"
+              href="/documents/sprint-1/Phase 1 Market Research.pdf"
               download
               className="sprint-download-button"
               aria-label="Download Phase 1 Market Research PDF"
@@ -482,7 +482,7 @@ function Sprint1() {
             </div>
 
             <a
-              href="../public/documents/sprint-1/Phase 2 Market Research.pdf"
+              href="/documents/sprint-1/Phase 2 Market Research.pdf"
               download
               className="sprint-download-button"
               aria-label="Download Phase 2 Market Research PDF"
