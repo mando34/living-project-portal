@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   PartyPopper,
   Sparkles,
+  Download,
 } from "lucide-react";
 
 import "../styles/Sprint1.css";
@@ -314,6 +315,180 @@ function Sprint1() {
               Determined what belongs in the first version of Festivo,
               what remains outside the project, and what may come later.
             </p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+            {/* ==========================================
+          SPRINT 1 DELIVERABLES
+      ========================================== */}
+
+      <section className="sprint1-deliverables-section">
+
+        <div className="sprint1-section-heading">
+
+          <span className="sprint1-eyebrow">
+            SPRINT 1 DELIVERABLES
+          </span>
+
+          <h2>
+            Want the
+            <span> full documents?</span>
+          </h2>
+
+          <p>
+            Download the original Sprint 1 deliverables used to document
+            our project's charter, strategy, and market research.
+          </p>
+
+        </div>
+
+
+        <div className="sprint1-download-grid">
+
+          {/* PROJECT CHARTER */}
+          <article className="sprint-download-card">
+
+            <div className="sprint-download-icon download-pink">
+              <BookOpen size={27} />
+            </div>
+
+            <div className="sprint-download-content">
+
+              <span>
+                PROJECT FOUNDATION
+              </span>
+
+              <h3>
+                Project Charter
+              </h3>
+
+              <p>
+                Project objective, scope, assumptions, constraints,
+                success criteria, and PM authority.
+              </p>
+
+            </div>
+
+            <a
+              href="../public/documents/sprint-1/Project Charter.pdf"
+              download
+              className="sprint-download-button"
+              aria-label="Download Project Charter PDF"
+            >
+              <Download size={19} />
+            </a>
+
+          </article>
+
+
+          {/* BUSINESS STRATEGY */}
+          <article className="sprint-download-card">
+
+            <div className="sprint-download-icon download-purple">
+              <BarChart3 size={27} />
+            </div>
+
+            <div className="sprint-download-content">
+
+              <span>
+                PROJECT STRATEGY
+              </span>
+
+              <h3>
+                Business Strategy
+              </h3>
+
+              <p>
+                Business objectives, project justification,
+                organization strategy, and business scope.
+              </p>
+
+            </div>
+
+            <a
+              href="../public/documents/sprint-1/Business Strategy.pdf"
+              download
+              className="sprint-download-button"
+              aria-label="Download Business Strategy PDF"
+            >
+              <Download size={19} />
+            </a>
+
+          </article>
+
+
+          {/* MARKET RESEARCH PHASE 1 */}
+          <article className="sprint-download-card">
+
+            <div className="sprint-download-icon download-orange">
+              <Users size={27} />
+            </div>
+
+            <div className="sprint-download-content">
+
+              <span>
+                MARKET RESEARCH
+              </span>
+
+              <h3>
+                Phase 1 Research
+              </h3>
+
+              <p>
+                The initial set of interviews used during project
+                discovery and problem exploration.
+              </p>
+
+            </div>
+
+            <a
+              href="../public/documents/sprint-1/Phase 1 Market Research.pdf"
+              download
+              className="sprint-download-button"
+              aria-label="Download Phase 1 Market Research PDF"
+            >
+              <Download size={19} />
+            </a>
+
+          </article>
+
+
+          {/* MARKET RESEARCH PHASE 2 */}
+          <article className="sprint-download-card">
+
+            <div className="sprint-download-icon download-blue">
+              <Search size={27} />
+            </div>
+
+            <div className="sprint-download-content">
+
+              <span>
+                MARKET RESEARCH
+              </span>
+
+              <h3>
+                Phase 2 Research
+              </h3>
+
+              <p>
+                Expanded interviews used to validate and further
+                investigate the patterns found in Phase 1.
+              </p>
+
+            </div>
+
+            <a
+              href="../public/documents/sprint-1/Phase 2 Market Research.pdf"
+              download
+              className="sprint-download-button"
+              aria-label="Download Phase 2 Market Research PDF"
+            >
+              <Download size={19} />
+            </a>
 
           </article>
 

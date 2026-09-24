@@ -1004,3 +1004,253 @@
   }
 
 }
+
+/* ==========================================
+   SPRINT 1 DELIVERABLE DOWNLOADS
+========================================== */
+
+.sprint1-deliverables-section {
+  padding:
+    105px 40px;
+
+  background:
+    #fffaf8;
+}
+
+
+.sprint1-download-grid {
+  width: 100%;
+
+  max-width: 1120px;
+
+  margin:
+    50px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.sprint-download-card {
+  position: relative;
+
+  min-height: 175px;
+
+  padding:
+    27px;
+
+  display: grid;
+
+  grid-template-columns:
+    58px 1fr 45px;
+
+  gap: 17px;
+
+  align-items: center;
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    #eee5e6;
+
+  border-radius:
+    23px;
+
+  box-shadow:
+    0 14px 38px
+    rgba(17, 21, 56, 0.05);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+.sprint-download-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 20px 45px
+    rgba(17, 21, 56, 0.09);
+}
+
+
+.sprint-download-icon {
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius:
+    17px;
+}
+
+
+.download-pink {
+  color:
+    #ff3e91;
+
+  background:
+    #ffe5ef;
+}
+
+
+.download-purple {
+  color:
+    #8c52ff;
+
+  background:
+    #eee5ff;
+}
+
+
+.download-orange {
+  color:
+    #d77d08;
+
+  background:
+    #fff0d7;
+}
+
+
+.download-blue {
+  color:
+    #168aad;
+
+  background:
+    #dff6fd;
+}
+
+
+.sprint-download-content > span {
+  color:
+    #ff3e91;
+
+  font-size:
+    0.64rem;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    0.13em;
+}
+
+
+.sprint-download-content h3 {
+  margin:
+    5px 0 7px;
+
+  color:
+    #111538;
+
+  font-size:
+    1.2rem;
+}
+
+
+.sprint-download-content p {
+  margin:
+    0;
+
+  color:
+    #69697a;
+
+  font-size:
+    0.81rem;
+
+  line-height:
+    1.55;
+}
+
+
+.sprint-download-button {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #ffffff;
+
+  background:
+    #ff3e91;
+
+  border-radius:
+    50%;
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    0 8px 20px
+    rgba(255, 62, 145, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.sprint-download-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    #e72c7d;
+}
+
+
+@media (max-width: 800px) {
+
+  .sprint1-download-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .sprint1-deliverables-section {
+    padding:
+      80px 22px;
+  }
+
+
+  .sprint-download-card {
+    grid-template-columns:
+      50px 1fr;
+
+    padding:
+      23px 20px;
+  }
+
+
+  .sprint-download-button {
+    grid-column:
+      1 / -1;
+
+    width:
+      100%;
+
+    height:
+      44px;
+
+    border-radius:
+      999px;
+  }
+
+}
