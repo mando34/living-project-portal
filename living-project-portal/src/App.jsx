@@ -11,6 +11,9 @@ import NotFound from "./pages/NotFound";
 import ProjectCharter from "./pages/sprint1/ProjectCharter";
 import BusinessStrategy from "./pages/sprint1/BusinessStrategy";
 import MarketResearch from "./pages/sprint1/MarketResearch";
+import ProjectEstimationStarter from "./pages/sprint2/ProjectEstimationStarter";
+import EstimationDetails from "./pages/sprint2/EstimationDetails";
+import OnePageBudget from "./pages/sprint2/OnePageBudget";
 
 function App() {
   return (
@@ -27,7 +30,10 @@ function App() {
           <Route path="/sprint-1/business-strategy" element={<BusinessStrategy />}/>
           <Route path="/sprint-1/market-research" element={<MarketResearch />}/>
 
-          {/* <Route path="/sprint-2" element={<Sprint2 />} /> */}
+          <Route path="/sprint-2" element={<Sprint2 />} />
+          <Route path="/sprint-2/project-estimation-starter" element={<ProjectEstimationStarter />}/>
+          <Route path="/sprint-2/estimation-details" element={<EstimationDetails />}/>
+          <Route path="/sprint-2/one-page-budget" element={<OnePageBudget />}/>
 
           <Route path="*" element={<NotFound />} />
           

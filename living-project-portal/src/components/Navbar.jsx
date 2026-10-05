@@ -86,7 +86,7 @@ function Navbar() {
           </NavLink>
 
 
-          {/* <NavLink
+          <NavLink
             to="/sprint-2"
             className={({ isActive }) =>
               `navbar-link ${
@@ -99,9 +99,9 @@ function Navbar() {
             <span>
               Sprint 2
             </span>
-          </NavLink> */}
+          </NavLink>
 
-          <div className="navbar-link navbar-link-disabled">
+          {/* <div className="navbar-link navbar-link-disabled">
             <BarChart3 size={19} strokeWidth={2} />
 
             <span>
@@ -111,7 +111,7 @@ function Navbar() {
             <span className="coming-soon-badge">
               Soon
             </span>
-          </div>
+          </div> */}
 
         </nav>
 

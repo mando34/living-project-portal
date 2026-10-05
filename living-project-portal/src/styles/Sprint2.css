@@ -1,0 +1,2694 @@
+/* =========================================================
+   FESTIVO — SPRINT 2
+========================================================= */
+
+.sprint2-page {
+  --s2-navy: #111538;
+  --s2-pink: #ff3e91;
+  --s2-purple: #8451ff;
+  --s2-orange: #ffad42;
+  --s2-blue: #38bde8;
+  --s2-green: #38c7a3;
+
+  --s2-bg: #fffaf8;
+  --s2-white: #ffffff;
+  --s2-muted: #6c6c7d;
+  --s2-border: #eee4e7;
+
+  width: 100%;
+
+  color: var(--s2-navy);
+
+  background: var(--s2-bg);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.sprint2-hero {
+  position: relative;
+
+  min-height: 590px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(255, 62, 145, 0.1),
+      transparent 27%
+    ),
+    #fffaf8;
+}
+
+
+.sprint2-hero-container {
+  width: 100%;
+
+  max-width: 1240px;
+
+  margin: auto;
+
+  padding:
+    85px 40px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(400px, 0.85fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+
+.sprint2-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: var(--s2-pink);
+
+  font-size: 0.74rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.17em;
+}
+
+
+.sprint2-hero-copy h1 {
+  margin: 0;
+
+  color: var(--s2-navy);
+
+  font-size: clamp(
+    4rem,
+    7vw,
+    6.4rem
+  );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+}
+
+
+.sprint2-hero-copy h1 span {
+  color: var(--s2-pink);
+}
+
+
+.sprint2-hero-copy > p {
+  max-width: 650px;
+
+  margin:
+    27px 0 29px;
+
+  color: var(--s2-muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO PILLS
+========================================================= */
+
+.sprint2-hero-pills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.sprint2-hero-pills > div {
+  padding:
+    10px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: white;
+
+  border:
+    1px solid
+    var(--s2-border);
+
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 22px
+    rgba(17, 21, 56, 0.04);
+}
+
+
+.sprint2-hero-pills svg {
+  color: var(--s2-pink);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.sprint2-hero-visual {
+  position: relative;
+
+  min-height: 390px;
+}
+
+
+.s2-visual-blob {
+  position: absolute;
+
+  width: 315px;
+  height: 315px;
+
+  top: 30px;
+  left: 50%;
+
+  transform:
+    translateX(-50%)
+    rotate(9deg);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffd9e8,
+      #f1e4ff
+    );
+
+  border-radius:
+    47% 53% 45% 55% /
+    52% 42% 58% 48%;
+}
+
+
+.s2-main-visual-card {
+  position: absolute;
+
+  left: 50%;
+  top: 80px;
+
+  width: 230px;
+  height: 225px;
+
+  transform:
+    translateX(-50%)
+    rotate(2deg);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  color: var(--s2-purple);
+
+  background: white;
+
+  border:
+    7px solid
+    #ece6ff;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 50px
+    rgba(17, 21, 56, 0.13);
+}
+
+
+.s2-chart-bars {
+  height: 75px;
+
+  display: flex;
+
+  gap: 10px;
+
+  align-items: flex-end;
+}
+
+
+.s2-chart-bars span {
+  width: 24px;
+
+  border-radius:
+    7px 7px 3px 3px;
+}
+
+
+.s2-chart-bars span:nth-child(1) {
+  height: 35px;
+
+  background:
+    var(--s2-blue);
+}
+
+
+.s2-chart-bars span:nth-child(2) {
+  height: 53px;
+
+  background:
+    var(--s2-purple);
+}
+
+
+.s2-chart-bars span:nth-child(3) {
+  height: 75px;
+
+  background:
+    var(--s2-pink);
+}
+
+
+.s2-floating-calculator,
+.s2-floating-document {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+
+  place-items: center;
+
+  background: white;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(17, 21, 56, 0.12);
+}
+
+
+.s2-floating-calculator {
+  right: 25px;
+  bottom: 45px;
+
+  color: var(--s2-orange);
+
+  transform:
+    rotate(8deg);
+}
+
+
+.s2-floating-document {
+  left: 15px;
+  top: 25px;
+
+  color: var(--s2-pink);
+
+  transform:
+    rotate(-8deg);
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.s2-confetti {
+  position: absolute;
+
+  width: 11px;
+  height: 27px;
+
+  border-radius: 5px;
+}
+
+
+.s2-confetti-1 {
+  left: 3%;
+  top: 20%;
+
+  background:
+    var(--s2-pink);
+
+  transform:
+    rotate(35deg);
+}
+
+
+.s2-confetti-2 {
+  left: 45%;
+  top: 13%;
+
+  background:
+    var(--s2-orange);
+}
+
+
+.s2-confetti-3 {
+  right: 4%;
+  top: 22%;
+
+  background:
+    var(--s2-purple);
+
+  transform:
+    rotate(-35deg);
+}
+
+
+.s2-confetti-4 {
+  right: 28%;
+  bottom: 15%;
+
+  background:
+    var(--s2-green);
+
+  transform:
+    rotate(45deg);
+}
+
+
+/* =========================================================
+   SHARED HEADING
+========================================================= */
+
+.sprint2-section-heading {
+  max-width: 830px;
+
+  margin:
+    0 auto 55px;
+
+  text-align: center;
+}
+
+
+.sprint2-section-heading h2 {
+  margin:
+    0 0 17px;
+
+  font-size: clamp(
+    2.7rem,
+    5vw,
+    4.2rem
+  );
+
+  line-height: 1.05;
+
+  letter-spacing: -0.05em;
+}
+
+
+.sprint2-section-heading h2 span {
+  color: var(--s2-pink);
+}
+
+
+.sprint2-section-heading p {
+  max-width: 720px;
+
+  margin: auto;
+
+  color: var(--s2-muted);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PROCESS TIMELINE
+========================================================= */
+
+.sprint2-process-section {
+  padding:
+    105px 40px 85px;
+
+  background: white;
+}
+
+
+.sprint2-timeline {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+
+.sprint2-timeline-line {
+  position: absolute;
+
+  left: 16%;
+  right: 16%;
+
+  top: 31px;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--s2-pink),
+      var(--s2-purple),
+      var(--s2-orange)
+    );
+
+  z-index: 0;
+}
+
+
+.sprint2-timeline-step {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 0;
+
+  text-align: center;
+
+  color: inherit;
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+
+.sprint2-timeline-number {
+  width: 63px;
+  height: 63px;
+
+  margin:
+    0 auto 16px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: white;
+
+  border:
+    7px solid
+    white;
+
+  border-radius: 50%;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 9px 24px
+    rgba(17, 21, 56, 0.12);
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.sprint2-timeline-step:hover
+.sprint2-timeline-number,
+.sprint2-timeline-step-active
+.sprint2-timeline-number {
+  transform:
+    scale(1.1);
+}
+
+
+.s2-pink.sprint2-timeline-number {
+  background:
+    var(--s2-pink);
+}
+
+
+.s2-purple.sprint2-timeline-number {
+  background:
+    var(--s2-purple);
+}
+
+
+.s2-orange.sprint2-timeline-number {
+  background:
+    var(--s2-orange);
+}
+
+
+.sprint2-timeline-step h3 {
+  margin:
+    0 0 5px;
+
+  font-size: 1rem;
+}
+
+
+.sprint2-timeline-step p {
+  margin: 0;
+
+  color: var(--s2-muted);
+
+  font-size: 0.74rem;
+}
+
+
+/* =========================================================
+   DOCUMENT SECTION
+========================================================= */
+
+.sprint2-document-section {
+  padding:
+    80px 40px 110px;
+
+  background:
+    #fffaf8;
+}
+
+
+.sprint2-document-wrapper {
+  max-width: 1080px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.sprint2-tabs {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  padding: 6px;
+
+  background: white;
+
+  border:
+    1px solid
+    var(--s2-border);
+
+  border-radius:
+    18px 18px 0 0;
+}
+
+
+.sprint2-tab {
+  min-height: 48px;
+
+  padding:
+    8px 14px;
+
+  color: var(--s2-muted);
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 13px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.sprint2-tab-active {
+  color: white;
+}
+
+
+.sprint2-tab-active.s2-pink {
+  background:
+    var(--s2-pink);
+}
+
+
+.sprint2-tab-active.s2-purple {
+  background:
+    var(--s2-purple);
+}
+
+
+.sprint2-tab-active.s2-orange {
+  background:
+    var(--s2-orange);
+}
+
+
+/* =========================================================
+   DOCUMENT CARD
+========================================================= */
+
+.sprint2-document-card {
+  min-height: 510px;
+
+  padding: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 0.72fr)
+    minmax(0, 1.28fr);
+
+  gap: 45px;
+
+  align-items: center;
+
+  background: white;
+
+  border:
+    1px solid
+    var(--s2-border);
+
+  border-top: none;
+
+  border-radius:
+    0 0 25px 25px;
+
+  box-shadow:
+    0 18px 45px
+    rgba(17, 21, 56, 0.06);
+}
+
+
+/* =========================================================
+   DOCUMENT PREVIEW
+========================================================= */
+
+.sprint2-document-preview {
+  position: relative;
+
+  min-height: 335px;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    #f8f7f7;
+
+  border-radius: 20px;
+}
+
+
+.s2-paper-preview {
+  width: 205px;
+  height: 270px;
+
+  padding: 21px;
+
+  background: white;
+
+  border:
+    1px solid
+    #dedcdf;
+
+  box-shadow:
+    0 12px 25px
+    rgba(17, 21, 56, 0.08);
+}
+
+
+.s2-paper-header {
+  width: 100%;
+
+  height: 20px;
+
+  margin-bottom: 20px;
+
+  background:
+    var(--s2-navy);
+}
+
+
+.s2-paper-line {
+  height: 7px;
+
+  margin-bottom: 8px;
+
+  background:
+    #e4e1e5;
+
+  border-radius: 3px;
+}
+
+
+.s2-paper-line.long {
+  width: 90%;
+}
+
+
+.s2-paper-line.medium {
+  width: 68%;
+}
+
+
+.s2-paper-table {
+  margin-top: 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 5px;
+}
+
+
+.s2-paper-table span {
+  height: 40px;
+
+  background:
+    #f0eef1;
+
+  border:
+    1px solid
+    #ddd9de;
+}
+
+
+.s2-document-number {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: white;
+
+  background:
+    var(--s2-pink);
+
+  border-radius: 50%;
+
+  font-size: 0.72rem;
+
+  font-weight: 900;
+}
+
+
+.s2-purple
+.s2-document-number {
+  background:
+    var(--s2-purple);
+}
+
+
+.s2-orange
+.s2-document-number {
+  background:
+    var(--s2-orange);
+}
+
+
+/* =========================================================
+   DOCUMENT CONTENT
+========================================================= */
+
+.sprint2-document-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.sprint2-document-icon {
+  flex-shrink: 0;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s2-pink);
+
+  background:
+    #ffe4ef;
+
+  border-radius: 17px;
+}
+
+
+.s2-purple
+.sprint2-document-icon {
+  color:
+    var(--s2-purple);
+
+  background:
+    #eee5ff;
+}
+
+
+.s2-orange
+.sprint2-document-icon {
+  color:
+    #d97e08;
+
+  background:
+    #fff0d7;
+}
+
+
+.sprint2-document-heading span {
+  color: var(--s2-pink);
+
+  font-size: 0.65rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+}
+
+
+.sprint2-document-heading h2 {
+  margin:
+    4px 0 0;
+
+  font-size: 1.65rem;
+}
+
+
+.sprint2-document-description {
+  margin:
+    24px 0;
+
+  color: var(--s2-muted);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TOPIC BOX
+========================================================= */
+
+.sprint2-topic-box {
+  padding: 20px;
+
+  background:
+    #fff1f6;
+
+  border-radius: 17px;
+}
+
+
+.s2-purple
+.sprint2-topic-box {
+  background:
+    #f2edff;
+}
+
+
+.s2-orange
+.sprint2-topic-box {
+  background:
+    #fff3df;
+}
+
+
+.sprint2-topic-box > span {
+  color:
+    var(--s2-pink);
+
+  font-size: 0.68rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.sprint2-topic-box ul {
+  margin:
+    12px 0 0;
+
+  padding-left: 18px;
+}
+
+
+.sprint2-topic-box li {
+  margin-bottom: 6px;
+
+  color:
+    var(--s2-muted);
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   HIGHLIGHT STAT
+========================================================= */
+
+.sprint2-highlight-stat {
+  margin-top: 18px;
+
+  padding:
+    14px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border:
+    1px solid
+    var(--s2-border);
+
+  border-radius: 15px;
+}
+
+
+.sprint2-highlight-stat strong {
+  color:
+    var(--s2-pink);
+
+  font-size: 1.65rem;
+}
+
+
+.s2-purple
+.sprint2-highlight-stat strong {
+  color:
+    var(--s2-purple);
+}
+
+
+.s2-orange
+.sprint2-highlight-stat strong {
+  color:
+    #d97e08;
+}
+
+
+.sprint2-highlight-stat span {
+  color:
+    var(--s2-muted);
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.sprint2-document-actions {
+  margin-top: 23px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.sprint2-primary-action,
+.sprint2-secondary-action {
+  min-height: 47px;
+
+  padding:
+    0 19px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.sprint2-primary-action {
+  color: white;
+
+  background:
+    var(--s2-pink);
+}
+
+
+.s2-purple
+.sprint2-primary-action {
+  background:
+    var(--s2-purple);
+}
+
+
+.s2-orange
+.sprint2-primary-action {
+  background:
+    var(--s2-orange);
+}
+
+
+.sprint2-secondary-action {
+  color:
+    var(--s2-pink);
+
+  background: white;
+
+  border:
+    1px solid
+    var(--s2-pink);
+}
+
+
+.sprint2-primary-action:hover,
+.sprint2-secondary-action:hover {
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   OUTCOMES
+========================================================= */
+
+.sprint2-outcome-section {
+  padding:
+    105px 40px;
+
+  background: white;
+}
+
+
+.sprint2-outcome-wrapper {
+  max-width: 1120px;
+
+  margin: auto;
+}
+
+
+.sprint2-outcome-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+.sprint2-outcome-grid article {
+  padding: 30px;
+
+  text-align: center;
+
+  background:
+    #faf7ff;
+
+  border:
+    1px solid
+    #eee6fb;
+
+  border-radius: 22px;
+}
+
+
+.s2-outcome-icon {
+  width: 56px;
+  height: 56px;
+
+  margin:
+    0 auto 18px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--s2-purple);
+
+  background: white;
+
+  border-radius: 17px;
+}
+
+
+.sprint2-outcome-grid h3 {
+  margin:
+    0 0 10px;
+}
+
+
+.sprint2-outcome-grid p {
+  margin: 0;
+
+  color:
+    var(--s2-muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .sprint2-hero-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .sprint2-hero-copy {
+    text-align: center;
+  }
+
+
+  .sprint2-hero-pills {
+    justify-content: center;
+  }
+
+
+  .sprint2-hero-visual {
+    max-width: 500px;
+
+    width: 100%;
+
+    margin: auto;
+  }
+
+
+  .sprint2-document-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .sprint2-document-preview {
+    min-height: 315px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .sprint2-timeline {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .sprint2-timeline-line {
+    display: none;
+  }
+
+
+  .sprint2-tabs {
+    display: flex;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+
+  .sprint2-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .sprint2-tab {
+    min-width: 180px;
+
+    flex-shrink: 0;
+  }
+
+
+  .sprint2-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .sprint2-hero,
+  .sprint2-process-section,
+  .sprint2-document-section,
+  .sprint2-outcome-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+
+  .sprint2-hero-copy h1 {
+    font-size: 3.5rem;
+  }
+
+
+  .sprint2-document-card {
+    padding:
+      28px 20px;
+  }
+
+
+  .sprint2-document-actions {
+    flex-direction: column;
+  }
+
+
+  .sprint2-primary-action,
+  .sprint2-secondary-action {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   SPRINT 2 — ESTIMATION HERO VISUAL
+========================================================= */
+
+.s2-estimation-visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 560px;
+
+  height: 440px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   BACKGROUND BLOBS
+========================================================= */
+
+.s2-estimation-blob {
+  position: absolute;
+
+  border-radius:
+    45% 55% 52% 48% /
+    55% 43% 57% 45%;
+}
+
+
+.s2-blob-one {
+  width: 390px;
+  height: 330px;
+
+  top: 55px;
+  left: 80px;
+
+  background:
+    rgba(255, 184, 213, 0.45);
+
+  transform:
+    rotate(-6deg);
+}
+
+
+.s2-blob-two {
+  width: 270px;
+  height: 220px;
+
+  top: 145px;
+  left: 190px;
+
+  background:
+    rgba(221, 206, 255, 0.48);
+
+  transform:
+    rotate(12deg);
+}
+
+
+/* =========================================================
+   CLIPBOARD
+========================================================= */
+
+.s2-clipboard {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 245px;
+  height: 310px;
+
+  top: 62px;
+  left: 175px;
+
+  padding:
+    56px 28px 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f9f7ff
+    );
+
+  border:
+    8px solid
+    #6f42e8;
+
+  border-radius:
+    26px;
+
+  box-shadow:
+    0 24px 48px
+    rgba(17, 21, 56, 0.18);
+
+  transform:
+    rotate(4deg);
+}
+
+
+/* CLIP */
+
+.s2-clipboard-clip {
+  position: absolute;
+
+  width: 105px;
+  height: 37px;
+
+  top: -24px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    #261e75;
+
+  border-radius:
+    13px 13px 8px 8px;
+
+  box-shadow:
+    0 5px 10px
+    rgba(17, 21, 56, 0.14);
+}
+
+
+.s2-clipboard-clip::before {
+  content: "";
+
+  position: absolute;
+
+  width: 27px;
+  height: 27px;
+
+  top: -17px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    #ffffff;
+
+  border:
+    8px solid
+    #261e75;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CLIPBOARD CHART
+========================================================= */
+
+.s2-clipboard-chart {
+  position: relative;
+
+  height: 115px;
+
+  margin-bottom: 25px;
+}
+
+
+.s2-chart-arrow {
+  position: absolute;
+
+  right: 10px;
+  top: 0;
+
+  color:
+    #9b83ff;
+}
+
+
+.s2-custom-bars {
+  position: absolute;
+
+  left: 8px;
+  bottom: 5px;
+
+  height: 80px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 12px;
+}
+
+
+.s2-custom-bars span {
+  width: 27px;
+
+  border-radius:
+    7px 7px 3px 3px;
+}
+
+
+.s2-bar-one {
+  height: 36px;
+
+  background:
+    #8863ff;
+}
+
+
+.s2-bar-two {
+  height: 54px;
+
+  background:
+    #7047f4;
+}
+
+
+.s2-bar-three {
+  height: 78px;
+
+  background:
+    #8b4df5;
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+.s2-checklist {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.s2-check-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.s2-check-row svg {
+  flex-shrink: 0;
+
+  color:
+    #ff3e91;
+
+  fill:
+    #ff3e91;
+
+  stroke:
+    white;
+}
+
+
+.s2-check-row span {
+  width: 105px;
+  height: 9px;
+
+  background:
+    #d6d0ed;
+
+  border-radius:
+    999px;
+}
+
+
+/* =========================================================
+   CALCULATOR
+========================================================= */
+
+.s2-calculator-card {
+  position: absolute;
+
+  z-index: 7;
+
+  right: 15px;
+  bottom: 30px;
+
+  width: 105px;
+  height: 145px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #221871;
+
+  background:
+    linear-gradient(
+      145deg,
+      #4b32c4,
+      #271a73
+    );
+
+  border:
+    5px solid
+    #1e165d;
+
+  border-radius:
+    19px;
+
+  box-shadow:
+    0 18px 35px
+    rgba(17, 21, 56, 0.22);
+
+  transform:
+    rotate(8deg);
+}
+
+
+.s2-calculator-card svg {
+  color:
+    #c9bfff;
+}
+
+
+/* =========================================================
+   PIE CHART
+========================================================= */
+
+.s2-pie-chart-card {
+  position: absolute;
+
+  z-index: 6;
+
+  right: 13px;
+  top: 45px;
+
+  width: 105px;
+  height: 105px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #ff3e91;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 15px 32px
+    rgba(17, 21, 56, 0.1);
+
+  transform:
+    rotate(9deg);
+}
+
+
+.s2-pie-chart-card svg {
+  stroke-width:
+    2.5;
+}
+
+
+/* =========================================================
+   COINS
+========================================================= */
+
+.s2-coins-visual {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 65px;
+  bottom: 30px;
+
+  width: 150px;
+  height: 120px;
+}
+
+
+.s2-coins-icon {
+  position: absolute;
+
+  left: 46px;
+  bottom: 20px;
+
+  color:
+    #db7b00;
+}
+
+
+.s2-coin-stack {
+  position: absolute;
+
+  display: flex;
+
+  flex-direction: column-reverse;
+}
+
+
+.s2-coin-stack span {
+  width: 68px;
+  height: 18px;
+
+  margin-top: -4px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffc352,
+      #ff970c
+    );
+
+  border:
+    2px solid
+    #ef8d00;
+
+  border-radius: 50%;
+}
+
+
+.s2-coin-stack-back {
+  right: 5px;
+  bottom: 20px;
+}
+
+
+.s2-coin-stack-front {
+  left: 4px;
+  bottom: 4px;
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.s2-estimation-sparkle {
+  position: absolute;
+
+  z-index: 9;
+}
+
+
+.s2-sparkle-one {
+  top: 77px;
+  left: 85px;
+
+  color:
+    #ffad42;
+}
+
+
+.s2-sparkle-two {
+  top: 130px;
+  right: -8px;
+
+  color:
+    #38bde8;
+}
+
+
+/* =========================================================
+   SMALL DECORATIVE LINES
+========================================================= */
+
+.s2-estimation-visual::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 5;
+
+  width: 10px;
+  height: 55px;
+
+  top: 125px;
+  left: 125px;
+
+  background:
+    #513acb;
+
+  border-radius:
+    999px;
+
+  transform:
+    rotate(-32deg);
+}
+
+
+.s2-estimation-visual::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 5;
+
+  width: 10px;
+  height: 35px;
+
+  top: 165px;
+  left: 115px;
+
+  background:
+    #513acb;
+
+  border-radius:
+    999px;
+
+  transform:
+    rotate(-48deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .s2-estimation-visual {
+    max-width: 530px;
+
+    margin:
+      20px auto 0;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .s2-estimation-visual {
+    height: 360px;
+
+    transform:
+      scale(0.82);
+
+    transform-origin:
+      top center;
+
+    margin-bottom:
+      -55px;
+  }
+
+}
+
+/* =========================================================
+   SPRINT 2 DOCUMENT PREVIEW — OPTION 1
+========================================================= */
+
+.sprint2-document-preview {
+  position: relative;
+
+  min-height: 355px;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffafd,
+      #faf8fb
+    );
+
+  border:
+    1px solid
+    #f0e9ed;
+
+  border-radius: 24px;
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND BLOB
+========================================================= */
+
+.s2-preview-blob {
+  position: absolute;
+
+  width: 270px;
+  height: 260px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-7deg);
+
+  border-radius:
+    46% 54% 44% 56% /
+    56% 43% 57% 44%;
+}
+
+
+/* Starter */
+
+.s2-preview-starter
+.s2-preview-blob {
+  background:
+    linear-gradient(
+      145deg,
+      #ffe0ec,
+      #fbdcf0
+    );
+}
+
+
+/* Details */
+
+.s2-preview-details
+.s2-preview-blob {
+  background:
+    linear-gradient(
+      145deg,
+      #eee3ff,
+      #e4dcff
+    );
+}
+
+
+/* Budget */
+
+.s2-preview-budget
+.s2-preview-blob {
+  background:
+    linear-gradient(
+      145deg,
+      #fff0db,
+      #ffe4ca
+    );
+}
+
+
+/* =========================================================
+   DECORATIVE SPARKS
+========================================================= */
+
+.s2-preview-spark {
+  position: absolute;
+
+  z-index: 4;
+
+  font-size: 1.2rem;
+}
+
+
+.s2-preview-spark-one {
+  left: 35px;
+  top: 80px;
+
+  color: #ffad42;
+
+  transform:
+    rotate(-15deg);
+}
+
+
+.s2-preview-spark-two {
+  right: 42px;
+  bottom: 65px;
+
+  color: #8451ff;
+
+  transform:
+    rotate(18deg);
+}
+
+
+/* =========================================================
+   DOCUMENT NUMBER
+========================================================= */
+
+.s2-document-number {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 20px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    var(--s2-pink);
+
+  border:
+    5px solid
+    rgba(255, 255, 255, 0.85);
+
+  border-radius: 50%;
+
+  font-size: 0.74rem;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 20px
+    rgba(17, 21, 56, 0.12);
+}
+
+
+.s2-preview-details
+.s2-document-number {
+  background:
+    var(--s2-purple);
+}
+
+
+.s2-preview-budget
+.s2-document-number {
+  background:
+    var(--s2-orange);
+}
+
+
+/* =========================================================
+   OPTION 1 — PROJECT ESTIMATION STARTER
+========================================================= */
+
+.s2-starter-illustration {
+  position: relative;
+
+  z-index: 3;
+
+  width: 235px;
+  height: 285px;
+
+  display: grid;
+
+  place-items: center;
+
+  transform:
+    rotate(-5deg);
+}
+
+
+/* Main white document */
+
+.s2-illustration-document {
+  position: relative;
+
+  width: 185px;
+  height: 245px;
+
+  padding:
+    31px 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #faf8ff
+    );
+
+  border:
+    6px solid
+    #8763f4;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 38px
+    rgba(17, 21, 56, 0.15);
+}
+
+
+/* fake second sheet */
+
+.s2-illustration-document::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  left: -14px;
+  top: 13px;
+
+  background:
+    #d8cdff;
+
+  border:
+    4px solid
+    #a58cff;
+
+  border-radius: 15px;
+}
+
+
+/* mini chart */
+
+.s2-document-mini-chart {
+  height: 88px;
+
+  margin-bottom: 15px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--s2-pink);
+
+  background:
+    #fff1f6;
+
+  border-radius: 13px;
+}
+
+
+/* checklist */
+
+.s2-document-check-row {
+  margin-bottom: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.s2-document-check-row svg {
+  flex-shrink: 0;
+
+  color:
+    var(--s2-pink);
+}
+
+
+.s2-document-check-row span {
+  width: 100%;
+
+  height: 7px;
+
+  background:
+    #ded9eb;
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   ESTIMATION DETAILS ILLUSTRATION
+========================================================= */
+
+.s2-details-illustration {
+  position: relative;
+
+  z-index: 3;
+
+  width: 270px;
+  height: 280px;
+}
+
+
+/* Main analysis card */
+
+.s2-details-main-card {
+  position: absolute;
+
+  width: 190px;
+  height: 215px;
+
+  left: 30px;
+  top: 25px;
+
+  padding:
+    30px 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #faf8ff
+    );
+
+  border:
+    6px solid
+    #8255f5;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 38px
+    rgba(17, 21, 56, 0.14);
+
+  transform:
+    rotate(-4deg);
+}
+
+
+/* bars */
+
+.s2-details-chart {
+  height: 80px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+.s2-details-bar {
+  width: 23px;
+
+  border-radius:
+    6px 6px 3px 3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #a580ff,
+      #7040ef
+    );
+}
+
+
+.s2-details-bar-1 {
+  height: 28px;
+}
+
+
+.s2-details-bar-2 {
+  height: 44px;
+}
+
+
+.s2-details-bar-3 {
+  height: 60px;
+}
+
+
+.s2-details-bar-4 {
+  height: 74px;
+}
+
+
+/* document text */
+
+.s2-details-lines {
+  margin-top: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.s2-details-lines span {
+  height: 7px;
+
+  background:
+    #dcd7e9;
+
+  border-radius: 999px;
+}
+
+
+.s2-details-lines span:nth-child(1) {
+  width: 90%;
+}
+
+
+.s2-details-lines span:nth-child(2) {
+  width: 72%;
+}
+
+
+.s2-details-lines span:nth-child(3) {
+  width: 82%;
+}
+
+
+/* Calculator */
+
+.s2-details-calculator {
+  position: absolute;
+
+  z-index: 5;
+
+  right: 0;
+  bottom: 13px;
+
+  width: 83px;
+  height: 90px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #7b4bf0,
+      #4b29b8
+    );
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 13px 28px
+    rgba(76, 43, 184, 0.25);
+
+  transform:
+    rotate(8deg);
+}
+
+
+/* Layers / slices */
+
+.s2-details-slices {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 0;
+  bottom: 20px;
+
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--s2-purple);
+
+  background: white;
+
+  border:
+    1px solid
+    #ded4fa;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 12px 27px
+    rgba(17, 21, 56, 0.1);
+
+  transform:
+    rotate(-7deg);
+}
+
+
+/* Clock */
+
+.s2-details-clock {
+  position: absolute;
+
+  z-index: 6;
+
+  right: 6px;
+  top: 4px;
+
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--s2-purple);
+
+  background:
+    #f2ecff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 10px 22px
+    rgba(17, 21, 56, 0.09);
+}
+
+
+/* =========================================================
+   ONE PAGE BUDGET ILLUSTRATION
+========================================================= */
+
+.s2-budget-illustration {
+  position: relative;
+
+  z-index: 3;
+
+  width: 270px;
+  height: 280px;
+}
+
+
+/* Main sheet */
+
+.s2-budget-document {
+  position: absolute;
+
+  width: 185px;
+  height: 225px;
+
+  left: 35px;
+  top: 22px;
+
+  padding:
+    26px 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fffaf4
+    );
+
+  border:
+    6px solid
+    #ffad42;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 38px
+    rgba(17, 21, 56, 0.13);
+
+  transform:
+    rotate(-4deg);
+}
+
+
+.s2-budget-heading {
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 18px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #d97a00;
+
+  background:
+    #fff0d8;
+
+  border-radius: 14px;
+}
+
+
+/* Chart */
+
+.s2-budget-chart {
+  height: 70px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 9px;
+}
+
+
+.budget-bar {
+  width: 28px;
+
+  border-radius:
+    7px 7px 3px 3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffc359,
+      #ff920b
+    );
+}
+
+
+.budget-bar-1 {
+  height: 32px;
+}
+
+
+.budget-bar-2 {
+  height: 48px;
+}
+
+
+.budget-bar-3 {
+  height: 67px;
+}
+
+
+/* fake text */
+
+.s2-budget-line {
+  width: 100%;
+  height: 7px;
+
+  margin-top: 15px;
+
+  background:
+    #e6dfd5;
+
+  border-radius: 999px;
+}
+
+
+.s2-budget-line-short {
+  width: 70%;
+
+  margin-top: 9px;
+}
+
+
+/* Coins */
+
+.s2-budget-coins {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 2px;
+  bottom: 6px;
+
+  width: 90px;
+  height: 80px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #d87700;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffd270,
+      #ffad31
+    );
+
+  border-radius:
+    45% 55% 48% 52% /
+    55% 45% 55% 45%;
+
+  box-shadow:
+    0 13px 28px
+    rgba(255, 153, 0, 0.2);
+
+  transform:
+    rotate(-7deg);
+}
+
+
+/* Growth badge */
+
+.s2-budget-growth {
+  position: absolute;
+
+  z-index: 7;
+
+  right: 0;
+  top: 15px;
+
+  width: 75px;
+  height: 75px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    #d97a00;
+
+  background: white;
+
+  border:
+    1px solid
+    #f4dfbd;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 27px
+    rgba(17, 21, 56, 0.1);
+
+  transform:
+    rotate(7deg);
+}
+
+
+/* =========================================================
+   PREVIEW HOVER EFFECT
+========================================================= */
+
+.sprint2-document-preview {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.sprint2-document-card:hover
+.sprint2-document-preview {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 18px 38px
+    rgba(17, 21, 56, 0.08);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .sprint2-document-preview {
+    min-height: 340px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .sprint2-document-preview {
+    min-height: 305px;
+  }
+
+
+  .s2-starter-illustration,
+  .s2-details-illustration,
+  .s2-budget-illustration {
+    transform:
+      scale(0.85);
+  }
+
+}

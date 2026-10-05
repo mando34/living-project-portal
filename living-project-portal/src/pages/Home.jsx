@@ -348,7 +348,7 @@ function Home() {
             </Link>
 
 
-            {/* <Link
+            <Link
               to="/sprint-2"
               className="journey-card"
             >
@@ -378,9 +378,9 @@ function Home() {
                 →
               </span>
 
-            </Link> */}
+            </Link>
 
-            <div className="journey-card journey-card-disabled">
+            {/* <div className="journey-card journey-card-disabled">
 
               <div className="journey-number">
                 02
@@ -413,7 +413,7 @@ function Home() {
                 🔒
               </span>
 
-            </div>
+            </div> */}
 
 
             <div className="journey-card coming-soon journey-card-disabled">
