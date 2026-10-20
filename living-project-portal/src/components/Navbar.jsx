@@ -5,25 +5,37 @@ import {
   Users,
   ClipboardList,
   BarChart3,
-  Heart,
+  Sparkles,
   PartyPopper,
 } from "lucide-react";
 
 import "../styles/Navbar.css";
 
+
 function Navbar() {
   return (
     <header className="main-navbar">
+
       <div className="navbar-container">
 
         {/* =========================
             BRAND
         ========================== */}
-        <Link to="/" className="navbar-brand">
+
+        <Link
+          to="/"
+          className="navbar-brand"
+        >
 
           <div className="navbar-logo">
-            <PartyPopper size={23} strokeWidth={2.3} />
+
+            <PartyPopper
+              size={23}
+              strokeWidth={2.3}
+            />
+
           </div>
+
 
           <span>
             Living Project Portal
@@ -35,7 +47,10 @@ function Navbar() {
         {/* =========================
             NAVIGATION
         ========================== */}
+
         <nav className="navbar-links">
+
+          {/* HOME */}
 
           <NavLink
             to="/"
@@ -46,13 +61,20 @@ function Navbar() {
               }`
             }
           >
-            <Home size={19} strokeWidth={2} />
+
+            <Home
+              size={19}
+              strokeWidth={2}
+            />
 
             <span>
               Home
             </span>
+
           </NavLink>
 
+
+          {/* ABOUT */}
 
           <NavLink
             to="/about"
@@ -62,13 +84,20 @@ function Navbar() {
               }`
             }
           >
-            <Users size={19} strokeWidth={2} />
+
+            <Users
+              size={19}
+              strokeWidth={2}
+            />
 
             <span>
               About Us
             </span>
+
           </NavLink>
 
+
+          {/* SPRINT 1 */}
 
           <NavLink
             to="/sprint-1"
@@ -78,13 +107,20 @@ function Navbar() {
               }`
             }
           >
-            <ClipboardList size={19} strokeWidth={2} />
+
+            <ClipboardList
+              size={19}
+              strokeWidth={2}
+            />
 
             <span>
               Sprint 1
             </span>
+
           </NavLink>
 
+
+          {/* SPRINT 2 */}
 
           <NavLink
             to="/sprint-2"
@@ -94,54 +130,48 @@ function Navbar() {
               }`
             }
           >
-            <BarChart3 size={19} strokeWidth={2} />
 
-            <span>
-              Sprint 2
-            </span>
-          </NavLink>
-
-          {/* <div className="navbar-link navbar-link-disabled">
-            <BarChart3 size={19} strokeWidth={2} />
-
-            <span>
-              Sprint 2
-            </span>
-
-            <span className="coming-soon-badge">
-              Soon
-            </span>
-          </div> */}
-
-        </nav>
-
-
-        {/* =========================
-            CTA
-        ========================== */}
-        {/* <div className="navbar-cta-wrapper">
-
-          <div className="navbar-divider"></div>
-
-          <Link
-            to="/sprint-1"
-            className="navbar-cta"
-          >
-            <Heart
-              size={18}
-              strokeWidth={2.2}
+            <BarChart3
+              size={19}
+              strokeWidth={2}
             />
 
             <span>
-              Plan Happier
+              Sprint 2
             </span>
-          </Link>
 
-        </div> */}
+          </NavLink>
+
+
+          {/* SPRINT 3 */}
+
+          <NavLink
+            to="/sprint-3"
+            className={({ isActive }) =>
+              `navbar-link ${
+                isActive ? "navbar-link-active" : ""
+              }`
+            }
+          >
+
+            <Sparkles
+              size={19}
+              strokeWidth={2}
+            />
+
+            <span>
+              Sprint 3
+            </span>
+
+          </NavLink>
+
+        </nav>
 
       </div>
+
     </header>
   );
 }
+
 
 export default Navbar;
