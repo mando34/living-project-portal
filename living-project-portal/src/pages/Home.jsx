@@ -315,140 +315,118 @@ function Home() {
 
           <div className="journey-cards">
 
-            <Link
-              to="/sprint-1"
-              className="journey-card"
-            >
+  {/* =========================
+      SPRINT 1
+  ========================== */}
 
-              <div className="journey-number">
-                01
-              </div>
+  <Link
+    to="/sprint-1"
+    className="journey-card"
+  >
 
-              <div>
+    <div className="journey-number">
+      01
+    </div>
 
-                <span className="journey-label">
-                  SPRINT ONE
-                </span>
+    <div>
 
-                <h3>
-                  Understanding the Problem
-                </h3>
+      <span className="journey-label">
+        SPRINT ONE
+      </span>
 
-                <p>
-                  User interviews, research, problem discovery,
-                  and early project direction.
-                </p>
+      <h3>
+        Understanding the Problem
+      </h3>
 
-              </div>
+      <p>
+        User interviews, research, problem discovery,
+        and early project direction.
+      </p>
 
-              <span className="journey-arrow">
-                →
-              </span>
+    </div>
 
-            </Link>
+    <span className="journey-arrow">
+      →
+    </span>
 
-
-            <Link
-              to="/sprint-2"
-              className="journey-card"
-            >
-
-              <div className="journey-number">
-                02
-              </div>
-
-              <div>
-
-                <span className="journey-label">
-                  SPRINT TWO
-                </span>
-
-                <h3>
-                  Turning Research Into Direction
-                </h3>
-
-                <p>
-                  Converting what we learned into requirements,
-                  priorities, and project decisions.
-                </p>
-
-              </div>
-
-              <span className="journey-arrow">
-                →
-              </span>
-
-            </Link>
-
-            {/* <div className="journey-card journey-card-disabled">
-
-              <div className="journey-number">
-                02
-              </div>
-
-              <div>
-
-                <div className="journey-label-row">
-                  <span className="journey-label">
-                    SPRINT TWO
-                  </span>
-
-                  <span className="journey-coming-soon">
-                    Coming Soon
-                  </span>
-                </div>
-
-                <h3>
-                  Turning Research Into Direction
-                </h3>
-
-                <p>
-                  Sprint 2 content will be added after the next phase
-                  of the project is completed.
-                </p>
-
-              </div>
-
-              <span className="journey-lock">
-                🔒
-              </span>
-
-            </div> */}
+  </Link>
 
 
-            <div className="journey-card coming-soon journey-card-disabled">
+  {/* =========================
+      SPRINT 2
+  ========================== */}
 
-              <div className="journey-number">
-                03
-              </div>
+  <Link
+    to="/sprint-2"
+    className="journey-card"
+  >
 
-              <div>
+    <div className="journey-number">
+      02
+    </div>
 
-                <span className="journey-label">
-                  COMING SOON
-                </span>
+    <div>
 
-                <h3>
-                  The Next Chapter
-                </h3>
+      <span className="journey-label">
+        SPRINT TWO
+      </span>
 
-                <p>
-                  More sprint pages will appear here as our project
-                  continues to evolve.
-                </p>
+      <h3>
+        Turning Research Into Direction
+      </h3>
 
-              </div>
+      <p>
+        Converting what we learned into requirements,
+        priorities, estimates, and project decisions.
+      </p>
 
-              {/* <span className="journey-arrow">
-                ✦
-              </span> */}
-              <span className="journey-lock">
-                🔒
-              </span>
+    </div>
 
-            </div>
+    <span className="journey-arrow">
+      →
+    </span>
 
-          </div>
+  </Link>
+
+
+  {/* =========================
+      SPRINT 3
+  ========================== */}
+
+  <Link
+    to="/sprint-3"
+    className="journey-card"
+  >
+
+    <div className="journey-number">
+      03
+    </div>
+
+    <div>
+
+      <span className="journey-label">
+        SPRINT THREE
+      </span>
+
+      <h3>
+        Evidence, Risks & Project Evolution
+      </h3>
+
+      <p>
+        Validating our assumptions through interviews, product
+        research, contradiction analysis, risk identification,
+        and updates to the Festivo business case.
+      </p>
+
+    </div>
+
+    <span className="journey-arrow">
+      →
+    </span>
+
+  </Link>
+
+</div>
 
         </div>
 
