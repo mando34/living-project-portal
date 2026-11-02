@@ -1,0 +1,2961 @@
+/* =========================================================
+   =========================================================
+   SPRINT 4 — BUDGET & POSTMORTEM
+   =========================================================
+
+   Namespace: s4budget-
+
+   Includes:
+   - Option 6 Learn → Improve → Repeat hero
+   - Error Budget Summary
+   - Sprint Timeline
+   - Postmortem Insights
+   - Contributing Causes
+   - Action Items
+   - Error Budget Policy
+   - Escalation Path
+   - Priority Gauge
+   - Incident Roles
+   - Bottom Navigation
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.s4budget-page {
+  --s4b-navy: #111538;
+  --s4b-muted: #626277;
+
+  --s4b-pink: #ff3e91;
+  --s4b-purple: #8057f5;
+  --s4b-orange: #f59a39;
+  --s4b-green: #45b98d;
+  --s4b-blue: #4f8df7;
+
+  --s4b-pink-soft: #fff0f6;
+  --s4b-purple-soft: #f1ebff;
+  --s4b-orange-soft: #fff1e5;
+  --s4b-green-soft: #eaf8f3;
+
+  --s4b-border: #eae3e8;
+
+  width: 100%;
+  overflow-x: hidden;
+
+  color: var(--s4b-navy);
+  background: #ffffff;
+
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+.s4budget-page,
+.s4budget-page *,
+.s4budget-page *::before,
+.s4budget-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHARED WIDTH
+========================================================= */
+
+.s4budget-page .s4budget-shell {
+  width: calc(100% - 80px);
+  max-width: 1240px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.s4budget-page .s4budget-hero {
+  position: relative;
+
+  padding:
+    48px 0
+    95px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 87% 17%,
+      rgba(128, 87, 245, 0.1),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 10% 74%,
+      rgba(255, 62, 145, 0.05),
+      transparent 22%
+    ),
+    #fffaf8;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.s4budget-page .s4budget-breadcrumb {
+  margin-bottom: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+
+.s4budget-page .s4budget-breadcrumb a {
+  color: var(--s4b-pink);
+
+  text-decoration: none;
+}
+
+
+.s4budget-page .s4budget-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   HERO LAYOUT
+========================================================= */
+
+.s4budget-page .s4budget-hero-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(430px, 0.8fr);
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.s4budget-page .s4budget-hero-copy {
+  min-width: 0;
+}
+
+
+.s4budget-page .s4budget-eyebrow {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--s4b-pink);
+
+  font-size: 0.82rem;
+  font-weight: 900;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+
+.s4budget-page .s4budget-hero-copy h1 {
+  margin: 0;
+
+  color: var(--s4b-navy);
+
+  font-size:
+    clamp(
+      4rem,
+      6vw,
+      6rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+
+.s4budget-page .s4budget-hero-copy h1 span {
+  display: block;
+
+  color: var(--s4b-pink);
+}
+
+
+.s4budget-page .s4budget-title-line {
+  width: 58px;
+  height: 5px;
+
+  margin:
+    24px 0;
+
+  background: var(--s4b-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4budget-page .s4budget-hero-copy > p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 1.18rem;
+
+  line-height: 1.78;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.s4budget-page .s4budget-back {
+  width: fit-content;
+
+  margin-top: 29px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4b-muted);
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 750;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.s4budget-page .s4budget-back:hover {
+  color: var(--s4b-pink);
+
+  transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   =========================================================
+   HERO ART
+   OPTION 6 — LEARN → IMPROVE → REPEAT
+   =========================================================
+========================================================= */
+
+.s4budget-page .s4budget-hero-art {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 430px;
+}
+
+
+/* =========================================================
+   HERO BLOBS
+========================================================= */
+
+.s4budget-page .s4budget-cycle-blob {
+  position: absolute;
+
+  width: 375px;
+  height: 300px;
+
+  left: 50%;
+  top: 51%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-7deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #eee7ff,
+      #d8caff
+    );
+
+  border-radius:
+    52% 48% 58% 42% /
+    47% 55% 45% 53%;
+
+  opacity: 0.9;
+}
+
+
+.s4budget-page .s4budget-cycle-blob-small {
+  position: absolute;
+
+  width: 185px;
+  height: 155px;
+
+  right: 4px;
+  bottom: 40px;
+
+  background:
+    rgba(255, 210, 229, 0.65);
+
+  border-radius:
+    54% 46% 43% 57% /
+    49% 55% 45% 51%;
+
+  transform: rotate(12deg);
+}
+
+
+/* =========================================================
+   CYCLE CARDS
+========================================================= */
+
+.s4budget-page .s4budget-cycle-card {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 145px;
+  min-height: 150px;
+
+  padding:
+    18px 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e9e2e7;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 18px 38px
+    rgba(17, 21, 56, 0.11);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.s4budget-page .s4budget-cycle-card:hover {
+  box-shadow:
+    0 24px 45px
+    rgba(17, 21, 56, 0.14);
+}
+
+
+/* =========================================================
+   CYCLE CARD POSITIONS
+========================================================= */
+
+.s4budget-page .s4budget-cycle-learn {
+  left: 50%;
+  top: 12px;
+
+  transform:
+    translateX(-50%)
+    rotate(1deg);
+}
+
+
+.s4budget-page .s4budget-cycle-improve {
+  right: 28px;
+  bottom: 28px;
+
+  transform: rotate(3deg);
+}
+
+
+.s4budget-page .s4budget-cycle-repeat {
+  left: 28px;
+  bottom: 28px;
+
+  transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   CYCLE CARD COLORS
+========================================================= */
+
+.s4budget-page .s4budget-cycle-learn {
+  --cycle-accent: #ff3e91;
+  --cycle-soft: #fff0f6;
+}
+
+
+.s4budget-page .s4budget-cycle-improve {
+  --cycle-accent: #8057f5;
+  --cycle-soft: #f1ebff;
+}
+
+
+.s4budget-page .s4budget-cycle-repeat {
+  --cycle-accent: #3daa83;
+  --cycle-soft: #eaf8f3;
+}
+
+
+/* =========================================================
+   CYCLE ICON
+========================================================= */
+
+.s4budget-page .s4budget-cycle-icon {
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 11px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--cycle-accent);
+
+  background: var(--cycle-soft);
+
+  border-radius: 15px;
+}
+
+
+/* =========================================================
+   CYCLE CARD TYPOGRAPHY
+========================================================= */
+
+.s4budget-page .s4budget-cycle-card > span {
+  color: var(--cycle-accent);
+
+  font-size: 0.51rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-cycle-card > strong {
+  margin-top: 3px;
+
+  color: var(--s4b-navy);
+
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-cycle-card > small {
+  max-width: 110px;
+
+  margin-top: 5px;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.61rem;
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CENTER RETROSPECTIVE LABEL
+========================================================= */
+
+.s4budget-page .s4budget-cycle-center {
+  position: absolute;
+
+  z-index: 6;
+
+  width: 112px;
+  height: 74px;
+
+  left: 50%;
+  top: 57%;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  color: var(--s4b-purple);
+
+  background:
+    rgba(255, 255, 255, 0.91);
+
+  border:
+    1px solid #e4dcf3;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 28px
+    rgba(17, 21, 56, 0.08);
+}
+
+
+.s4budget-page .s4budget-cycle-center span {
+  color: var(--s4b-navy);
+
+  font-size: 0.48rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   CONNECTING ARROWS
+========================================================= */
+
+.s4budget-page .s4budget-cycle-arrow {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #9e82f5;
+}
+
+
+.s4budget-page .s4budget-arrow-learn-improve {
+  right: 92px;
+  top: 157px;
+
+  transform: rotate(55deg);
+}
+
+
+.s4budget-page .s4budget-arrow-improve-repeat {
+  left: 50%;
+  bottom: 13px;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+}
+
+
+.s4budget-page .s4budget-arrow-repeat-learn {
+  left: 92px;
+  top: 157px;
+
+  transform:
+    rotate(-55deg)
+    scaleY(-1);
+}
+
+
+/* =========================================================
+   HERO DECORATIVE SPARKS
+========================================================= */
+
+.s4budget-page .s4budget-hero-spark {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 5px;
+  height: 27px;
+
+  background: var(--s4b-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4budget-page .s4budget-spark-1 {
+  right: 11px;
+  top: 29px;
+
+  transform: rotate(18deg);
+}
+
+
+.s4budget-page .s4budget-spark-2 {
+  right: -11px;
+  top: 64px;
+
+  transform: rotate(69deg);
+}
+
+
+.s4budget-page .s4budget-spark-3 {
+  right: 34px;
+  top: 64px;
+
+  height: 19px;
+
+  transform: rotate(103deg);
+}
+
+
+/* =========================================================
+   OVERVIEW SECTION
+========================================================= */
+
+.s4budget-page .s4budget-overview-section {
+  padding:
+    115px 0;
+
+  background: #ffffff;
+}
+
+
+.s4budget-page .s4budget-overview-heading {
+  max-width: 850px;
+
+  margin-bottom: 50px;
+}
+
+
+.s4budget-page .s4budget-overview-heading > span,
+.s4budget-page .s4budget-section-heading > span,
+.s4budget-page .s4budget-insights-heading > span {
+  color: var(--s4b-pink);
+
+  font-size: 0.73rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4budget-page .s4budget-overview-heading h2,
+.s4budget-page .s4budget-section-heading h2,
+.s4budget-page .s4budget-insights-heading h2 {
+  margin:
+    9px 0 17px;
+
+  color: var(--s4b-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.4rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4budget-page .s4budget-overview-heading h2 strong,
+.s4budget-page .s4budget-section-heading h2 strong,
+.s4budget-page .s4budget-insights-heading h2 strong {
+  color: var(--s4b-pink);
+
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-overview-heading > p,
+.s4budget-page .s4budget-section-heading > p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 1.08rem;
+
+  line-height: 1.74;
+}
+
+
+/* =========================================================
+   OVERVIEW GRID
+========================================================= */
+
+.s4budget-page .s4budget-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.88fr)
+    minmax(0, 1.12fr);
+
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   OVERVIEW CARDS
+========================================================= */
+
+.s4budget-page .s4budget-budget-card,
+.s4budget-page .s4budget-timeline-card {
+  min-width: 0;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4b-border);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 32px
+    rgba(17, 21, 56, 0.05);
+}
+
+
+.s4budget-page .s4budget-card-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.s4budget-page .s4budget-card-icon {
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+}
+
+
+.s4budget-page .s4budget-icon-pink {
+  color: var(--s4b-pink);
+
+  background: var(--s4b-pink-soft);
+}
+
+
+.s4budget-page .s4budget-icon-purple {
+  color: var(--s4b-purple);
+
+  background: var(--s4b-purple-soft);
+}
+
+
+.s4budget-page .s4budget-card-heading span {
+  color: var(--s4b-pink);
+
+  font-size: 0.57rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-card-heading h3 {
+  margin:
+    5px 0 0;
+
+  color: var(--s4b-navy);
+
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-card-intro {
+  margin:
+    22px 0 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.96rem;
+
+  line-height: 1.68;
+}
+
+
+/* =========================================================
+   ERROR BUDGET OBJECTIVES
+========================================================= */
+
+.s4budget-page .s4budget-objective {
+  margin-top: 22px;
+
+  padding: 21px;
+
+  background: var(--s4b-pink-soft);
+
+  border-radius: 16px;
+}
+
+
+.s4budget-page .s4budget-objective-purple {
+  background: var(--s4b-purple-soft);
+}
+
+
+.s4budget-page .s4budget-objective-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.s4budget-page .s4budget-objective-top span {
+  color: var(--s4b-pink);
+
+  font-size: 0.56rem;
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4budget-page
+.s4budget-objective-purple
+.s4budget-objective-top span {
+  color: var(--s4b-purple);
+}
+
+
+.s4budget-page .s4budget-objective-top strong {
+  color: var(--s4b-pink);
+
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page
+.s4budget-objective-purple
+.s4budget-objective-top strong {
+  color: var(--s4b-purple);
+}
+
+
+.s4budget-page .s4budget-objective h4 {
+  margin:
+    7px 0;
+
+  color: var(--s4b-navy);
+
+  font-size: 1.08rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-objective > p {
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.87rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   ERROR BUDGET METER
+========================================================= */
+
+.s4budget-page .s4budget-budget-meter {
+  height: 10px;
+
+  margin:
+    18px 0;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border-radius: 999px;
+}
+
+
+.s4budget-page .s4budget-budget-meter span {
+  width: 78%;
+  height: 100%;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff72b1,
+      var(--s4b-pink)
+    );
+
+  border-radius: 999px;
+}
+
+
+.s4budget-page
+.s4budget-objective-purple
+.s4budget-budget-meter span {
+  width: 72%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #b79aff,
+      var(--s4b-purple)
+    );
+}
+
+
+.s4budget-page .s4budget-budget-detail {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.s4budget-page .s4budget-budget-detail span {
+  color: var(--s4b-muted);
+
+  font-size: 0.53rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4budget-page .s4budget-budget-detail strong {
+  color: var(--s4b-navy);
+
+  font-size: 0.8rem;
+  font-weight: 900;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.s4budget-page .s4budget-timeline {
+  margin-top: 29px;
+}
+
+
+.s4budget-page .s4budget-timeline-item {
+  display: grid;
+
+  grid-template-columns:
+    29px minmax(0, 1fr);
+
+  gap: 14px;
+}
+
+
+.s4budget-page .s4budget-timeline-marker {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.s4budget-page .s4budget-timeline-marker::after {
+  content: "";
+
+  position: absolute;
+
+  width: 2px;
+
+  top: 18px;
+  bottom: -18px;
+
+  background: #e7dff6;
+}
+
+
+.s4budget-page
+.s4budget-timeline-item:last-child
+.s4budget-timeline-marker::after {
+  display: none;
+}
+
+
+.s4budget-page .s4budget-timeline-marker span {
+  position: relative;
+
+  z-index: 2;
+
+  width: 14px;
+  height: 14px;
+
+  margin-top: 4px;
+
+  background: #ffffff;
+
+  border:
+    4px solid var(--s4b-purple);
+
+  border-radius: 50%;
+}
+
+
+.s4budget-page .s4budget-timeline-content {
+  padding-bottom: 24px;
+}
+
+
+.s4budget-page .s4budget-timeline-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.s4budget-page .s4budget-timeline-meta span {
+  color: var(--s4b-purple);
+
+  font-size: 0.56rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+}
+
+
+.s4budget-page .s4budget-timeline-meta small {
+  color: var(--s4b-muted);
+
+  font-size: 0.61rem;
+  font-weight: 700;
+}
+
+
+.s4budget-page .s4budget-timeline-content h4 {
+  margin:
+    5px 0 6px;
+
+  color: var(--s4b-navy);
+
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-timeline-content p {
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   POSTMORTEM INSIGHTS
+========================================================= */
+
+.s4budget-page .s4budget-insights-section {
+  padding:
+    115px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fb,
+      #f7f3ff
+    );
+}
+
+
+.s4budget-page .s4budget-insights-heading {
+  max-width: 900px;
+
+  margin-bottom: 48px;
+}
+
+
+.s4budget-page .s4budget-insights-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+
+.s4budget-page .s4budget-insight-card {
+  min-height: 280px;
+
+  padding: 27px;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--insight-border);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(17, 21, 56, 0.04);
+}
+
+
+.s4budget-page .s4budget-insight-pink {
+  --insight-accent: #ff3e91;
+  --insight-soft: #fff0f6;
+  --insight-border: #f1dae4;
+}
+
+
+.s4budget-page .s4budget-insight-green {
+  --insight-accent: #3daa83;
+  --insight-soft: #eaf8f3;
+  --insight-border: #d7eee5;
+}
+
+
+.s4budget-page .s4budget-insight-orange {
+  --insight-accent: #e98b2e;
+  --insight-soft: #fff1e5;
+  --insight-border: #f2dfcc;
+}
+
+
+.s4budget-page .s4budget-insight-icon {
+  width: 56px;
+  height: 56px;
+
+  margin-bottom: 22px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--insight-accent);
+
+  background: var(--insight-soft);
+
+  border-radius: 15px;
+}
+
+
+.s4budget-page .s4budget-insight-card > span {
+  color: var(--insight-accent);
+
+  font-size: 0.59rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-insight-card h3 {
+  margin:
+    8px 0 12px;
+
+  color: var(--s4b-navy);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.s4budget-page .s4budget-insight-card p {
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.91rem;
+
+  line-height: 1.67;
+}
+
+
+/* =========================================================
+   CONTRIBUTING CAUSES
+========================================================= */
+
+.s4budget-page .s4budget-causes {
+  margin-top: 55px;
+
+  padding: 37px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.7fr)
+    minmax(0, 1.3fr);
+
+  gap: 55px;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4b-border);
+
+  border-radius: 24px;
+}
+
+
+.s4budget-page .s4budget-causes-copy > span {
+  color: var(--s4b-purple);
+
+  font-size: 0.62rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-causes-copy h3 {
+  margin:
+    8px 0 13px;
+
+  color: var(--s4b-navy);
+
+  font-size: 1.65rem;
+  font-weight: 900;
+
+  line-height: 1.15;
+}
+
+
+.s4budget-page .s4budget-causes-copy p {
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.94rem;
+
+  line-height: 1.68;
+}
+
+
+.s4budget-page .s4budget-causes-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.s4budget-page .s4budget-causes-list > div {
+  min-height: 63px;
+
+  padding:
+    11px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    42px minmax(0, 1fr);
+
+  gap: 12px;
+
+  align-items: center;
+
+  background: #faf8fb;
+
+  border-radius: 12px;
+}
+
+
+.s4budget-page .s4budget-causes-list span {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s4b-purple);
+
+  background: var(--s4b-purple-soft);
+
+  border-radius: 10px;
+
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-causes-list p {
+  margin: 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.87rem;
+
+  line-height: 1.56;
+}
+
+
+/* =========================================================
+   ACTION ITEMS
+========================================================= */
+
+.s4budget-page .s4budget-actions-section {
+  padding:
+    115px 0;
+
+  background: #ffffff;
+}
+
+
+.s4budget-page .s4budget-section-heading {
+  max-width: 850px;
+
+  margin-bottom: 48px;
+}
+
+
+.s4budget-page .s4budget-actions-table {
+  overflow: hidden;
+
+  border:
+    1px solid var(--s4b-border);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(17, 21, 56, 0.04);
+}
+
+
+.s4budget-page .s4budget-actions-header,
+.s4budget-page .s4budget-action-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(150px, 0.65fr)
+    minmax(110px, 0.4fr);
+
+  gap: 18px;
+
+  align-items: center;
+}
+
+
+.s4budget-page .s4budget-actions-header {
+  padding:
+    14px 19px;
+
+  background: var(--s4b-navy);
+}
+
+
+.s4budget-page .s4budget-actions-header span {
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 0.58rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-action-row {
+  min-height: 78px;
+
+  padding:
+    14px 19px;
+
+  border-top:
+    1px solid #eee9ec;
+
+  background: #ffffff;
+}
+
+
+.s4budget-page
+.s4budget-action-row:nth-child(odd) {
+  background: #fffafb;
+}
+
+
+.s4budget-page .s4budget-action-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.s4budget-page .s4budget-action-name > span {
+  width: 37px;
+  height: 37px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s4b-pink);
+
+  background: var(--s4b-pink-soft);
+
+  border-radius: 10px;
+
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-action-name strong {
+  color: var(--s4b-navy);
+
+  font-size: 0.85rem;
+  font-weight: 850;
+}
+
+
+.s4budget-page .s4budget-action-owner,
+.s4budget-page .s4budget-action-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+
+.s4budget-page .s4budget-action-owner svg {
+  color: var(--s4b-purple);
+}
+
+
+.s4budget-page .s4budget-action-date svg {
+  color: var(--s4b-pink);
+}
+
+
+/* =========================================================
+   ERROR BUDGET POLICY
+========================================================= */
+
+.s4budget-page .s4budget-policy-section {
+  padding:
+    115px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff4f8,
+      #f5f0ff
+    );
+}
+
+
+.s4budget-page .s4budget-policy-heading {
+  max-width: 850px;
+
+  margin:
+    0 auto 50px;
+
+  text-align: center;
+}
+
+
+.s4budget-page .s4budget-policy-heading > span {
+  color: var(--s4b-purple);
+
+  font-size: 0.73rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4budget-page .s4budget-policy-heading h2 {
+  margin:
+    9px 0 16px;
+
+  color: var(--s4b-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.4rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4budget-page .s4budget-policy-heading h2 strong {
+  color: var(--s4b-pink);
+
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-policy-heading p {
+  max-width: 720px;
+
+  margin: auto;
+
+  color: var(--s4b-muted);
+
+  font-size: 1.02rem;
+
+  line-height: 1.72;
+}
+
+
+.s4budget-page .s4budget-policy-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.s4budget-page .s4budget-policy-card {
+  padding: 30px;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--policy-border);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(17, 21, 56, 0.04);
+}
+
+
+.s4budget-page .s4budget-policy-pink {
+  --policy-accent: #ff3e91;
+  --policy-soft: #fff0f6;
+  --policy-border: #f0dbe4;
+}
+
+
+.s4budget-page .s4budget-policy-purple {
+  --policy-accent: #8057f5;
+  --policy-soft: #f1ebff;
+  --policy-border: #dfd6f3;
+}
+
+
+.s4budget-page .s4budget-policy-top {
+  margin-bottom: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+.s4budget-page .s4budget-policy-top span {
+  color: var(--policy-accent);
+
+  font-size: 0.58rem;
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4budget-page .s4budget-policy-top h3 {
+  margin:
+    5px 0 0;
+
+  color: var(--s4b-navy);
+
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-policy-top > strong {
+  padding:
+    11px 14px;
+
+  color: var(--policy-accent);
+
+  background: var(--policy-soft);
+
+  border-radius: 12px;
+
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-policy-row {
+  padding:
+    16px 0;
+
+  border-top:
+    1px solid #eee9ec;
+}
+
+
+.s4budget-page .s4budget-policy-row span {
+  display: block;
+
+  color: var(--policy-accent);
+
+  font-size: 0.56rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4budget-page .s4budget-policy-row p {
+  margin:
+    6px 0 0;
+
+  color: var(--s4b-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   =========================================================
+   ESCALATION PATH
+   PRIORITY GAUGE
+   =========================================================
+========================================================= */
+
+.s4budget-page .s4budget-escalation-section {
+  padding:
+    105px 0
+    110px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(128, 87, 245, 0.16),
+      transparent 24%
+    ),
+    var(--s4b-navy);
+}
+
+
+/* =========================================================
+   ESCALATION TOP
+========================================================= */
+
+.s4budget-page .s4budget-escalation-top {
+  margin-bottom: 48px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    330px;
+
+  gap: 55px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   ESCALATION HEADING
+========================================================= */
+
+.s4budget-page .s4budget-escalation-heading {
+  max-width: 700px;
+}
+
+
+.s4budget-page .s4budget-escalation-heading > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #ff78b1;
+
+  font-size: 0.7rem;
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4budget-page .s4budget-escalation-heading h2 {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3.1rem,
+      4.5vw,
+      4.35rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4budget-page .s4budget-escalation-heading h2 strong {
+  display: inline;
+
+  color: #ffad42;
+
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-escalation-heading p {
+  max-width: 620px;
+
+  margin:
+    20px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 0.94rem;
+
+  line-height: 1.68;
+}
+
+
+/* =========================================================
+   PRIORITY VISUAL
+========================================================= */
+
+.s4budget-page .s4budget-priority-visual {
+  width: 330px;
+  min-height: 205px;
+
+  padding:
+    20px 20px
+    17px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+.s4budget-page .s4budget-priority-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.57);
+
+  font-size: 0.53rem;
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GAUGE WINDOW
+========================================================= */
+
+.s4budget-page .s4budget-priority-gauge {
+  position: relative;
+
+  width: 240px;
+  height: 125px;
+
+  margin:
+    0 auto;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   GAUGE ARC
+========================================================= */
+
+.s4budget-page .s4budget-priority-arc {
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  left: 0;
+  top: 0;
+
+  background:
+    conic-gradient(
+      from 225deg,
+
+      #ff5c9f 0deg,
+      #ff5c9f 60deg,
+
+      #ffb14a 60deg,
+      #ffb14a 120deg,
+
+      #8d6cf5 120deg,
+      #8d6cf5 180deg,
+
+      transparent 180deg,
+      transparent 360deg
+    );
+
+  border-radius: 50%;
+}
+
+
+.s4budget-page .s4budget-priority-arc-inner {
+  position: absolute;
+
+  width: 178px;
+  height: 178px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background: #242751;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   GAUGE NEEDLE
+========================================================= */
+
+.s4budget-page .s4budget-priority-needle {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 84px;
+  height: 5px;
+
+  left: 50%;
+  bottom: 9px;
+
+  transform:
+    rotate(-38deg);
+
+  transform-origin:
+    3px center;
+
+  background: #ffffff;
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 9px
+    rgba(255, 255, 255, 0.25);
+}
+
+
+.s4budget-page .s4budget-priority-center {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 20px;
+  height: 20px;
+
+  left: 50%;
+  bottom: 1px;
+
+  transform:
+    translateX(-50%);
+
+  background: #ffffff;
+
+  border:
+    5px solid #62578d;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   GAUGE LABELS
+========================================================= */
+
+.s4budget-page .s4budget-priority-scale {
+  margin-top: 7px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+  font-size: 0.48rem;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4budget-page
+.s4budget-priority-scale
+span:first-child {
+  text-align: left;
+}
+
+
+.s4budget-page
+.s4budget-priority-scale
+span:nth-child(2) {
+  text-align: center;
+}
+
+
+.s4budget-page
+.s4budget-priority-scale
+span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   SEVERITY GRID
+========================================================= */
+
+.s4budget-page .s4budget-severity-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   SEVERITY CARDS
+========================================================= */
+
+.s4budget-page .s4budget-severity-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 305px;
+
+  padding:
+    25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.085);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-top:
+    4px solid var(--severity-accent);
+
+  border-radius: 19px;
+
+  box-shadow:
+    0 12px 25px
+    rgba(0, 0, 0, 0.05);
+}
+
+
+.s4budget-page .s4budget-severity-pink {
+  --severity-accent: #ff67aa;
+
+  --severity-soft:
+    rgba(255, 62, 145, 0.15);
+}
+
+
+.s4budget-page .s4budget-severity-orange {
+  --severity-accent: #ffb149;
+
+  --severity-soft:
+    rgba(245, 154, 57, 0.15);
+}
+
+
+.s4budget-page .s4budget-severity-purple {
+  --severity-accent: #a68aff;
+
+  --severity-soft:
+    rgba(128, 87, 245, 0.18);
+}
+
+
+/* =========================================================
+   SEVERITY TOP
+========================================================= */
+
+.s4budget-page .s4budget-severity-card-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.s4budget-page .s4budget-severity-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--severity-accent);
+
+  background: var(--severity-soft);
+
+  border-radius: 11px;
+}
+
+
+.s4budget-page .s4budget-severity-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+.s4budget-page .s4budget-severity-label {
+  display: inline-flex;
+
+  width: fit-content;
+
+  padding:
+    6px 10px;
+
+  color: var(--severity-accent);
+
+  background: var(--severity-soft);
+
+  border-radius: 999px;
+
+  font-size: 0.57rem;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SEVERITY TITLE
+========================================================= */
+
+.s4budget-page .s4budget-severity-card h3 {
+  min-height: 55px;
+
+  margin:
+    23px 0 25px;
+
+  color: #ffffff;
+
+  font-size: 1.13rem;
+  font-weight: 900;
+
+  line-height: 1.28;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   SEVERITY RESPONSE INFO
+========================================================= */
+
+.s4budget-page .s4budget-severity-info {
+  margin-top: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+
+.s4budget-page .s4budget-severity-info > div {
+  min-width: 0;
+  min-height: 105px;
+
+  padding:
+    14px;
+
+  color: var(--severity-accent);
+
+  background:
+    rgba(255, 255, 255, 0.065);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.035);
+
+  border-radius: 12px;
+}
+
+
+.s4budget-page .s4budget-severity-info svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+.s4budget-page .s4budget-severity-info span {
+  display: block;
+
+  margin-top: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 0.47rem;
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+}
+
+
+.s4budget-page .s4budget-severity-info strong {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #ffffff;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   INCIDENT ROLES
+========================================================= */
+
+.s4budget-page .s4budget-roles {
+  margin-top: 70px;
+
+  padding-top: 55px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.s4budget-page .s4budget-roles-heading {
+  max-width: 720px;
+
+  margin-bottom: 30px;
+}
+
+
+.s4budget-page .s4budget-roles-heading > span {
+  color: #ff7eb4;
+
+  font-size: 0.62rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.s4budget-page .s4budget-roles-heading h3 {
+  margin:
+    7px 0 9px;
+
+  color: #ffffff;
+
+  font-size: 1.7rem;
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.s4budget-page .s4budget-roles-heading p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 0.88rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   INCIDENT ROLE GRID
+========================================================= */
+
+.s4budget-page .s4budget-role-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4budget-page .s4budget-role-grid article {
+  min-height: 185px;
+
+  padding: 23px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 17px;
+}
+
+
+.s4budget-page .s4budget-role-icon {
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 15px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--s4b-pink),
+      var(--s4b-purple)
+    );
+
+  border-radius: 13px;
+}
+
+
+.s4budget-page .s4budget-role-grid span {
+  color: #ff8abb;
+
+  font-size: 0.55rem;
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4budget-page .s4budget-role-grid h4 {
+  margin:
+    5px 0 7px;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+
+.s4budget-page .s4budget-role-grid p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 0.82rem;
+
+  line-height: 1.52;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.s4budget-page .s4budget-navigation-section {
+  padding:
+    70px 0
+    90px;
+
+  background: #ffffff;
+}
+
+
+.s4budget-page .s4budget-navigation-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4budget-page .s4budget-nav-card {
+  min-height: 105px;
+
+  padding:
+    22px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: var(--s4b-navy);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fa,
+      #ffffff
+    );
+
+  border:
+    1px solid var(--s4b-border);
+
+  border-radius: 17px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.s4budget-page .s4budget-nav-home {
+  justify-content: flex-end;
+
+  text-align: right;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f0ff,
+      #fff6fa
+    );
+}
+
+
+.s4budget-page .s4budget-nav-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(17, 21, 56, 0.07);
+}
+
+
+.s4budget-page .s4budget-nav-card > svg {
+  flex-shrink: 0;
+
+  color: var(--s4b-pink);
+}
+
+
+.s4budget-page
+.s4budget-nav-home > svg {
+  color: var(--s4b-purple);
+}
+
+
+.s4budget-page .s4budget-nav-card span {
+  display: block;
+
+  color: var(--s4b-pink);
+
+  font-size: 0.57rem;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4budget-page .s4budget-nav-home span {
+  color: var(--s4b-purple);
+}
+
+
+.s4budget-page .s4budget-nav-card strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--s4b-navy);
+
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .s4budget-page .s4budget-hero-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      390px;
+
+    gap: 45px;
+  }
+
+
+  /* HERO CYCLE */
+
+  .s4budget-page .s4budget-cycle-improve {
+    right: 5px;
+  }
+
+
+  .s4budget-page .s4budget-cycle-repeat {
+    left: 5px;
+  }
+
+
+  .s4budget-page .s4budget-arrow-learn-improve {
+    right: 66px;
+  }
+
+
+  .s4budget-page .s4budget-arrow-repeat-learn {
+    left: 66px;
+  }
+
+
+  /* OVERVIEW */
+
+  .s4budget-page .s4budget-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CAUSES */
+
+  .s4budget-page .s4budget-causes {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  /* ESCALATION */
+
+  .s4budget-page .s4budget-escalation-top {
+    grid-template-columns:
+      minmax(0, 1fr)
+      300px;
+
+    gap: 35px;
+  }
+
+
+  .s4budget-page .s4budget-priority-visual {
+    width: 300px;
+  }
+
+
+  .s4budget-page .s4budget-priority-gauge {
+    transform:
+      scale(0.9);
+
+    transform-origin:
+      center top;
+
+    margin-bottom: -10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .s4budget-page .s4budget-shell {
+    width: calc(100% - 48px);
+  }
+
+
+  /* HERO */
+
+  .s4budget-page .s4budget-hero-layout {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .s4budget-page .s4budget-hero-art {
+    width: 100%;
+    max-width: 520px;
+
+    margin:
+      0 auto;
+  }
+
+
+  /* INSIGHTS */
+
+  .s4budget-page .s4budget-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* POLICY */
+
+  .s4budget-page .s4budget-policy-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ACTIONS */
+
+  .s4budget-page .s4budget-actions-header,
+  .s4budget-page .s4budget-action-row {
+    grid-template-columns:
+      minmax(0, 1.5fr)
+      minmax(120px, 0.6fr)
+      minmax(95px, 0.4fr);
+  }
+
+
+  /* ESCALATION */
+
+  .s4budget-page .s4budget-escalation-top {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .s4budget-page .s4budget-priority-visual {
+    width: 100%;
+    max-width: 330px;
+  }
+
+
+  .s4budget-page .s4budget-severity-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4budget-page .s4budget-severity-card {
+    min-height: auto;
+  }
+
+
+  .s4budget-page .s4budget-severity-card h3 {
+    min-height: auto;
+  }
+
+
+  /* ROLES */
+
+  .s4budget-page .s4budget-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .s4budget-page .s4budget-shell {
+    width: calc(100% - 40px);
+  }
+
+
+  /* HERO */
+
+  .s4budget-page .s4budget-hero {
+    padding-top: 35px;
+  }
+
+
+  .s4budget-page .s4budget-breadcrumb {
+    margin-bottom: 30px;
+
+    font-size: 0.78rem;
+  }
+
+
+  .s4budget-page .s4budget-hero-copy h1 {
+    font-size: 3.3rem;
+  }
+
+
+  .s4budget-page .s4budget-hero-copy > p {
+    font-size: 1rem;
+
+    line-height: 1.72;
+  }
+
+
+  .s4budget-page .s4budget-hero-art {
+    min-height: 410px;
+
+    transform:
+      scale(0.9);
+
+    transform-origin:
+      top center;
+
+    margin-bottom: -35px;
+  }
+
+
+  .s4budget-page .s4budget-cycle-card {
+    width: 135px;
+
+    min-height: 142px;
+  }
+
+
+  .s4budget-page .s4budget-cycle-improve {
+    right: 5px;
+  }
+
+
+  .s4budget-page .s4budget-cycle-repeat {
+    left: 5px;
+  }
+
+
+  /* SECTIONS */
+
+  .s4budget-page .s4budget-overview-section,
+  .s4budget-page .s4budget-insights-section,
+  .s4budget-page .s4budget-actions-section,
+  .s4budget-page .s4budget-policy-section {
+    padding:
+      90px 0;
+  }
+
+
+  /* HEADINGS */
+
+  .s4budget-page .s4budget-overview-heading h2,
+  .s4budget-page .s4budget-insights-heading h2,
+  .s4budget-page .s4budget-section-heading h2,
+  .s4budget-page .s4budget-policy-heading h2 {
+    font-size: 3rem;
+  }
+
+
+  .s4budget-page .s4budget-overview-heading > p,
+  .s4budget-page .s4budget-section-heading > p,
+  .s4budget-page .s4budget-policy-heading p {
+    font-size: 0.96rem;
+  }
+
+
+  /* ERROR BUDGET */
+
+  .s4budget-page .s4budget-objective {
+    padding: 18px;
+  }
+
+
+  .s4budget-page .s4budget-budget-detail {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+
+  .s4budget-page .s4budget-budget-detail strong {
+    text-align: left;
+  }
+
+
+  /* ACTION ITEMS */
+
+  .s4budget-page .s4budget-actions-header {
+    display: none;
+  }
+
+
+  .s4budget-page .s4budget-action-row {
+    padding: 18px;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  .s4budget-page .s4budget-action-owner,
+  .s4budget-page .s4budget-action-date {
+    padding-left: 49px;
+  }
+
+
+  /* ESCALATION */
+
+  .s4budget-page .s4budget-escalation-section {
+    padding:
+      85px 0;
+  }
+
+
+  .s4budget-page .s4budget-escalation-heading h2 {
+    font-size: 3rem;
+  }
+
+
+  .s4budget-page .s4budget-escalation-heading p {
+    font-size: 0.92rem;
+  }
+
+
+  .s4budget-page .s4budget-priority-visual {
+    margin:
+      0 auto;
+  }
+
+
+  .s4budget-page .s4budget-severity-info {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4budget-page .s4budget-severity-info > div {
+    min-height: 90px;
+  }
+
+
+  /* NAVIGATION */
+
+  .s4budget-page .s4budget-navigation-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4budget-page .s4budget-nav-home {
+    justify-content: space-between;
+
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  /* HERO */
+
+  .s4budget-page .s4budget-hero-copy h1 {
+    font-size: 2.8rem;
+  }
+
+
+  .s4budget-page .s4budget-hero-art {
+    transform:
+      scale(0.8);
+
+    margin-bottom: -75px;
+  }
+
+
+  /* SECTION HEADINGS */
+
+  .s4budget-page .s4budget-overview-heading h2,
+  .s4budget-page .s4budget-insights-heading h2,
+  .s4budget-page .s4budget-section-heading h2,
+  .s4budget-page .s4budget-policy-heading h2 {
+    font-size: 2.5rem;
+  }
+
+
+  /* CARDS */
+
+  .s4budget-page .s4budget-budget-card,
+  .s4budget-page .s4budget-timeline-card,
+  .s4budget-page .s4budget-policy-card {
+    padding: 23px;
+  }
+
+
+  .s4budget-page .s4budget-causes {
+    padding: 25px;
+  }
+
+
+  /* ESCALATION */
+
+  .s4budget-page .s4budget-escalation-heading h2 {
+    font-size: 2.55rem;
+  }
+
+
+  .s4budget-page .s4budget-priority-visual {
+    width: 100%;
+  }
+
+
+  .s4budget-page .s4budget-priority-gauge {
+    transform:
+      scale(0.82);
+
+    transform-origin:
+      center top;
+
+    margin-bottom: -20px;
+  }
+
+}

@@ -1,0 +1,2169 @@
+/* =========================================================
+   SPRINT 4
+   OPTION 1 — EDITORIAL OPERATIONS
+   ---------------------------------------------------------
+   Matches the visual language of Sprint 3:
+   - Inter typography
+   - #111538 navy
+   - #ff3e91 pink
+   - pastel collage
+   - rounded cards
+   - editorial section sizing
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.s4-page {
+  --s4-navy: #111538;
+  --s4-muted: #626277;
+
+  --s4-pink: #ff3e91;
+  --s4-purple: #8057f5;
+  --s4-orange: #f7aa3f;
+  --s4-blue: #45b3d7;
+  --s4-green: #43bb96;
+
+  --s4-pink-light: #fff0f6;
+  --s4-purple-light: #f0ebff;
+  --s4-orange-light: #fff2dd;
+  --s4-blue-light: #e8f8fd;
+
+  --s4-border: #eee7e4;
+  --s4-bg: #fffaf8;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  color: var(--s4-navy);
+
+  background: var(--s4-bg);
+
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+
+.s4-page,
+.s4-page *,
+.s4-page *::before,
+.s4-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.s4-hero {
+  padding:
+    105px 45px
+    120px;
+
+  background:
+    radial-gradient(
+      circle at 86% 20%,
+      rgba(128, 87, 245, 0.09),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 11% 82%,
+      rgba(255, 62, 145, 0.055),
+      transparent 23%
+    ),
+    #fffaf8;
+}
+
+
+.s4-hero-inner {
+  width: 100%;
+
+  max-width: 1240px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(390px, 0.9fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.s4-hero-copy {
+  min-width: 0;
+}
+
+
+.s4-hero-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: var(--s4-pink);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.s4-hero h1 {
+  max-width: 820px;
+
+  margin:
+    0 0 28px;
+
+  color: var(--s4-navy);
+
+  font-size:
+    clamp(
+      4rem,
+      6vw,
+      6rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.06em;
+}
+
+
+.s4-hero h1 span {
+  display: block;
+
+  color: var(--s4-pink);
+
+  font-weight: 900;
+}
+
+
+.s4-hero-copy > p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: var(--s4-muted);
+
+  font-size: 1.03rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO TAGS
+========================================================= */
+
+.s4-hero-tags {
+  margin-top: 31px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.s4-hero-tags span {
+  min-height: 43px;
+
+  padding:
+    0 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4-navy);
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4-border);
+
+  border-radius: 999px;
+
+  font-size: 0.73rem;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 24px
+    rgba(17, 21, 56, 0.05);
+}
+
+
+.s4-hero-tags svg {
+  color: var(--s4-pink);
+}
+
+
+/* =========================================================
+   HERO COLLAGE
+========================================================= */
+
+.s4-hero-collage {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 455px;
+}
+
+
+/* =========================================================
+   COLLAGE SHAPES
+========================================================= */
+
+.s4-collage-shape {
+  position: absolute;
+
+  border-radius:
+    45% 55% 48% 52% /
+    53% 44% 56% 47%;
+}
+
+
+.s4-shape-pink {
+  width: 315px;
+  height: 295px;
+
+  left: 4px;
+  top: 85px;
+
+  background: #ffd7e8;
+
+  transform: rotate(-7deg);
+}
+
+
+.s4-shape-purple {
+  width: 300px;
+  height: 255px;
+
+  right: -10px;
+  bottom: 28px;
+
+  background: #dcd0ff;
+
+  transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   OPERATIONS PAPER
+========================================================= */
+
+.s4-operations-paper {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 325px;
+
+  min-height: 350px;
+
+  top: 39px;
+  left: 50%;
+
+  padding:
+    32px 32px
+    29px;
+
+  transform:
+    translateX(-50%)
+    rotate(5deg);
+
+  background: #ffffff;
+
+  border:
+    1px solid #e9e3e6;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 26px 58px
+    rgba(17, 21, 56, 0.15);
+}
+
+
+/* =========================================================
+   PAPER HEADER
+========================================================= */
+
+.s4-paper-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.s4-paper-header-icon {
+  width: 47px;
+  height: 47px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s4-pink);
+
+  background: var(--s4-pink-light);
+
+  border-radius: 13px;
+}
+
+
+.s4-paper-header > span {
+  color: var(--s4-pink);
+
+  font-size: 0.56rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+}
+
+
+.s4-operations-paper h2 {
+  margin:
+    25px 0 30px;
+
+  color: var(--s4-navy);
+
+  font-size: 2rem;
+
+  font-weight: 900;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   PAPER GRAPHIC
+========================================================= */
+
+.s4-paper-graphic {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   BAR GRAPH
+========================================================= */
+
+.s4-mini-chart {
+  height: 125px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 12px;
+}
+
+
+.s4-bar {
+  width: 30px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ff4c99,
+      #ff2f82
+    );
+
+  border-radius:
+    7px 7px 2px 2px;
+}
+
+
+.s4-bar-1 {
+  height: 55px;
+}
+
+
+.s4-bar-2 {
+  height: 85px;
+}
+
+
+.s4-bar-3 {
+  height: 120px;
+}
+
+
+/* =========================================================
+   RELIABILITY CHECK
+========================================================= */
+
+.s4-reliability-check {
+  width: 88px;
+  height: 88px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s4-purple);
+
+  background:
+    rgba(128, 87, 245, 0.06);
+
+  border:
+    6px solid var(--s4-purple);
+
+  border-radius: 50%;
+}
+
+
+.s4-reliability-check svg {
+  width: 49px;
+  height: 49px;
+}
+
+
+/* =========================================================
+   FLOATING NOTE
+========================================================= */
+
+.s4-floating-note {
+  position: absolute;
+
+  z-index: 5;
+
+  right: -2px;
+  top: 20px;
+
+  width: 145px;
+
+  padding: 17px;
+
+  color: var(--s4-purple);
+
+  background: #ffffff;
+
+  border:
+    1px solid #e9e2f2;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 16px 35px
+    rgba(17, 21, 56, 0.08);
+
+  transform: rotate(6deg);
+}
+
+
+.s4-floating-note > span {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--s4-pink);
+
+  font-size: 0.5rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.s4-floating-note strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--s4-navy);
+
+  font-size: 0.95rem;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   PAPER TAPE
+========================================================= */
+
+.s4-paper-tape {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 92px;
+  height: 27px;
+
+  left: 50%;
+  top: 17px;
+
+  transform:
+    translateX(-50%)
+    rotate(7deg);
+
+  background:
+    rgba(255, 116, 174, 0.78);
+
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   EXPLORE SPRINT 4
+========================================================= */
+
+.s4-explore-section {
+  padding:
+    120px 45px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   EXPLORE HEADING
+========================================================= */
+
+.s4-explore-heading {
+  width: 100%;
+
+  max-width: 1140px;
+
+  margin:
+    0 auto 55px;
+}
+
+
+.s4-explore-heading > span {
+  color: var(--s4-purple);
+
+  font-size: 0.67rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.s4-explore-heading h2 {
+  margin:
+    8px 0 14px;
+
+  color: var(--s4-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.5rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4-explore-heading h2 strong {
+  color: var(--s4-pink);
+
+  font-weight: 900;
+}
+
+
+.s4-explore-heading p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--s4-muted);
+
+  font-size: 0.93rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUBPAGE GRID
+========================================================= */
+
+.s4-page-grid {
+  width: 100%;
+
+  max-width: 1140px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 19px;
+}
+
+
+/* =========================================================
+   SUBPAGE CARD
+========================================================= */
+
+.s4-page-card {
+  position: relative;
+
+  min-height: 410px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: var(--s4-navy);
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.23s ease,
+    box-shadow 0.23s ease;
+}
+
+
+.s4-page-card:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 20px 43px
+    rgba(17, 21, 56, 0.09);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.s4-page-number {
+  position: absolute;
+
+  top: 8px;
+  right: 17px;
+
+  color:
+    rgba(17, 21, 56, 0.08);
+
+  font-size: 4.8rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.s4-page-icon {
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 29px;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-radius: 16px;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.s4-page-eyebrow {
+  font-size: 0.59rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.11em;
+}
+
+
+.s4-page-card h3 {
+  margin:
+    10px 0 16px;
+
+  color: var(--s4-navy);
+
+  font-size: 1.7rem;
+
+  font-weight: 850;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.035em;
+}
+
+
+.s4-page-card > p {
+  margin: 0;
+
+  color: var(--s4-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.s4-page-bottom {
+  margin-top: auto;
+
+  padding-top: 30px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+
+.s4-page-bottom > span {
+  max-width: 205px;
+
+  color: var(--s4-muted);
+
+  font-size: 0.72rem;
+
+  font-weight: 650;
+
+  line-height: 1.45;
+}
+
+
+.s4-page-arrow {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.s4-page-card:hover
+.s4-page-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+.s4-page-card-pink {
+  color: var(--s4-pink);
+
+  background: #fff0f6;
+}
+
+
+.s4-page-card-purple {
+  color: var(--s4-purple);
+
+  background: #eee8ff;
+}
+
+
+.s4-page-card-orange {
+  color: #d67d0c;
+
+  background: #fff1dd;
+}
+
+
+.s4-page-card-pink
+.s4-page-icon,
+.s4-page-card-pink
+.s4-page-eyebrow,
+.s4-page-card-pink
+.s4-page-arrow {
+  color: var(--s4-pink);
+}
+
+
+.s4-page-card-purple
+.s4-page-icon,
+.s4-page-card-purple
+.s4-page-eyebrow,
+.s4-page-card-purple
+.s4-page-arrow {
+  color: var(--s4-purple);
+}
+
+
+.s4-page-card-orange
+.s4-page-icon,
+.s4-page-card-orange
+.s4-page-eyebrow,
+.s4-page-card-orange
+.s4-page-arrow {
+  color: #d67d0c;
+}
+
+
+/* =========================================================
+   =========================================================
+   DOWNLOADABLE DOCUMENTS
+   =========================================================
+========================================================= */
+
+.s4-document-downloads {
+  width: 100%;
+
+  max-width: 1140px;
+
+  margin:
+    38px auto 0;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid var(--s4-border);
+}
+
+
+/* =========================================================
+   DOWNLOAD HEADER
+========================================================= */
+
+.s4-document-downloads-header {
+  margin-bottom: 17px;
+}
+
+
+.s4-document-downloads-header > span {
+  color: var(--s4-purple);
+
+  font-size: 0.62rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+.s4-document-downloads-header p {
+  margin:
+    5px 0 0;
+
+  color: var(--s4-muted);
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DOWNLOAD GRID
+========================================================= */
+
+.s4-document-downloads-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   DOWNLOAD ITEM
+========================================================= */
+
+.s4-document-download {
+  --download-color: var(--s4-pink);
+  --download-bg: var(--s4-pink-light);
+
+  min-width: 0;
+
+  min-height: 82px;
+
+  padding:
+    13px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    minmax(0, 1fr)
+    auto;
+
+  gap: 12px;
+
+  align-items: center;
+
+  color: var(--s4-navy);
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4-border);
+
+  border-radius: 15px;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 7px 20px
+    rgba(17, 21, 56, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.s4-document-download:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--download-color);
+
+  box-shadow:
+    0 12px 25px
+    rgba(17, 21, 56, 0.07);
+}
+
+
+/* =========================================================
+   DOWNLOAD COLORS
+========================================================= */
+
+.s4-document-download-pink {
+  --download-color: var(--s4-pink);
+  --download-bg: var(--s4-pink-light);
+}
+
+
+.s4-document-download-purple {
+  --download-color: var(--s4-purple);
+  --download-bg: var(--s4-purple-light);
+}
+
+
+.s4-document-download-orange {
+  --download-color: #d67d0c;
+  --download-bg: var(--s4-orange-light);
+}
+
+
+/* =========================================================
+   DOWNLOAD ICON
+========================================================= */
+
+.s4-document-download-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  color:
+    var(--download-color);
+
+  background:
+    var(--download-bg);
+
+  border-radius: 11px;
+}
+
+
+/* =========================================================
+   DOWNLOAD COPY
+========================================================= */
+
+.s4-document-download-copy {
+  min-width: 0;
+}
+
+
+.s4-document-download-copy > span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    var(--download-color);
+
+  font-size: 0.48rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4-document-download-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: var(--s4-navy);
+
+  font-size: 0.86rem;
+
+  font-weight: 850;
+
+  line-height: 1.25;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DOWNLOAD ACTION
+========================================================= */
+
+.s4-document-download-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color:
+    var(--download-color);
+}
+
+
+.s4-document-download-action span {
+  font-size: 0.67rem;
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   =========================================================
+   SPRINT 4 CLOSING SECTION
+   OPTION 3 — NOTEBOOK SKETCH MOODBOARD
+   =========================================================
+========================================================= */
+
+.s4-closing-section {
+  position: relative;
+
+  padding:
+    115px 45px
+    120px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 86% 18%,
+      rgba(128, 87, 245, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 65% 92%,
+      rgba(255, 62, 145, 0.08),
+      transparent 28%
+    ),
+    var(--s4-navy);
+}
+
+
+.s4-closing-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 470px;
+  height: 470px;
+
+  right: -170px;
+  top: -190px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(128, 87, 245, 0.16),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CLOSING MAIN LAYOUT
+========================================================= */
+
+.s4-closing-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1380px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    75px
+    minmax(400px, 0.82fr)
+    minmax(600px, 1.18fr);
+
+  gap: 42px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND NUMBER
+========================================================= */
+
+.s4-closing-number {
+  align-self: start;
+
+  margin-top: 140px;
+
+  color:
+    rgba(255, 255, 255, 0.07);
+
+  font-size: 6rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
+   CLOSING COPY
+========================================================= */
+
+.s4-closing-copy > span {
+  color: #ff7db4;
+
+  font-size: 0.69rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.s4-closing-copy h2 {
+  margin:
+    10px 0
+    22px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3rem,
+      4.4vw,
+      4.5rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4-closing-copy h2 strong {
+  display: block;
+
+  color: #ffad42;
+
+  font-weight: 900;
+}
+
+
+.s4-closing-copy p {
+  max-width: 660px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 0.93rem;
+
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   SKETCH NOTEBOOK BOARD
+========================================================= */
+
+.s4-sketch-board {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding:
+    30px 27px
+    27px 42px;
+
+  color: var(--s4-navy);
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf8,
+      #fff9ef
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.8);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 30px 65px
+    rgba(0, 0, 0, 0.24);
+
+  transform:
+    rotate(0.6deg);
+}
+
+
+/* NOTEBOOK PAPER LINES */
+
+.s4-sketch-board::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    92px 20px
+    22px 38px;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      rgba(91, 120, 175, 0.08) 36px
+    );
+}
+
+
+/* =========================================================
+   NOTEBOOK RINGS
+========================================================= */
+
+.s4-sketch-rings {
+  position: absolute;
+
+  z-index: 8;
+
+  left: -12px;
+  top: 55px;
+
+  height: calc(100% - 110px);
+
+  max-height: 620px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+}
+
+
+.s4-sketch-rings span {
+  width: 31px;
+  height: 11px;
+
+  border:
+    4px solid #252747;
+
+  border-right: none;
+
+  border-radius:
+    10px 0 0 10px;
+}
+
+
+/* =========================================================
+   SKETCH BOARD HEADER
+========================================================= */
+
+.s4-sketch-board-header {
+  position: relative;
+
+  z-index: 3;
+
+  padding-bottom: 18px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid #e9e1d7;
+}
+
+
+.s4-sketch-board-header span {
+  display: block;
+
+  color: var(--s4-pink);
+
+  font-size: 0.55rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.s4-sketch-board-header h3 {
+  margin:
+    4px 0 0;
+
+  color: var(--s4-navy);
+
+  font-size: 1.35rem;
+
+  font-weight: 900;
+
+  letter-spacing: -0.035em;
+}
+
+
+.s4-sketch-board-badge {
+  padding:
+    8px 12px;
+
+  flex-shrink: 0;
+
+  color: var(--s4-purple);
+
+  background:
+    var(--s4-purple-light);
+
+  border-radius: 999px;
+
+  font-size: 0.61rem;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SKETCH GRID
+========================================================= */
+
+.s4-sketch-grid {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INDIVIDUAL SKETCH CARDS
+========================================================= */
+
+.s4-sketch-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 13px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e9e1dc;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 9px 20px
+    rgba(17, 21, 56, 0.09);
+}
+
+
+.s4-sketch-card-vendor {
+  transform:
+    rotate(-0.7deg);
+}
+
+
+.s4-sketch-card-rsvp {
+  transform:
+    rotate(0.6deg);
+}
+
+
+.s4-sketch-card-detail {
+  transform:
+    rotate(0.8deg);
+}
+
+
+.s4-sketch-card-itinerary {
+  transform:
+    rotate(-0.5deg);
+}
+
+
+/* =========================================================
+   SKETCH LABELS
+========================================================= */
+
+.s4-sketch-label {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+  top: -12px;
+
+  padding:
+    6px 11px;
+
+  transform:
+    translateX(-50%)
+    rotate(-1deg);
+
+  color: #1c2046;
+
+  background: #ffd6e7;
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 4px 8px
+    rgba(17, 21, 56, 0.08);
+
+  font-size: 0.54rem;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+.s4-sketch-label-pink {
+  background: #ffc3df;
+}
+
+
+.s4-sketch-label-blue {
+  background: #cbeaff;
+}
+
+
+.s4-sketch-label-purple {
+  background: #ded2ff;
+}
+
+
+/* =========================================================
+   BASE SKETCH IMAGE FRAME
+
+   IMPORTANT:
+   No fixed crop.
+   Entire image remains visible.
+========================================================= */
+
+.s4-sketch-image-frame {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    #f8f6f2;
+
+  border-radius: 5px;
+}
+
+
+.s4-sketch-image-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background:
+    #f8f6f2;
+}
+
+
+/* =========================================================
+   VENDOR SEARCH
+
+   Landscape-style sketch.
+========================================================= */
+
+.s4-sketch-card-vendor
+.s4-sketch-image-frame {
+  aspect-ratio: 4 / 3;
+}
+
+
+.s4-sketch-card-vendor
+.s4-sketch-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+}
+
+
+/* Legacy class retained safely */
+
+.s4-sketch-search-frame {
+  width: 100%;
+}
+
+
+.s4-sketch-search-image {
+  width: 100% !important;
+
+  height: 100% !important;
+
+  object-fit: contain !important;
+
+  object-position:
+    center center !important;
+}
+
+
+/* =========================================================
+   RSVP FLOW
+
+   Both images are shown in full.
+========================================================= */
+
+.s4-rsvp-sketches {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  align-items: start;
+}
+
+
+.s4-rsvp-sketches
+.s4-sketch-image-frame {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+}
+
+
+.s4-rsvp-sketches
+.s4-sketch-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+}
+
+
+/* Legacy send-frame classes */
+
+.s4-sketch-send-frame {
+  width: 100%;
+}
+
+
+.s4-sketch-send-image {
+  width: 100% !important;
+
+  height: 100% !important;
+
+  object-fit: contain !important;
+
+  object-position:
+    center center !important;
+}
+
+
+/* =========================================================
+   VENDOR DETAIL
+
+   Taller portrait sketch.
+========================================================= */
+
+.s4-sketch-card-detail
+.s4-sketch-image-frame {
+  aspect-ratio: 3 / 4;
+}
+
+
+.s4-sketch-card-detail
+.s4-sketch-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position:
+    center center;
+}
+
+
+/* =========================================================
+   ITINERARY
+
+   Slightly wider portrait frame.
+========================================================= */
+
+.s4-sketch-card-itinerary
+.s4-sketch-image-frame {
+  aspect-ratio: 4 / 5;
+}
+
+
+.s4-sketch-card-itinerary
+.s4-sketch-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position:
+    center center;
+}
+
+
+/* =========================================================
+   SKETCH BOARD FOOTER
+========================================================= */
+
+.s4-sketch-board-note {
+  position: relative;
+
+  z-index: 4;
+
+  margin-top: 22px;
+
+  padding-top: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4-purple);
+
+  border-top:
+    1px dashed #ddd4ca;
+}
+
+
+.s4-sketch-board-note span {
+  color: var(--s4-muted);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1450px) {
+
+  .s4-closing-inner {
+    max-width: 1440px;
+
+    grid-template-columns:
+      80px
+      minmax(420px, 0.8fr)
+      minmax(650px, 1.2fr);
+  }
+
+
+  .s4-sketch-board {
+    padding:
+      32px 30px
+      29px 45px;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .s4-closing-inner {
+    grid-template-columns:
+      60px
+      minmax(330px, 0.8fr)
+      minmax(500px, 1.2fr);
+
+    gap: 30px;
+  }
+
+
+  .s4-sketch-board {
+    padding:
+      27px 22px
+      24px 38px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .s4-hero-inner {
+    gap: 45px;
+  }
+
+
+  .s4-closing-inner {
+    grid-template-columns:
+      1fr;
+
+    gap: 42px;
+  }
+
+
+  .s4-closing-number {
+    display: none;
+  }
+
+
+  .s4-closing-copy {
+    max-width: 760px;
+  }
+
+
+  .s4-sketch-board {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin:
+      0 auto;
+
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .s4-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4-hero-collage {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin:
+      25px auto 0;
+  }
+
+
+  .s4-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4-page-card {
+    min-height: 325px;
+  }
+
+
+  .s4-document-downloads-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4-sketch-board {
+    max-width: 680px;
+  }
+
+
+  .s4-sketch-grid {
+    gap: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .s4-hero,
+  .s4-explore-section,
+  .s4-closing-section {
+    padding-left: 22px;
+
+    padding-right: 22px;
+  }
+
+
+  /* HERO */
+
+  .s4-hero {
+    padding-top: 75px;
+  }
+
+
+  .s4-hero h1 {
+    font-size: 3.35rem;
+  }
+
+
+  .s4-hero-copy > p {
+    font-size: 0.95rem;
+  }
+
+
+  .s4-hero-tags {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .s4-hero-collage {
+    min-height: 410px;
+
+    transform:
+      scale(0.88);
+
+    transform-origin:
+      top center;
+
+    margin-bottom: -45px;
+  }
+
+
+  /* EXPLORE */
+
+  .s4-explore-heading h2 {
+    font-size: 3rem;
+  }
+
+
+  /* DOWNLOADS */
+
+  .s4-document-downloads {
+    margin-top: 30px;
+
+    padding-top: 25px;
+  }
+
+
+  .s4-document-download {
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      auto;
+  }
+
+
+  .s4-document-download-action span {
+    display: none;
+  }
+
+
+  /* CLOSING */
+
+  .s4-closing-section {
+    padding-top: 90px;
+
+    padding-bottom: 90px;
+  }
+
+
+  .s4-closing-copy h2 {
+    font-size: 3rem;
+  }
+
+
+  .s4-sketch-board {
+    padding:
+      25px 18px
+      22px 31px;
+  }
+
+
+  .s4-sketch-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .s4-sketch-card {
+    transform: none;
+  }
+
+
+  .s4-sketch-rings {
+    left: -10px;
+  }
+
+
+  /* Larger images when cards stack */
+
+  .s4-sketch-card-vendor
+  .s4-sketch-image-frame {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  .s4-sketch-card-detail
+  .s4-sketch-image-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+
+  .s4-sketch-card-itinerary
+  .s4-sketch-image-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  /* HERO */
+
+  .s4-hero h1 {
+    font-size: 2.85rem;
+  }
+
+
+  /* EXPLORE */
+
+  .s4-explore-heading h2 {
+    font-size: 2.55rem;
+  }
+
+
+  .s4-page-card {
+    padding: 25px;
+
+    min-height: 350px;
+  }
+
+
+  /* CLOSING */
+
+  .s4-closing-copy h2 {
+    font-size: 2.65rem;
+  }
+
+
+  .s4-sketch-board-header {
+    flex-direction: column;
+  }
+
+
+  .s4-rsvp-sketches {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .s4-rsvp-sketches
+  .s4-sketch-image-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+
+  .s4-sketch-board {
+    padding:
+      24px 15px
+      20px 27px;
+  }
+
+
+  .s4-sketch-board-note {
+    align-items: flex-start;
+  }
+
+}

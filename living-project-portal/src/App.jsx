@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Sprint1 from "./pages/Sprint1";
 import Sprint2 from "./pages/Sprint2";
 import Sprint3 from "./pages/Sprint3";
+import Sprint4 from "./pages/Sprint4";
 import NotFound from "./pages/NotFound";
 import ProjectCharter from "./pages/sprint1/ProjectCharter";
 import BusinessStrategy from "./pages/sprint1/BusinessStrategy";
@@ -18,6 +19,9 @@ import OnePageBudget from "./pages/sprint2/OnePageBudget";
 import ChangeNote from "./pages/sprint3/ChangeNote";
 import EvidenceLog from "./pages/sprint3/EvidenceLog";
 import CandidateRiskEntries from "./pages/sprint3/CanidateRiskEntries";
+import DeliveryMetrics from "./pages/sprint4/DeliveryMetrics";
+import SLI from "./pages/sprint4/Sli";
+import BudgetPostmortem from "./pages/sprint4/BudgetPostmortem";
 
 
 function App() {
@@ -44,6 +48,11 @@ function App() {
           <Route path="/sprint-3/change-note" element={<ChangeNote />}/>
           <Route path="/sprint-3/evidence-log" element={<EvidenceLog />}/>
           <Route path="/sprint-3/candidate-risk-entries" element={<CandidateRiskEntries />}/>
+
+          <Route path="/sprint-4" element={<Sprint4 />} />
+          <Route path="/sprint-4/delivery-metrics" element={<DeliveryMetrics />}/>
+          <Route path="/sprint-4/sli" element={<SLI />}/>
+          <Route path="/sprint-4/budget-postmortem" element={<BudgetPostmortem />}/>
 
           <Route path="*" element={<NotFound />} />
           

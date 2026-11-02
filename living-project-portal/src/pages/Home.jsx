@@ -426,6 +426,40 @@ function Home() {
 
   </Link>
 
+
+  <Link
+    to="/sprint-4"
+    className="journey-card"
+  >
+
+    <div className="journey-number">
+      04
+    </div>
+
+    <div>
+
+      <span className="journey-label">
+        SPRINT FOUR
+      </span>
+
+      <h3>
+        Performance, Reliability & Operations
+      </h3>
+
+      <p>
+        Measuring delivery performance, defining service
+        reliability, and establishing how Festivo responds
+        when operational targets are missed.
+      </p>
+
+    </div>
+
+    <span className="journey-arrow">
+      →
+    </span>
+
+  </Link>
+
 </div>
 
         </div>
