@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import {
-  Activity,
   ArrowLeft,
   ArrowRight,
   BarChart3,
+  CheckCircle2,
   Clock3,
   Layers3,
   RefreshCw,
@@ -13,125 +13,121 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-import "../sprint4/Sprint4SubPages.css";
+import "./Sprint4SubPages.css";
 
 
 function DeliveryMetrics() {
 
   const metrics = [
     {
-      id: "01",
-
+      number: "01",
       title: "Change Lead Time",
-
-      shortDescription:
-        "Time from the first code commit for a change until it is available to users.",
-
-      meaning:
-        "Time from the first code commit for a change until it is available to users. For example, adding the ability to reorder itinerary items on the event dashboard.",
-
-      measurement:
-        "Record the first commit timestamp and the production availability timestamp. Include testing, release preparation, and app-store review when required. Calculate average lead time each sprint.",
-
-      decision:
-        "If average change lead time exceeds 7 days in a sprint, we will divide upcoming features into smaller changes and review testing and release blockers twice a week.",
-
+      eyebrow: "DELIVERY SPEED",
+      description:
+        "How long it takes a change to move from its first commit until it becomes available to Festivo users.",
       icon: Clock3,
-
-      tone: "pink",
+      className: "s4metrics-card-pink",
     },
-
     {
-      id: "02",
-
+      number: "02",
       title: "Deployment Frequency",
-
-      shortDescription:
-        "How often we release production changes to Festivo.",
-
-      meaning:
-        "How often we release changes to Festivo's production environment, such as improvements to vendor search, service requests, or RSVP management.",
-
-      measurement:
-        "Count production releases each week. Track mobile app releases and backend deployments separately because they have different release processes.",
-
-      decision:
-        "If no mobile app release occurs over two weeks while completed mobile changes are waiting, we will review release blockers and prepare a smaller release.",
-
+      eyebrow: "RELEASE FLOW",
+      description:
+        "How often the Festivo team releases completed changes into the production environment.",
       icon: Rocket,
-
-      tone: "purple",
+      className: "s4metrics-card-purple",
     },
-
     {
-      id: "03",
-
+      number: "03",
       title: "Change Fail Rate",
-
-      shortDescription:
-        "Percentage of releases that introduce a production problem.",
-
-      meaning:
-        "Percentage of production releases that introduce a problem requiring a corrective release, rollback, or feature disablement.",
-
-      measurement:
-        "Divide the number of releases causing failures by total production releases, then multiply by 100. Calculate separately for mobile and backend releases.",
-
-      decision:
-        "If change fail rate exceeds 10% in a sprint, we will require additional regression checks of the affected workflows before the next release.",
-
+      eyebrow: "RELEASE QUALITY",
+      description:
+        "The percentage of production releases that introduce problems requiring corrective action.",
       icon: ShieldCheck,
-
-      tone: "violet",
+      className: "s4metrics-card-blue",
     },
-
     {
-      id: "04",
-
+      number: "04",
       title: "Rework Rate",
-
-      shortDescription:
-        "Percentage of releases containing unplanned corrective work.",
-
-      meaning:
-        "Percentage of production releases that are unplanned corrections to problems introduced by earlier releases.",
-
-      measurement:
-        "Divide unplanned corrective releases by total production releases, then multiply by 100. Count mobile and backend releases separately.",
-
-      decision:
-        "If rework rate exceeds 20% in a sprint, we will prioritize recurring defects and strengthen regression checks before starting lower-priority features.",
-
+      eyebrow: "CORRECTIVE WORK",
+      description:
+        "The percentage of releases that are unplanned corrections instead of planned improvements.",
       icon: Layers3,
-
-      tone: "orange",
+      className: "s4metrics-card-orange",
     },
-
     {
-      id: "05",
-
+      number: "05",
       title: "Recovery Time",
-
-      shortDescription:
-        "Time required to restore functionality after a release-related issue.",
-
-      meaning:
-        "Time needed to restore affected functionality after detecting a release-related failure. Recovery could involve reverting a backend change, disabling a faulty feature, or distributing a corrected mobile version.",
-
-      measurement:
-        "Record the detection timestamp and the timestamp when the affected workflow is verified as working again. For mobile updates, track whether users on the affected version still experience the failure.",
-
-      decision:
-        "If recovery takes more than 4 hours, we will add or improve a recovery option for the affected workflow, such as a backend rollback or remotely controlled feature switch.",
-
+      eyebrow: "SERVICE RECOVERY",
+      description:
+        "How long it takes to restore affected Festivo functionality after a release-related problem.",
       icon: RefreshCw,
+      className: "s4metrics-card-green",
+    },
+  ];
 
-      tone: "blue",
+
+  const metricDetails = [
+    {
+      title: "Change Lead Time",
+      eyebrow: "DELIVERY SPEED",
+      icon: Clock3,
+      meaning:
+        "Time from the first code commit for a change until that change is available to users.",
+      measurement:
+        "Record the first commit timestamp and the production availability timestamp. The measurement includes testing, release preparation, and any required release review.",
+      decision:
+        "If average change lead time exceeds 7 days in a sprint, divide upcoming features into smaller changes and review testing and release blockers twice a week.",
+    },
+    {
+      title: "Deployment Frequency",
+      eyebrow: "RELEASE FLOW",
+      icon: Rocket,
+      meaning:
+        "How often the team releases changes to Festivo's production environment.",
+      measurement:
+        "Count production releases each week. Mobile application releases and backend deployments should be tracked separately.",
+      decision:
+        "If no mobile release occurs for more than two weeks while completed changes are waiting, review release blockers and prepare a smaller release.",
+    },
+    {
+      title: "Change Fail Rate",
+      eyebrow: "RELEASE QUALITY",
+      icon: ShieldCheck,
+      meaning:
+        "Percentage of production releases that introduce a problem requiring a corrective release, rollback, or disablement.",
+      measurement:
+        "Divide the number of failed releases by the total number of production releases and multiply by 100. Track mobile and backend releases separately.",
+      decision:
+        "If the change fail rate exceeds 10% during a sprint, require additional regression checks before the next release.",
+    },
+    {
+      title: "Rework Rate",
+      eyebrow: "CORRECTIVE WORK",
+      icon: Layers3,
+      meaning:
+        "Percentage of releases made primarily to correct previously released functionality.",
+      measurement:
+        "Divide unplanned corrective releases by total production releases and multiply by 100.",
+      decision:
+        "If rework exceeds 20%, prioritize recurring defects and strengthen regression testing before continuing with additional feature work.",
+    },
+    {
+      title: "Recovery Time",
+      eyebrow: "SERVICE RECOVERY",
+      icon: RefreshCw,
+      meaning:
+        "The amount of time required to restore affected functionality after a release-related issue.",
+      measurement:
+        "Record the time the failure is detected and the time the affected workflow is verified as working again.",
+      decision:
+        "If recovery takes longer than 4 hours, improve the team's recovery option such as rollback procedures or feature switches.",
     },
   ];
 
 
   return (
+
     <main className="s4metrics-page">
 
       {/* ==================================================
@@ -142,17 +138,13 @@ function DeliveryMetrics() {
 
         <div className="s4metrics-shell">
 
-          {/* BREADCRUMB */}
-
           <div className="s4metrics-breadcrumb">
 
             <Link to="/sprint-4">
               Sprint 4
             </Link>
 
-
-            <ArrowRight size={14} />
-
+            <span>/</span>
 
             <span>
               Delivery Metrics
@@ -163,7 +155,7 @@ function DeliveryMetrics() {
 
           <div className="s4metrics-hero-layout">
 
-            {/* LEFT SIDE */}
+            {/* LEFT */}
 
             <div className="s4metrics-hero-copy">
 
@@ -184,11 +176,11 @@ function DeliveryMetrics() {
 
 
               <p>
-                Using DORA metrics to understand how quickly,
-                safely, and reliably we deliver changes to Festivo.
-                These measures help our team identify bottlenecks,
-                quality risks, and opportunities to improve our
-                release process.
+                Using delivery-focused metrics to understand how
+                quickly, safely, and reliably changes move through
+                Festivo. These measures help the team identify
+                bottlenecks, release instability, corrective work,
+                and recovery performance.
               </p>
 
 
@@ -196,195 +188,168 @@ function DeliveryMetrics() {
                 to="/sprint-4"
                 className="s4metrics-back"
               >
-                <ArrowLeft size={16} />
+
+                <ArrowLeft size={18} />
 
                 Back to Sprint 4
+
               </Link>
 
             </div>
 
 
-            {/* HERO ILLUSTRATION */}
+            {/* RIGHT — DELIVERY PERFORMANCE DASHBOARD */}
 
             <div className="s4metrics-hero-art">
 
-                {/* BACKGROUND SHAPES */}
-
-                <div className="s4metrics-art-blob s4metrics-art-blob-purple"></div>
-
-                <div className="s4metrics-art-blob s4metrics-art-blob-pink"></div>
+              <div className="s4metrics-art-blob-purple"></div>
+              <div className="s4metrics-art-blob-pink"></div>
 
 
-                {/* MAIN DASHBOARD */}
+              <div className="s4metrics-dashboard">
 
-                <div className="s4metrics-dashboard">
+                <div className="s4metrics-dashboard-top">
 
-                    <div className="s4metrics-dashboard-top">
-
-                    <div>
-
-                        <span>
-                        DELIVERY PERFORMANCE
-                        </span>
-
-                        <strong>
-                        Sprint Metrics
-                        </strong>
-
-                    </div>
-
-
-                    <div className="s4metrics-dashboard-status">
-
-                        <Activity size={17} />
-
-                        Tracking
-
-                    </div>
-
-                    </div>
-
-
-                    {/* GRAPH AREA */}
-
-                    <div className="s4metrics-dashboard-graph">
-
-                    <div className="s4metrics-graph-grid">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div className="s4metrics-graph-bars">
-
-                        <span className="s4metrics-graph-bar s4metrics-graph-bar-1"></span>
-
-                        <span className="s4metrics-graph-bar s4metrics-graph-bar-2"></span>
-
-                        <span className="s4metrics-graph-bar s4metrics-graph-bar-3"></span>
-
-                        <span className="s4metrics-graph-bar s4metrics-graph-bar-4"></span>
-
-                        <span className="s4metrics-graph-bar s4metrics-graph-bar-5"></span>
-
-                    </div>
-
-                    </div>
-
-
-                    {/* BOTTOM METRICS */}
-
-                    <div className="s4metrics-dashboard-bottom">
-
-                    <div>
-
-                        <TrendingUp size={18} />
-
-                        <span>
-                        Lead Time
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <Rocket size={18} />
-
-                        <span>
-                        Releases
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <ShieldCheck size={18} />
-
-                        <span>
-                        Stability
-                        </span>
-
-                    </div>
-
-                    </div>
-
-                </div>
-
-
-                {/* FLOATING LEFT CARD */}
-
-                <div className="s4metrics-floating-card s4metrics-floating-speed">
-
-                    <div className="s4metrics-floating-icon">
-
-                    <Rocket size={20} />
-
-                    </div>
-
-
-                    <div>
+                  <div>
 
                     <span>
-                        THROUGHPUT
+                      FESTIVO OPERATIONS
                     </span>
 
                     <strong>
-                        Faster delivery
+                      Delivery Performance
                     </strong>
 
-                    </div>
+                  </div>
+
+
+                  <div className="s4metrics-dashboard-status">
+
+                    <CheckCircle2 size={15} />
+
+                    Tracking
+
+                  </div>
 
                 </div>
 
 
-                {/* FLOATING RIGHT CARD */}
+                <div className="s4metrics-dashboard-graph">
 
-                <div className="s4metrics-floating-card s4metrics-floating-quality">
-
-                    <div className="s4metrics-floating-icon">
-
-                    <ShieldCheck size={20} />
-
-                    </div>
+                  <div className="s4metrics-graph-grid"></div>
 
 
-                    <div>
+                  <div className="s4metrics-graph-bars">
 
-                    <span>
-                        STABILITY
-                    </span>
+                    <span className="s4metrics-graph-bar-1"></span>
+                    <span className="s4metrics-graph-bar-2"></span>
+                    <span className="s4metrics-graph-bar-3"></span>
+                    <span className="s4metrics-graph-bar-4"></span>
+                    <span className="s4metrics-graph-bar-5"></span>
 
-                    <strong>
-                        Safer releases
-                    </strong>
-
-                    </div>
+                  </div>
 
                 </div>
 
 
-                {/* SMALL DECORATION */}
+                <div className="s4metrics-dashboard-bottom">
 
-                <div className="s4metrics-art-spark s4metrics-art-spark-1"></div>
+                  <span>
+                    Five delivery measures
+                  </span>
 
-                <div className="s4metrics-art-spark s4metrics-art-spark-2"></div>
-
-                <div className="s4metrics-art-spark s4metrics-art-spark-3"></div>
+                  <strong>
+                    Sprint 4
+                  </strong>
 
                 </div>
+
+              </div>
+
+
+              <div className="s4metrics-floating-speed">
+
+                <TrendingUp size={23} />
+
+                <div>
+
+                  <span>
+                    THROUGHPUT
+                  </span>
+
+                  <strong>
+                    Measure speed
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div className="s4metrics-floating-quality">
+
+                <ShieldCheck size={23} />
+
+                <div>
+
+                  <span>
+                    STABILITY
+                  </span>
+
+                  <strong>
+                    Reduce failures
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div className="s4metrics-art-spark s4metrics-spark-1"></div>
+              <div className="s4metrics-art-spark s4metrics-spark-2"></div>
+              <div className="s4metrics-art-spark s4metrics-spark-3"></div>
+
+            </div>
 
           </div>
 
+        </div>
 
-          {/* ==================================================
-              FIVE METRIC CARDS
-          ================================================== */}
+      </section>
+
+
+      {/* ==================================================
+          METRIC OVERVIEW
+      ================================================== */}
+
+      <section className="s4metrics-overview-section">
+
+        <div className="s4metrics-shell">
+
+          <div className="s4metrics-overview-heading">
+
+            <span>
+              THE FIVE METRICS
+            </span>
+
+
+            <h2>
+              Measure the way
+              <strong>
+                {" "}change moves.
+              </strong>
+            </h2>
+
+
+            <p>
+              Each metric looks at a different part of Festivo's
+              delivery process — how quickly changes move, how often
+              releases happen, how frequently releases cause issues,
+              and how efficiently the team responds.
+            </p>
+
+          </div>
+
 
           <div className="s4metrics-overview-grid">
 
@@ -395,32 +360,35 @@ function DeliveryMetrics() {
               return (
 
                 <article
-                  key={metric.id}
-                  className={`s4metrics-overview-card s4metrics-overview-${metric.tone}`}
+                  key={metric.number}
+                  className={`s4metrics-overview-card ${metric.className}`}
                 >
 
                   <div className="s4metrics-overview-icon">
 
-                    <Icon
-                      size={29}
-                      strokeWidth={2}
-                    />
+                    <Icon size={27} />
 
                   </div>
 
 
-                  <h2>
+                  <span>
+                    {metric.eyebrow}
+                  </span>
+
+
+                  <h3>
                     {metric.title}
-                  </h2>
+                  </h3>
 
 
                   <p>
-                    {metric.shortDescription}
+                    {metric.description}
                   </p>
 
                 </article>
 
               );
+
             })}
 
           </div>
@@ -431,7 +399,7 @@ function DeliveryMetrics() {
 
 
       {/* ==================================================
-          WHAT WE MEASURE
+          METRIC DETAILS
       ================================================== */}
 
       <section className="s4metrics-details-section">
@@ -441,22 +409,22 @@ function DeliveryMetrics() {
           <div className="s4metrics-section-heading">
 
             <span>
-              HOW WE USE THE METRICS
+              METRIC DETAILS
             </span>
 
 
             <h2>
-              From measurement
+              What we measure
               <strong>
-                {" "}to action.
+                {" "}and what happens next.
               </strong>
             </h2>
 
 
             <p>
-              Each metric has a specific meaning for Festivo,
-              a defined measurement method, and a decision threshold
-              that tells our team when action is needed.
+              Each metric has a Festivo-specific definition,
+              measurement approach, and decision rule so that
+              collecting data leads to an actual team response.
             </p>
 
           </div>
@@ -464,41 +432,31 @@ function DeliveryMetrics() {
 
           <div className="s4metrics-detail-list">
 
-            {metrics.map((metric) => {
+            {metricDetails.map((metric) => {
 
               const Icon = metric.icon;
 
               return (
 
                 <article
-                  key={metric.id}
-                  className={`s4metrics-detail-card s4metrics-detail-${metric.tone}`}
+                  className="s4metrics-detail-card"
+                  key={metric.title}
                 >
-
-                  {/* ==================================================
-                      LEFT IDENTITY
-                  ================================================== */}
 
                   <div className="s4metrics-detail-heading">
 
-                    <span className="s4metrics-detail-number">
-                      {metric.id}
-                    </span>
+                    <div>
 
-
-                    <div className="s4metrics-detail-heading-icon">
-
-                      <Icon size={30} />
+                      <Icon size={23} />
 
                     </div>
 
 
                     <div>
 
-                      <span className="s4metrics-detail-label">
-                        DORA METRIC
+                      <span>
+                        {metric.eyebrow}
                       </span>
-
 
                       <h3>
                         {metric.title}
@@ -509,16 +467,11 @@ function DeliveryMetrics() {
                   </div>
 
 
-                  {/* ==================================================
-                      MEANING
-                  ================================================== */}
-
                   <div className="s4metrics-detail-column">
 
-                    <span className="s4metrics-column-label">
+                    <span>
                       MEANING FOR FESTIVO
                     </span>
-
 
                     <p>
                       {metric.meaning}
@@ -527,16 +480,11 @@ function DeliveryMetrics() {
                   </div>
 
 
-                  {/* ==================================================
-                      MEASUREMENT
-                  ================================================== */}
-
                   <div className="s4metrics-detail-column">
 
-                    <span className="s4metrics-column-label">
+                    <span>
                       HOW WE MEASURE IT
                     </span>
-
 
                     <p>
                       {metric.measurement}
@@ -545,16 +493,11 @@ function DeliveryMetrics() {
                   </div>
 
 
-                  {/* ==================================================
-                      DECISION
-                  ================================================== */}
-
                   <div className="s4metrics-decision">
 
-                    <span className="s4metrics-column-label">
-                      DECISION IT WOULD TRIGGER
+                    <span>
+                      DECISION IT TRIGGERS
                     </span>
-
 
                     <p>
                       {metric.decision}
@@ -565,6 +508,7 @@ function DeliveryMetrics() {
                 </article>
 
               );
+
             })}
 
           </div>
@@ -575,7 +519,7 @@ function DeliveryMetrics() {
 
 
       {/* ==================================================
-          WHY THESE METRICS MATTER
+          WHY THIS MATTERS
       ================================================== */}
 
       <section className="s4metrics-purpose-section">
@@ -587,25 +531,24 @@ function DeliveryMetrics() {
             <div className="s4metrics-purpose-copy">
 
               <span>
-                WHY THESE METRICS MATTER
+                WHY IT MATTERS
               </span>
 
 
               <h2>
-                Better delivery starts with
+                Metrics should guide
                 <strong>
-                  {" "}better visibility.
+                  {" "}better decisions.
                 </strong>
               </h2>
 
 
               <p>
-                These five measures give the Festivo team a way to
-                evaluate both delivery speed and release stability.
-                Instead of relying on assumptions, the team can use
-                measurable signals to decide when to reduce release
-                size, strengthen regression checks, address recurring
-                defects, or improve recovery options.
+                The purpose of these measures is not simply to
+                collect numbers. They give the Festivo team a
+                repeatable way to identify delivery problems and
+                decide when a workflow, release process, or recovery
+                practice should change.
               </p>
 
             </div>
@@ -615,12 +558,15 @@ function DeliveryMetrics() {
 
               <div>
 
-                <span className="s4metrics-purpose-check">
-                  ✓
-                </span>
+                <div className="s4metrics-purpose-check">
+
+                  <CheckCircle2 size={22} />
+
+                </div>
 
                 <p>
-                  Track how quickly completed work reaches users.
+                  Identify when completed work is taking too long
+                  to reach Festivo users.
                 </p>
 
               </div>
@@ -628,12 +574,15 @@ function DeliveryMetrics() {
 
               <div>
 
-                <span className="s4metrics-purpose-check">
-                  ✓
-                </span>
+                <div className="s4metrics-purpose-check">
+
+                  <CheckCircle2 size={22} />
+
+                </div>
 
                 <p>
-                  Monitor how frequently Festivo releases changes.
+                  Monitor whether releases are introducing too many
+                  problems or corrective deployments.
                 </p>
 
               </div>
@@ -641,12 +590,15 @@ function DeliveryMetrics() {
 
               <div>
 
-                <span className="s4metrics-purpose-check">
-                  ✓
-                </span>
+                <div className="s4metrics-purpose-check">
+
+                  <CheckCircle2 size={22} />
+
+                </div>
 
                 <p>
-                  Identify releases that introduce quality problems.
+                  Track whether the team can restore affected
+                  functionality quickly after a deployment issue.
                 </p>
 
               </div>
@@ -654,25 +606,15 @@ function DeliveryMetrics() {
 
               <div>
 
-                <span className="s4metrics-purpose-check">
-                  ✓
-                </span>
+                <div className="s4metrics-purpose-check">
+
+                  <CheckCircle2 size={22} />
+
+                </div>
 
                 <p>
-                  Understand how much capacity is spent on rework.
-                </p>
-
-              </div>
-
-
-              <div>
-
-                <span className="s4metrics-purpose-check">
-                  ✓
-                </span>
-
-                <p>
-                  Measure how quickly the team restores affected functionality.
+                  Turn delivery measurements into specific actions
+                  instead of collecting metrics without a response.
                 </p>
 
               </div>
@@ -685,81 +627,50 @@ function DeliveryMetrics() {
 
       </section>
 
+
       {/* ==================================================
-    NEXT SPRINT 4 SUBPAGE
-================================================== */}
+          BOTTOM NAVIGATION
+          FIXED TO MATCH SLI / BUDGET
+      ================================================== */}
 
-<section className="s4metrics-next-section">
+      <section className="s4metrics-navigation-section">
 
-  <div className="s4metrics-shell">
+        <div className="s4metrics-shell">
 
-    <Link
-      to="/sprint-4/sli"
-      className="s4metrics-next-card"
-    >
+          <div className="s4metrics-navigation-grid">
 
-      <div className="s4metrics-next-copy">
+            <Link
+              to="/sprint-4/sli"
+              className="s4metrics-nav-card s4metrics-nav-next"
+            >
 
-        <span>
-          NEXT IN SPRINT 4
-        </span>
+              <div className="s4metrics-nav-copy">
 
+                <span>
+                  NEXT
+                </span>
 
-        <h2>
-          Service Level
-          <strong>
-            {" "}Indicators
-          </strong>
-        </h2>
+                <strong>
+                  Service Level Indicators
+                </strong>
 
-
-        <p>
-          Continue to the SLI document to see how Festivo
-          defines measurable service reliability through
-          availability, information freshness, and
-          service-level targets.
-        </p>
-
-      </div>
+              </div>
 
 
-      <div className="s4metrics-next-action">
+              <ArrowRight size={24} />
 
-        <div className="s4metrics-next-icon">
+            </Link>
 
-          <ShieldCheck size={26} />
+          </div>
 
         </div>
 
-
-        <div>
-
-          <span>
-            CONTINUE
-          </span>
-
-          <strong>
-            View SLI Doc
-          </strong>
-
-        </div>
-
-
-        <ArrowRight
-          size={25}
-          className="s4metrics-next-arrow"
-        />
-
-      </div>
-
-    </Link>
-
-  </div>
-
-</section>
+      </section>
 
     </main>
+
   );
+
 }
 
 

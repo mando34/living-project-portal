@@ -1,27 +1,3836 @@
 /* =========================================================
    =========================================================
-   SPRINT 4 — BUDGET & POSTMORTEM
+   SPRINT 4 SUBPAGES
    =========================================================
 
-   Namespace: s4budget-
+   Delivery Metrics  -> s4metrics-
+   Service Levels    -> s4sli-
+   Budget/Postmortem -> s4budget-
 
-   Includes:
-   - Option 6 Learn → Improve → Repeat hero
-   - Error Budget Summary
-   - Sprint Timeline
-   - Postmortem Insights
-   - Contributing Causes
-   - Action Items
-   - Error Budget Policy
-   - Escalation Path
-   - Priority Gauge
-   - Incident Roles
-   - Bottom Navigation
+   Everything is fully namespaced.
 ========================================================= */
 
 
 /* =========================================================
-   PAGE
+   =========================================================
+   DELIVERY METRICS
+   OPTION 1 — HERO + METRIC CARDS
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   DELIVERY METRICS — PAGE
+========================================================= */
+
+.s4metrics-page {
+  --s4m-navy: #111538;
+  --s4m-muted: #626277;
+
+  --s4m-pink: #ff3e91;
+  --s4m-purple: #8057f5;
+  --s4m-orange: #f59a39;
+  --s4m-blue: #4f8df7;
+  --s4m-green: #45b98d;
+
+  --s4m-pink-soft: #fff0f6;
+  --s4m-purple-soft: #f1ebff;
+  --s4m-orange-soft: #fff1e5;
+  --s4m-blue-soft: #edf4ff;
+  --s4m-green-soft: #eaf8f3;
+
+  --s4m-border: #eae3e8;
+  --s4m-cream: #fffaf8;
+
+  width: 100%;
+  overflow-x: hidden;
+
+  color: var(--s4m-navy);
+
+  background: #ffffff;
+
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+.s4metrics-page,
+.s4metrics-page *,
+.s4metrics-page *::before,
+.s4metrics-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — SHELL
+========================================================= */
+
+.s4metrics-page .s4metrics-shell {
+  width: calc(100% - 80px);
+  max-width: 1240px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — HERO
+========================================================= */
+
+.s4metrics-page .s4metrics-hero {
+  position: relative;
+
+  padding:
+    48px 0
+    105px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 87% 16%,
+      rgba(128, 87, 245, 0.11),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 8% 78%,
+      rgba(255, 62, 145, 0.055),
+      transparent 24%
+    ),
+    var(--s4m-cream);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — BREADCRUMB
+========================================================= */
+
+.s4metrics-page .s4metrics-breadcrumb {
+  margin-bottom: 43px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--s4m-muted);
+
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+
+.s4metrics-page .s4metrics-breadcrumb a {
+  color: var(--s4m-pink);
+  text-decoration: none;
+}
+
+
+.s4metrics-page .s4metrics-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — HERO LAYOUT
+========================================================= */
+
+.s4metrics-page .s4metrics-hero-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(450px, 0.88fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — HERO COPY
+========================================================= */
+
+.s4metrics-page .s4metrics-hero-copy {
+  min-width: 0;
+}
+
+
+.s4metrics-page .s4metrics-eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--s4m-pink);
+
+  font-size: 0.8rem;
+  font-weight: 900;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-hero-copy h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4m-navy);
+
+  font-size:
+    clamp(
+      4.2rem,
+      6vw,
+      6.1rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+}
+
+
+.s4metrics-page .s4metrics-hero-copy h1 span {
+  display: block;
+
+  color: var(--s4m-pink);
+
+  font-weight: 900;
+}
+
+
+.s4metrics-page .s4metrics-title-line {
+  width: 60px;
+  height: 5px;
+
+  margin:
+    25px 0;
+
+  background: var(--s4m-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4metrics-page .s4metrics-hero-copy > p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 1.12rem;
+
+  line-height: 1.78;
+}
+
+
+.s4metrics-page .s4metrics-back {
+  width: fit-content;
+
+  margin-top: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4m-muted);
+
+  text-decoration: none;
+
+  font-size: 0.92rem;
+
+  font-weight: 750;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.s4metrics-page .s4metrics-back:hover {
+  color: var(--s4m-pink);
+
+  transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — HERO ART
+========================================================= */
+
+.s4metrics-page .s4metrics-hero-art {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 455px;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — BLOBS
+========================================================= */
+
+.s4metrics-page .s4metrics-art-blob-purple {
+  position: absolute;
+
+  width: 405px;
+  height: 330px;
+
+  left: 50%;
+  top: 51%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-8deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8dfff,
+      #cdbaff
+    );
+
+  border-radius:
+    53% 47% 58% 42% /
+    48% 55% 45% 52%;
+}
+
+
+.s4metrics-page .s4metrics-art-blob-pink {
+  position: absolute;
+
+  width: 205px;
+  height: 165px;
+
+  right: -5px;
+  bottom: 28px;
+
+  background:
+    rgba(255, 209, 228, 0.76);
+
+  border-radius:
+    52% 48% 43% 57% /
+    45% 54% 46% 55%;
+
+  transform: rotate(11deg);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — DASHBOARD
+========================================================= */
+
+.s4metrics-page .s4metrics-dashboard {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 375px;
+
+  left: 50%;
+  top: 49%;
+
+  padding: 25px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(2deg);
+
+  background: #ffffff;
+
+  border:
+    1px solid #e8e2e7;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 68px
+    rgba(17, 21, 56, 0.16);
+}
+
+
+.s4metrics-page .s4metrics-dashboard-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+
+.s4metrics-page
+.s4metrics-dashboard-top
+> div:first-child span {
+  display: block;
+
+  color: var(--s4m-pink);
+
+  font-size: 0.56rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page
+.s4metrics-dashboard-top
+> div:first-child strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--s4m-navy);
+
+  font-size: 1.18rem;
+
+  font-weight: 900;
+}
+
+
+.s4metrics-page .s4metrics-dashboard-status {
+  padding:
+    7px 11px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #29966d;
+
+  background: var(--s4m-green-soft);
+
+  border-radius: 999px;
+
+  font-size: 0.64rem;
+
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — GRAPH
+========================================================= */
+
+.s4metrics-page .s4metrics-dashboard-graph {
+  position: relative;
+
+  height: 190px;
+
+  margin-top: 22px;
+
+  padding:
+    20px 20px
+    16px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffafd,
+      #ffffff
+    );
+
+  border:
+    1px solid #eee8ec;
+
+  border-radius: 17px;
+}
+
+
+.s4metrics-page .s4metrics-graph-grid {
+  position: absolute;
+
+  inset: 18px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 37px,
+      rgba(98, 98, 119, 0.11) 38px
+    );
+}
+
+
+.s4metrics-page .s4metrics-graph-bars {
+  position: relative;
+
+  z-index: 3;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 14px;
+}
+
+
+.s4metrics-page .s4metrics-graph-bars span {
+  flex: 1;
+
+  max-width: 40px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      180deg,
+      #a889ff,
+      #8057f5
+    );
+
+  border-radius:
+    8px 8px 3px 3px;
+
+  box-shadow:
+    0 7px 16px
+    rgba(128, 87, 245, 0.16);
+}
+
+
+.s4metrics-page .s4metrics-graph-bar-1 {
+  height: 37%;
+}
+
+
+.s4metrics-page .s4metrics-graph-bar-2 {
+  height: 51%;
+}
+
+
+.s4metrics-page .s4metrics-graph-bar-3 {
+  height: 67%;
+}
+
+
+.s4metrics-page .s4metrics-graph-bar-4 {
+  height: 80%;
+}
+
+
+.s4metrics-page .s4metrics-graph-bar-5 {
+  height: 95%;
+}
+
+
+.s4metrics-page .s4metrics-dashboard-bottom {
+  margin-top: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+
+.s4metrics-page .s4metrics-dashboard-bottom span {
+  color: var(--s4m-muted);
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+}
+
+
+.s4metrics-page .s4metrics-dashboard-bottom strong {
+  color: var(--s4m-purple);
+
+  font-size: 0.82rem;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — FLOATING CARDS
+========================================================= */
+
+.s4metrics-page .s4metrics-floating-speed,
+.s4metrics-page .s4metrics-floating-quality {
+  position: absolute;
+
+  z-index: 7;
+
+  min-width: 190px;
+
+  padding:
+    14px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e8e1e6;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 16px 32px
+    rgba(17, 21, 56, 0.1);
+}
+
+
+.s4metrics-page .s4metrics-floating-speed {
+  left: -8px;
+  top: 74px;
+
+  transform: rotate(-4deg);
+}
+
+
+.s4metrics-page .s4metrics-floating-quality {
+  right: -5px;
+  bottom: 34px;
+
+  transform: rotate(4deg);
+}
+
+
+.s4metrics-page .s4metrics-floating-speed svg {
+  color: var(--s4m-pink);
+}
+
+
+.s4metrics-page .s4metrics-floating-quality svg {
+  color: var(--s4m-purple);
+}
+
+
+.s4metrics-page .s4metrics-floating-speed span,
+.s4metrics-page .s4metrics-floating-quality span {
+  display: block;
+
+  color: var(--s4m-muted);
+
+  font-size: 0.54rem;
+
+  font-weight: 850;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4metrics-page .s4metrics-floating-speed strong,
+.s4metrics-page .s4metrics-floating-quality strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--s4m-navy);
+
+  font-size: 0.83rem;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — SPARKS
+========================================================= */
+
+.s4metrics-page .s4metrics-art-spark,
+.s4metrics-page .s4metrics-hero-spark {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 5px;
+  height: 27px;
+
+  background: var(--s4m-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4metrics-page .s4metrics-spark-1 {
+  right: 10px;
+  top: 29px;
+
+  transform: rotate(18deg);
+}
+
+
+.s4metrics-page .s4metrics-spark-2 {
+  right: -11px;
+  top: 65px;
+
+  transform: rotate(68deg);
+}
+
+
+.s4metrics-page .s4metrics-spark-3 {
+  right: 35px;
+  top: 65px;
+
+  height: 19px;
+
+  transform: rotate(103deg);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — OVERVIEW
+========================================================= */
+
+.s4metrics-page .s4metrics-overview-section {
+  padding:
+    112px 0
+    120px;
+
+  background: #ffffff;
+}
+
+
+.s4metrics-page .s4metrics-overview-heading {
+  max-width: 850px;
+
+  margin-bottom: 48px;
+}
+
+
+.s4metrics-page .s4metrics-overview-heading > span {
+  color: var(--s4m-pink);
+
+  font-size: 0.72rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-overview-heading h2 {
+  margin:
+    9px 0 17px;
+
+  color: var(--s4m-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.3rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4metrics-page .s4metrics-overview-heading h2 strong {
+  color: var(--s4m-pink);
+
+  font-weight: 900;
+}
+
+
+.s4metrics-page .s4metrics-overview-heading p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 1.04rem;
+
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — FIVE CARDS
+========================================================= */
+
+.s4metrics-page .s4metrics-overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4metrics-page .s4metrics-overview-card {
+  --metric-accent: var(--s4m-pink);
+  --metric-soft: var(--s4m-pink-soft);
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 260px;
+
+  padding:
+    25px 21px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4m-border);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(17, 21, 56, 0.045);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+.s4metrics-page .s4metrics-overview-card:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 38px
+    rgba(17, 21, 56, 0.08);
+}
+
+
+.s4metrics-page .s4metrics-overview-icon {
+  width: 55px;
+  height: 55px;
+
+  margin-bottom: 23px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--metric-accent);
+
+  background: var(--metric-soft);
+
+  border-radius: 15px;
+}
+
+
+.s4metrics-page .s4metrics-overview-card > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--metric-accent);
+
+  font-size: 0.53rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-overview-card h3 {
+  margin:
+    0 0 11px;
+
+  color: var(--s4m-navy);
+
+  font-size: 1.04rem;
+
+  font-weight: 900;
+
+  line-height: 1.22;
+
+  letter-spacing: -0.025em;
+}
+
+
+.s4metrics-page .s4metrics-overview-card p {
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 0.83rem;
+
+  line-height: 1.6;
+}
+
+
+.s4metrics-page .s4metrics-card-pink {
+  --metric-accent: var(--s4m-pink);
+  --metric-soft: var(--s4m-pink-soft);
+}
+
+
+.s4metrics-page .s4metrics-card-purple {
+  --metric-accent: var(--s4m-purple);
+  --metric-soft: var(--s4m-purple-soft);
+}
+
+
+.s4metrics-page .s4metrics-card-orange {
+  --metric-accent: var(--s4m-orange);
+  --metric-soft: var(--s4m-orange-soft);
+}
+
+
+.s4metrics-page .s4metrics-card-blue {
+  --metric-accent: var(--s4m-blue);
+  --metric-soft: var(--s4m-blue-soft);
+}
+
+
+.s4metrics-page .s4metrics-card-green {
+  --metric-accent: var(--s4m-green);
+  --metric-soft: var(--s4m-green-soft);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — DETAILS
+========================================================= */
+
+.s4metrics-page .s4metrics-details-section {
+  position: relative;
+
+  padding:
+    115px 0
+    120px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8fb 0%,
+      #f8f4ff 100%
+    );
+}
+
+
+.s4metrics-page .s4metrics-details-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  right: -190px;
+  bottom: -190px;
+
+  background:
+    rgba(128, 87, 245, 0.07);
+
+  border-radius: 50%;
+}
+
+
+.s4metrics-page .s4metrics-details-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  left: -150px;
+  top: 70px;
+
+  background:
+    rgba(255, 62, 145, 0.05);
+
+  border-radius: 50%;
+}
+
+
+.s4metrics-page .s4metrics-section-heading {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin-bottom: 50px;
+}
+
+
+.s4metrics-page .s4metrics-section-heading > span {
+  color: var(--s4m-pink);
+
+  font-size: 0.73rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-section-heading h2 {
+  margin:
+    9px 0 17px;
+
+  color: var(--s4m-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.4rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4metrics-page .s4metrics-section-heading h2 strong {
+  color: var(--s4m-pink);
+}
+
+
+.s4metrics-page .s4metrics-section-heading p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 1.06rem;
+
+  line-height: 1.72;
+}
+
+
+.s4metrics-page .s4metrics-detail-list {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+
+.s4metrics-page .s4metrics-detail-card {
+  --detail-accent: var(--s4m-pink);
+  --detail-soft: var(--s4m-pink-soft);
+
+  min-width: 0;
+
+  padding: 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    220px
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1.05fr);
+
+  gap: 26px;
+
+  align-items: stretch;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4m-border);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 32px
+    rgba(17, 21, 56, 0.045);
+}
+
+
+.s4metrics-page
+.s4metrics-detail-card:nth-child(1) {
+  --detail-accent: var(--s4m-pink);
+  --detail-soft: var(--s4m-pink-soft);
+}
+
+
+.s4metrics-page
+.s4metrics-detail-card:nth-child(2) {
+  --detail-accent: var(--s4m-purple);
+  --detail-soft: var(--s4m-purple-soft);
+}
+
+
+.s4metrics-page
+.s4metrics-detail-card:nth-child(3) {
+  --detail-accent: var(--s4m-blue);
+  --detail-soft: var(--s4m-blue-soft);
+}
+
+
+.s4metrics-page
+.s4metrics-detail-card:nth-child(4) {
+  --detail-accent: var(--s4m-orange);
+  --detail-soft: var(--s4m-orange-soft);
+}
+
+
+.s4metrics-page
+.s4metrics-detail-card:nth-child(5) {
+  --detail-accent: var(--s4m-green);
+  --detail-soft: var(--s4m-green-soft);
+}
+
+
+.s4metrics-page .s4metrics-detail-heading {
+  padding-right: 22px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  border-right:
+    1px solid #eee8ec;
+}
+
+
+.s4metrics-page
+.s4metrics-detail-heading
+> div:first-child {
+  width: 51px;
+  height: 51px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--detail-accent);
+
+  background: var(--detail-soft);
+
+  border-radius: 14px;
+}
+
+
+.s4metrics-page .s4metrics-detail-heading span {
+  display: block;
+
+  color: var(--detail-accent);
+
+  font-size: 0.51rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-detail-heading h3 {
+  margin:
+    5px 0 0;
+
+  color: var(--s4m-navy);
+
+  font-size: 1.07rem;
+
+  font-weight: 900;
+
+  line-height: 1.24;
+}
+
+
+.s4metrics-page .s4metrics-detail-column,
+.s4metrics-page .s4metrics-decision {
+  min-width: 0;
+
+  padding:
+    4px 0;
+}
+
+
+.s4metrics-page .s4metrics-detail-column span,
+.s4metrics-page .s4metrics-decision span {
+  display: inline-flex;
+
+  margin-bottom: 10px;
+
+  padding:
+    6px 9px;
+
+  color: var(--detail-accent);
+
+  background: var(--detail-soft);
+
+  border-radius: 999px;
+
+  font-size: 0.52rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-detail-column p,
+.s4metrics-page .s4metrics-decision p {
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 0.88rem;
+
+  line-height: 1.62;
+}
+
+
+.s4metrics-page .s4metrics-decision {
+  padding: 17px;
+
+  background: var(--detail-soft);
+
+  border-radius: 14px;
+}
+
+
+.s4metrics-page
+.s4metrics-decision span {
+  padding: 0;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — PURPOSE
+========================================================= */
+
+.s4metrics-page .s4metrics-purpose-section {
+  padding:
+    112px 0;
+
+  background: #ffffff;
+}
+
+
+.s4metrics-page .s4metrics-purpose-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.82fr)
+    minmax(0, 1.18fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+
+.s4metrics-page .s4metrics-purpose-copy > span {
+  color: var(--s4m-purple);
+
+  font-size: 0.71rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-purpose-copy h2 {
+  margin:
+    9px 0 18px;
+
+  color: var(--s4m-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.25rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4metrics-page
+.s4metrics-purpose-copy
+h2 strong {
+  color: var(--s4m-pink);
+}
+
+
+.s4metrics-page .s4metrics-purpose-copy p {
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.72;
+}
+
+
+.s4metrics-page .s4metrics-purpose-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.s4metrics-page .s4metrics-purpose-list > div {
+  min-height: 78px;
+
+  padding:
+    16px 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffafd,
+      #ffffff
+    );
+
+  border:
+    1px solid var(--s4m-border);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 22px
+    rgba(17, 21, 56, 0.035);
+}
+
+
+.s4metrics-page .s4metrics-purpose-check {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--s4m-green);
+
+  background: var(--s4m-green-soft);
+
+  border-radius: 12px;
+}
+
+
+.s4metrics-page .s4metrics-purpose-list p {
+  margin: 0;
+
+  color: var(--s4m-muted);
+
+  font-size: 0.91rem;
+
+  line-height: 1.58;
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — BOTTOM NAVIGATION
+   MATCHES SLI / BUDGET
+========================================================= */
+
+.s4metrics-page .s4metrics-navigation-section {
+  padding:
+    70px 0
+    90px;
+
+  background: #ffffff;
+}
+
+
+.s4metrics-page .s4metrics-navigation-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4metrics-page .s4metrics-nav-card {
+  min-height: 107px;
+
+  padding:
+    22px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: var(--s4m-navy);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8fb,
+      #ffffff
+    );
+
+  border:
+    1px solid var(--s4m-border);
+
+  border-radius: 17px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.s4metrics-page .s4metrics-nav-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(17, 21, 56, 0.07);
+}
+
+
+.s4metrics-page .s4metrics-nav-next {
+  grid-column: 2;
+
+  justify-content: flex-end;
+
+  text-align: right;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3edff,
+      #fff6fa
+    );
+}
+
+
+.s4metrics-page .s4metrics-nav-next:hover {
+  border-color: #ded4f3;
+}
+
+
+.s4metrics-page .s4metrics-nav-copy {
+  min-width: 0;
+}
+
+
+.s4metrics-page .s4metrics-nav-copy span {
+  display: block;
+
+  color: var(--s4m-purple);
+
+  font-size: 0.56rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+.s4metrics-page .s4metrics-nav-copy strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--s4m-navy);
+
+  font-size: 1rem;
+
+  font-weight: 900;
+
+  line-height: 1.3;
+}
+
+
+.s4metrics-page .s4metrics-nav-card > svg {
+  flex-shrink: 0;
+
+  color: var(--s4m-purple);
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.s4metrics-page
+.s4metrics-nav-card:hover
+> svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   DELIVERY METRICS — RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .s4metrics-page .s4metrics-hero-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      410px;
+
+    gap: 48px;
+  }
+
+
+  .s4metrics-page .s4metrics-overview-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  .s4metrics-page .s4metrics-detail-card {
+    grid-template-columns:
+      200px
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .s4metrics-page .s4metrics-decision {
+    grid-column:
+      2 / -1;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .s4metrics-page .s4metrics-shell {
+    width:
+      calc(100% - 48px);
+  }
+
+
+  .s4metrics-page .s4metrics-hero-layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+
+  .s4metrics-page .s4metrics-hero-art {
+    width: 100%;
+
+    max-width: 520px;
+
+    margin:
+      10px auto 0;
+  }
+
+
+  .s4metrics-page .s4metrics-overview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .s4metrics-page .s4metrics-detail-card {
+    grid-template-columns: 1fr;
+
+    gap: 19px;
+  }
+
+
+  .s4metrics-page
+  .s4metrics-detail-heading {
+    padding-right: 0;
+
+    padding-bottom: 18px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid #eee8ec;
+  }
+
+
+  .s4metrics-page .s4metrics-decision {
+    grid-column: auto;
+  }
+
+
+  .s4metrics-page .s4metrics-purpose-layout {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .s4metrics-page .s4metrics-shell {
+    width:
+      calc(100% - 40px);
+  }
+
+
+  .s4metrics-page .s4metrics-hero {
+    padding-top: 35px;
+  }
+
+
+  .s4metrics-page .s4metrics-breadcrumb {
+    margin-bottom: 30px;
+  }
+
+
+  .s4metrics-page .s4metrics-hero-copy h1 {
+    font-size: 3.35rem;
+  }
+
+
+  .s4metrics-page .s4metrics-hero-copy > p {
+    font-size: 1rem;
+
+    line-height: 1.72;
+  }
+
+
+  .s4metrics-page .s4metrics-hero-art {
+    min-height: 410px;
+
+    transform:
+      scale(0.9);
+
+    transform-origin:
+      top center;
+
+    margin-bottom: -35px;
+  }
+
+
+  .s4metrics-page .s4metrics-overview-section,
+  .s4metrics-page .s4metrics-details-section,
+  .s4metrics-page .s4metrics-purpose-section {
+    padding:
+      90px 0;
+  }
+
+
+  .s4metrics-page .s4metrics-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4metrics-page
+  .s4metrics-overview-heading
+  h2,
+  .s4metrics-page
+  .s4metrics-section-heading
+  h2,
+  .s4metrics-page
+  .s4metrics-purpose-copy
+  h2 {
+    font-size: 3rem;
+  }
+
+
+  .s4metrics-page .s4metrics-detail-card {
+    padding: 23px;
+  }
+
+
+  .s4metrics-page .s4metrics-navigation-section {
+    padding:
+      60px 0
+      75px;
+  }
+
+
+  .s4metrics-page .s4metrics-navigation-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4metrics-page .s4metrics-nav-next {
+    grid-column: 1;
+
+    justify-content: space-between;
+
+    text-align: left;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .s4metrics-page .s4metrics-hero-copy h1 {
+    font-size: 2.85rem;
+  }
+
+
+  .s4metrics-page
+  .s4metrics-overview-heading
+  h2,
+  .s4metrics-page
+  .s4metrics-section-heading
+  h2,
+  .s4metrics-page
+  .s4metrics-purpose-copy
+  h2 {
+    font-size: 2.55rem;
+  }
+
+
+  .s4metrics-page .s4metrics-hero-art {
+    transform:
+      scale(0.8);
+
+    margin-bottom: -75px;
+  }
+
+}
+
+
+/* =========================================================
+   =========================================================
+   SERVICE LEVELS
+   OPTION 2 — METRIC DASHBOARD
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   SLI — PAGE
+========================================================= */
+
+.s4sli-page {
+  --s4s-navy: #111538;
+  --s4s-muted: #626277;
+
+  --s4s-pink: #ff3e91;
+  --s4s-purple: #8057f5;
+  --s4s-orange: #f59a39;
+  --s4s-green: #45b98d;
+  --s4s-blue: #4f8df7;
+
+  --s4s-pink-soft: #fff0f6;
+  --s4s-purple-soft: #f1ebff;
+  --s4s-orange-soft: #fff1e5;
+  --s4s-green-soft: #eaf8f3;
+  --s4s-blue-soft: #edf4ff;
+
+  --s4s-border: #eae3e8;
+  --s4s-cream: #fffaf8;
+
+  width: 100%;
+
+  overflow-x: hidden;
+
+  color: var(--s4s-navy);
+
+  background: #ffffff;
+
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+
+.s4sli-page,
+.s4sli-page *,
+.s4sli-page *::before,
+.s4sli-page *::after {
+  box-sizing: border-box;
+}
+
+
+.s4sli-page .s4sli-shell {
+  width:
+    calc(100% - 80px);
+
+  max-width: 1240px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   SLI — HERO
+========================================================= */
+
+.s4sli-page .s4sli-hero {
+  position: relative;
+
+  padding:
+    48px 0
+    105px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 86% 16%,
+      rgba(128, 87, 245, 0.11),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 7% 80%,
+      rgba(255, 62, 145, 0.055),
+      transparent 23%
+    ),
+    var(--s4s-cream);
+}
+
+
+.s4sli-page .s4sli-breadcrumb {
+  margin-bottom: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.88rem;
+
+  font-weight: 700;
+}
+
+
+.s4sli-page .s4sli-breadcrumb a {
+  color: var(--s4s-pink);
+
+  text-decoration: none;
+}
+
+
+.s4sli-page .s4sli-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+.s4sli-page .s4sli-hero-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(430px, 0.86fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+
+.s4sli-page .s4sli-hero-copy {
+  min-width: 0;
+}
+
+
+.s4sli-page .s4sli-eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--s4s-pink);
+
+  font-size: 0.8rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.s4sli-page .s4sli-hero-copy h1 {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4s-navy);
+
+  font-size:
+    clamp(
+      4.1rem,
+      6vw,
+      6rem
+    );
+
+  font-weight: 900;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.065em;
+}
+
+
+.s4sli-page .s4sli-hero-copy h1 span {
+  display: block;
+
+  color: var(--s4s-pink);
+}
+
+
+.s4sli-page .s4sli-title-line {
+  width: 60px;
+  height: 5px;
+
+  margin:
+    25px 0;
+
+  background: var(--s4s-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4sli-page .s4sli-hero-copy > p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 1.1rem;
+
+  line-height: 1.76;
+}
+
+
+.s4sli-page .s4sli-back {
+  width: fit-content;
+
+  margin-top: 29px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--s4s-muted);
+
+  text-decoration: none;
+
+  font-size: 0.91rem;
+
+  font-weight: 750;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.s4sli-page .s4sli-back:hover {
+  color: var(--s4s-pink);
+
+  transform:
+    translateX(-4px);
+}
+
+
+/* =========================================================
+   SLI — HERO ART
+========================================================= */
+
+.s4sli-page .s4sli-hero-art {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 445px;
+}
+
+
+.s4sli-page .s4sli-art-blob {
+  position: absolute;
+
+  width: 395px;
+  height: 320px;
+
+  left: 50%;
+  top: 51%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-7deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8dfff,
+      #cdbaff
+    );
+
+  border-radius:
+    53% 47% 58% 42% /
+    48% 55% 45% 52%;
+}
+
+
+.s4sli-page .s4sli-gauge-card {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 360px;
+
+  left: 50%;
+  top: 49%;
+
+  padding:
+    27px 28px
+    25px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(2deg);
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e8e2e7;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 66px
+    rgba(17, 21, 56, 0.16);
+}
+
+
+.s4sli-page .s4sli-gauge-label {
+  display: block;
+
+  color: var(--s4s-pink);
+
+  font-size: 0.57rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.s4sli-page .s4sli-gauge {
+  position: relative;
+
+  width: 235px;
+  height: 125px;
+
+  margin:
+    23px auto
+    15px;
+
+  overflow: hidden;
+}
+
+
+.s4sli-page .s4sli-gauge-arc {
+  position: absolute;
+
+  width: 235px;
+  height: 235px;
+
+  left: 0;
+  top: 0;
+
+  background:
+    conic-gradient(
+      from 225deg,
+
+      #ff58a0 0deg,
+      #ff58a0 58deg,
+
+      #ffad42 58deg,
+      #ffad42 118deg,
+
+      #8c69f5 118deg,
+      #8c69f5 180deg,
+
+      transparent 180deg
+    );
+
+  border-radius: 50%;
+}
+
+
+.s4sli-page .s4sli-gauge-inner {
+  position: absolute;
+
+  width: 174px;
+  height: 174px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+
+.s4sli-page .s4sli-gauge-needle {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 79px;
+  height: 5px;
+
+  left: 50%;
+  bottom: 11px;
+
+  transform:
+    rotate(-38deg);
+
+  transform-origin:
+    3px center;
+
+  background: var(--s4s-navy);
+
+  border-radius: 999px;
+}
+
+
+.s4sli-page .s4sli-gauge-center {
+  position: absolute;
+
+  z-index: 6;
+
+  width: 21px;
+  height: 21px;
+
+  left: 50%;
+  bottom: 2px;
+
+  transform:
+    translateX(-50%);
+
+  background: var(--s4s-navy);
+
+  border:
+    5px solid #ddd4f5;
+
+  border-radius: 50%;
+}
+
+
+.s4sli-page .s4sli-gauge-card > strong {
+  display: block;
+
+  color: var(--s4s-navy);
+
+  font-size: 1.52rem;
+
+  font-weight: 900;
+
+  letter-spacing: -0.035em;
+}
+
+
+.s4sli-page .s4sli-gauge-card > p {
+  max-width: 255px;
+
+  margin:
+    7px auto 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.79rem;
+
+  line-height: 1.52;
+}
+
+
+.s4sli-page .s4sli-check-badge {
+  position: absolute;
+
+  z-index: 7;
+
+  right: 0;
+  bottom: 38px;
+
+  padding:
+    13px 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--s4s-green);
+
+  background: #ffffff;
+
+  border:
+    1px solid #dfece7;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 15px 31px
+    rgba(17, 21, 56, 0.1);
+
+  transform:
+    rotate(4deg);
+}
+
+
+.s4sli-page .s4sli-check-badge > div {
+  text-align: left;
+}
+
+
+.s4sli-page .s4sli-check-badge span {
+  display: block;
+
+  color: var(--s4s-green);
+
+  font-size: 0.48rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4sli-page .s4sli-check-badge strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--s4s-navy);
+
+  font-size: 0.75rem;
+
+  font-weight: 900;
+}
+
+
+.s4sli-page .s4sli-spark {
+  position: absolute;
+
+  z-index: 8;
+
+  width: 5px;
+  height: 26px;
+
+  background: var(--s4s-pink);
+
+  border-radius: 999px;
+}
+
+
+.s4sli-page .s4sli-spark-1 {
+  right: 9px;
+  top: 29px;
+
+  transform: rotate(18deg);
+}
+
+
+.s4sli-page .s4sli-spark-2 {
+  right: -11px;
+  top: 65px;
+
+  transform: rotate(69deg);
+}
+
+
+.s4sli-page .s4sli-spark-3 {
+  right: 34px;
+  top: 65px;
+
+  height: 18px;
+
+  transform: rotate(103deg);
+}
+
+
+/* =========================================================
+   SLI — METRIC DASHBOARD
+========================================================= */
+
+.s4sli-page .s4sli-dashboard-section {
+  padding:
+    112px 0
+    118px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fffafd
+    );
+}
+
+
+.s4sli-page .s4sli-dashboard-heading {
+  max-width: 850px;
+
+  margin-bottom: 48px;
+}
+
+
+.s4sli-page .s4sli-dashboard-heading > span {
+  color: var(--s4s-pink);
+
+  font-size: 0.72rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4sli-page .s4sli-dashboard-heading h2 {
+  margin:
+    9px 0
+    17px;
+
+  color: var(--s4s-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.35rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4sli-page .s4sli-dashboard-heading h2 strong {
+  color: var(--s4s-pink);
+}
+
+
+.s4sli-page .s4sli-dashboard-heading p {
+  max-width: 740px;
+
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.72;
+}
+
+
+.s4sli-page .s4sli-dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.s4sli-page .s4sli-metric-card {
+  --metric-accent: var(--s4s-pink);
+  --metric-soft: var(--s4s-pink-soft);
+  --metric-border: #f0dbe4;
+
+  min-width: 0;
+  min-height: 355px;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--metric-border);
+
+  border-top:
+    4px solid var(--metric-accent);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 31px
+    rgba(17, 21, 56, 0.05);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+.s4sli-page .s4sli-metric-card:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 19px 40px
+    rgba(17, 21, 56, 0.085);
+}
+
+
+.s4sli-page .s4sli-metric-pink {
+  --metric-accent: var(--s4s-pink);
+  --metric-soft: var(--s4s-pink-soft);
+  --metric-border: #f0dbe4;
+}
+
+
+.s4sli-page .s4sli-metric-purple {
+  --metric-accent: var(--s4s-purple);
+  --metric-soft: var(--s4s-purple-soft);
+  --metric-border: #ded5f2;
+}
+
+
+.s4sli-page .s4sli-metric-orange {
+  --metric-accent: #df842d;
+  --metric-soft: var(--s4s-orange-soft);
+  --metric-border: #efddca;
+}
+
+
+.s4sli-page .s4sli-metric-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.s4sli-page .s4sli-metric-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--metric-accent);
+
+  background: var(--metric-soft);
+
+  border-radius: 16px;
+}
+
+
+.s4sli-page .s4sli-metric-top > span {
+  color: var(--metric-accent);
+
+  font-size: 0.55rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4sli-page .s4sli-metric-card h3 {
+  margin:
+    25px 0 13px;
+
+  color: var(--s4s-navy);
+
+  font-size: 1.42rem;
+
+  font-weight: 900;
+
+  line-height: 1.18;
+
+  letter-spacing: -0.03em;
+}
+
+
+.s4sli-page .s4sli-metric-card > p {
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.91rem;
+
+  line-height: 1.63;
+}
+
+
+.s4sli-page .s4sli-target-strip {
+  width: 100%;
+
+  min-height: 59px;
+
+  margin-top: auto;
+
+  padding:
+    12px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 13px;
+
+  color: var(--metric-accent);
+
+  background: var(--metric-soft);
+
+  border-radius: 13px;
+}
+
+
+.s4sli-page .s4sli-target-strip span {
+  font-size: 0.53rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-target-strip strong {
+  color: var(--metric-accent);
+
+  font-size: 0.9rem;
+
+  font-weight: 900;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   SLI — IN SHORT
+========================================================= */
+
+.s4sli-page .s4sli-inshort {
+  margin-top: 22px;
+
+  min-height: 105px;
+
+  padding:
+    22px 27px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    1px
+    minmax(0, 1fr);
+
+  gap: 26px;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111538,
+      #242052
+    );
+
+  border-radius: 19px;
+
+  box-shadow:
+    0 15px 33px
+    rgba(17, 21, 56, 0.13);
+}
+
+
+.s4sli-page .s4sli-inshort-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #ff80b6;
+}
+
+
+.s4sli-page .s4sli-inshort-title span {
+  display: block;
+
+  color: #ff80b6;
+
+  font-size: 0.51rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-inshort-title strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 0.91rem;
+
+  font-weight: 900;
+}
+
+
+.s4sli-page .s4sli-inshort-divider {
+  width: 1px;
+  height: 48px;
+
+  background:
+    rgba(255, 255, 255, 0.14);
+}
+
+
+.s4sli-page .s4sli-inshort > p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 0.88rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   SLI — FRAMEWORK
+========================================================= */
+
+.s4sli-page .s4sli-framework-section {
+  padding:
+    115px 0;
+
+  background: #ffffff;
+}
+
+
+.s4sli-page .s4sli-section-heading {
+  max-width: 850px;
+
+  margin-bottom: 49px;
+}
+
+
+.s4sli-page .s4sli-section-heading > span {
+  color: var(--s4s-pink);
+
+  font-size: 0.72rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.s4sli-page .s4sli-section-heading h2 {
+  margin:
+    9px 0
+    17px;
+
+  color: var(--s4s-navy);
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      4.35rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4sli-page .s4sli-section-heading h2 strong {
+  color: var(--s4s-pink);
+}
+
+
+.s4sli-page .s4sli-section-heading p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.72;
+}
+
+
+.s4sli-page .s4sli-framework-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+
+.s4sli-page .s4sli-framework-card {
+  --framework-accent: var(--s4s-pink);
+  --framework-soft: var(--s4s-pink-soft);
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 320px;
+
+  padding: 28px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4s-border);
+
+  border-radius: 21px;
+
+  box-shadow:
+    0 10px 28px
+    rgba(17, 21, 56, 0.045);
+}
+
+
+.s4sli-page .s4sli-framework-pink {
+  --framework-accent: var(--s4s-pink);
+  --framework-soft: var(--s4s-pink-soft);
+}
+
+
+.s4sli-page .s4sli-framework-purple {
+  --framework-accent: var(--s4s-purple);
+  --framework-soft: var(--s4s-purple-soft);
+}
+
+
+.s4sli-page .s4sli-framework-orange {
+  --framework-accent: #df842d;
+  --framework-soft: var(--s4s-orange-soft);
+}
+
+
+.s4sli-page .s4sli-framework-number {
+  position: absolute;
+
+  right: 17px;
+  top: 7px;
+
+  color:
+    rgba(17, 21, 56, 0.055);
+
+  font-size: 5rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+
+.s4sli-page .s4sli-framework-icon {
+  width: 56px;
+  height: 56px;
+
+  margin-bottom: 23px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--framework-accent);
+
+  background: var(--framework-soft);
+
+  border-radius: 15px;
+}
+
+
+.s4sli-page .s4sli-framework-card > span {
+  color: var(--framework-accent);
+
+  font-size: 0.58rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.s4sli-page .s4sli-framework-card h3 {
+  margin:
+    8px 0 12px;
+
+  color: var(--s4s-navy);
+
+  font-size: 1.32rem;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.s4sli-page .s4sli-framework-card p {
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.89rem;
+
+  line-height: 1.62;
+}
+
+
+.s4sli-page .s4sli-framework-card > strong {
+  display: block;
+
+  margin-top: 21px;
+
+  padding:
+    12px 14px;
+
+  color: var(--framework-accent);
+
+  background: var(--framework-soft);
+
+  border-radius: 12px;
+
+  font-size: 0.78rem;
+
+  font-weight: 900;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   SLI — CALCULATIONS
+========================================================= */
+
+.s4sli-page .s4sli-calculation-section {
+  position: relative;
+
+  padding:
+    115px 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fb,
+      #f7f3ff
+    );
+}
+
+
+.s4sli-page .s4sli-calculation-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.s4sli-page .s4sli-calculation-card {
+  --calc-accent: var(--s4s-pink);
+  --calc-soft: var(--s4s-pink-soft);
+
+  min-width: 0;
+
+  padding: 29px;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4s-border);
+
+  border-radius: 21px;
+
+  box-shadow:
+    0 11px 29px
+    rgba(17, 21, 56, 0.045);
+}
+
+
+.s4sli-page .s4sli-calc-pink {
+  --calc-accent: var(--s4s-pink);
+  --calc-soft: var(--s4s-pink-soft);
+}
+
+
+.s4sli-page .s4sli-calc-purple {
+  --calc-accent: var(--s4s-purple);
+  --calc-soft: var(--s4s-purple-soft);
+}
+
+
+.s4sli-page .s4sli-calculation-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.s4sli-page .s4sli-calculation-header > div:first-child {
+  width: 53px;
+  height: 53px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  color: var(--calc-accent);
+
+  background: var(--calc-soft);
+
+  border-radius: 14px;
+}
+
+
+.s4sli-page .s4sli-calculation-header span {
+  display: block;
+
+  color: var(--calc-accent);
+
+  font-size: 0.52rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-calculation-header h3 {
+  margin:
+    4px 0 0;
+
+  color: var(--s4s-navy);
+
+  font-size: 1.15rem;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SLI — FORMULA
+========================================================= */
+
+.s4sli-page .s4sli-formula {
+  margin-top: 25px;
+
+  padding: 20px;
+
+  color: var(--calc-accent);
+
+  background: var(--calc-soft);
+
+  border-radius: 14px;
+}
+
+
+.s4sli-page .s4sli-formula span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 0.51rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-formula strong {
+  display: block;
+
+  color: var(--s4s-navy);
+
+  font-size: 0.87rem;
+
+  font-weight: 850;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SLI — MEASUREMENT BOX
+========================================================= */
+
+.s4sli-page .s4sli-measurement-box {
+  margin-top: 14px;
+
+  padding:
+    16px 17px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  color: var(--calc-accent);
+
+  background: #faf9fb;
+
+  border:
+    1px solid #eee9ed;
+
+  border-radius: 13px;
+}
+
+
+.s4sli-page .s4sli-measurement-box svg {
+  flex-shrink: 0;
+}
+
+
+.s4sli-page .s4sli-measurement-box span {
+  display: block;
+
+  color: var(--calc-accent);
+
+  font-size: 0.51rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4sli-page .s4sli-measurement-box p {
+  margin:
+    5px 0 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.85rem;
+
+  line-height: 1.57;
+}
+
+
+/* =========================================================
+   SLI — SLO
+========================================================= */
+
+.s4sli-page .s4sli-slo-section {
+  padding:
+    115px 0;
+
+  background: #ffffff;
+}
+
+
+.s4sli-page .s4sli-slo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.s4sli-page .s4sli-slo-card {
+  --slo-accent: var(--s4s-pink);
+  --slo-soft: var(--s4s-pink-soft);
+
+  min-width: 0;
+
+  min-height: 320px;
+
+  padding: 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    155px
+    minmax(0, 1fr);
+
+  gap: 29px;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border:
+    1px solid var(--s4s-border);
+
+  border-radius: 21px;
+
+  box-shadow:
+    0 11px 29px
+    rgba(17, 21, 56, 0.045);
+}
+
+
+.s4sli-page .s4sli-slo-pink {
+  --slo-accent: var(--s4s-pink);
+  --slo-soft: var(--s4s-pink-soft);
+}
+
+
+.s4sli-page .s4sli-slo-purple {
+  --slo-accent: var(--s4s-purple);
+  --slo-soft: var(--s4s-purple-soft);
+}
+
+
+.s4sli-page .s4sli-slo-circle {
+  width: 145px;
+  height: 145px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: var(--slo-accent);
+
+  background: var(--slo-soft);
+
+  border:
+    8px solid
+    rgba(128, 87, 245, 0.1);
+
+  border-radius: 50%;
+}
+
+
+.s4sli-page .s4sli-slo-pink .s4sli-slo-circle {
+  border-color:
+    rgba(255, 62, 145, 0.11);
+}
+
+
+.s4sli-page .s4sli-slo-circle strong {
+  color: var(--slo-accent);
+
+  font-size: 2rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+
+.s4sli-page .s4sli-slo-circle span {
+  margin-top: 7px;
+
+  color: var(--slo-accent);
+
+  font-size: 0.53rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.07em;
+}
+
+
+.s4sli-page .s4sli-slo-label {
+  color: var(--slo-accent);
+
+  font-size: 0.54rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-slo-card h3 {
+  margin:
+    7px 0
+    11px;
+
+  color: var(--s4s-navy);
+
+  font-size: 1.34rem;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+}
+
+
+.s4sli-page .s4sli-slo-card p {
+  margin: 0;
+
+  color: var(--s4s-muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   SLI — SLA
+========================================================= */
+
+.s4sli-page .s4sli-sla-section {
+  position: relative;
+
+  padding:
+    120px 0;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 86% 9%,
+      rgba(128, 87, 245, 0.2),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 7% 84%,
+      rgba(255, 62, 145, 0.08),
+      transparent 27%
+    ),
+    var(--s4s-navy);
+}
+
+
+.s4sli-page .s4sli-sla-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+
+.s4sli-page .s4sli-sla-copy > span {
+  color: #ff80b6;
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+}
+
+
+.s4sli-page .s4sli-sla-copy h2 {
+  margin:
+    10px 0
+    19px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      3.1rem,
+      5vw,
+      4.5rem
+    );
+
+  font-weight: 900;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.055em;
+}
+
+
+.s4sli-page .s4sli-sla-copy h2 strong {
+  color: #ffad42;
+}
+
+
+.s4sli-page .s4sli-sla-copy p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.66);
+
+  font-size: 0.96rem;
+
+  line-height: 1.7;
+}
+
+
+.s4sli-page .s4sli-sla-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4sli-page .s4sli-sla-grid article {
+  min-width: 0;
+
+  min-height: 205px;
+
+  padding: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.075);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 18px;
+}
+
+
+.s4sli-page .s4sli-sla-icon {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 18px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--s4s-pink),
+      var(--s4s-purple)
+    );
+
+  border-radius: 13px;
+}
+
+
+.s4sli-page .s4sli-sla-grid article > span {
+  color: #ff88bb;
+
+  font-size: 0.54rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.s4sli-page .s4sli-sla-grid h3 {
+  margin:
+    6px 0
+    9px;
+
+  color: #ffffff;
+
+  font-size: 1.07rem;
+
+  font-weight: 900;
+}
+
+
+.s4sli-page .s4sli-sla-grid p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.66);
+
+  font-size: 0.83rem;
+
+  line-height: 1.57;
+}
+
+
+/* =========================================================
+   SLI — NAVIGATION
+========================================================= */
+
+.s4sli-page .s4sli-navigation-section {
+  padding:
+    70px 0
+    90px;
+
+  background: #ffffff;
+}
+
+
+.s4sli-page .s4sli-navigation-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.s4sli-page .s4sli-nav-card {
+  min-height: 107px;
+
+  padding:
+    22px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: var(--s4s-navy);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8fb,
+      #ffffff
+    );
+
+  border:
+    1px solid var(--s4s-border);
+
+  border-radius: 17px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.s4sli-page .s4sli-nav-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(17, 21, 56, 0.07);
+}
+
+
+.s4sli-page .s4sli-nav-card > svg {
+  flex-shrink: 0;
+
+  color: var(--s4s-pink);
+}
+
+
+.s4sli-page .s4sli-nav-card span {
+  display: block;
+
+  color: var(--s4s-pink);
+
+  font-size: 0.56rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.09em;
+}
+
+
+.s4sli-page .s4sli-nav-card strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--s4s-navy);
+
+  font-size: 1rem;
+
+  font-weight: 900;
+}
+
+
+.s4sli-page .s4sli-nav-next {
+  justify-content: flex-end;
+
+  text-align: right;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3edff,
+      #fff6fa
+    );
+}
+
+
+.s4sli-page .s4sli-nav-next > svg,
+.s4sli-page .s4sli-nav-next span {
+  color: var(--s4s-purple);
+}
+
+
+/* =========================================================
+   SLI — RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .s4sli-page .s4sli-hero-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      400px;
+
+    gap: 45px;
+  }
+
+
+  .s4sli-page .s4sli-dashboard-grid,
+  .s4sli-page .s4sli-framework-grid {
+    gap: 14px;
+  }
+
+
+  .s4sli-page .s4sli-slo-card {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+
+  .s4sli-page .s4sli-slo-circle {
+    margin: auto;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .s4sli-page .s4sli-shell {
+    width:
+      calc(100% - 48px);
+  }
+
+
+  .s4sli-page .s4sli-hero-layout,
+  .s4sli-page .s4sli-sla-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4sli-page .s4sli-hero-art {
+    width: 100%;
+
+    max-width: 520px;
+
+    margin:
+      10px auto 0;
+  }
+
+
+  .s4sli-page .s4sli-dashboard-grid,
+  .s4sli-page .s4sli-framework-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4sli-page .s4sli-metric-card {
+    min-height: 285px;
+  }
+
+
+  .s4sli-page .s4sli-calculation-grid,
+  .s4sli-page .s4sli-slo-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .s4sli-page .s4sli-shell {
+    width:
+      calc(100% - 40px);
+  }
+
+
+  .s4sli-page .s4sli-hero {
+    padding-top: 35px;
+  }
+
+
+  .s4sli-page .s4sli-breadcrumb {
+    margin-bottom: 30px;
+  }
+
+
+  .s4sli-page .s4sli-hero-copy h1 {
+    font-size: 3.3rem;
+  }
+
+
+  .s4sli-page .s4sli-hero-copy > p {
+    font-size: 1rem;
+  }
+
+
+  .s4sli-page .s4sli-hero-art {
+    min-height: 410px;
+
+    transform:
+      scale(0.9);
+
+    transform-origin:
+      top center;
+
+    margin-bottom: -35px;
+  }
+
+
+  .s4sli-page .s4sli-dashboard-section,
+  .s4sli-page .s4sli-framework-section,
+  .s4sli-page .s4sli-calculation-section,
+  .s4sli-page .s4sli-slo-section,
+  .s4sli-page .s4sli-sla-section {
+    padding:
+      90px 0;
+  }
+
+
+  .s4sli-page .s4sli-dashboard-heading h2,
+  .s4sli-page .s4sli-section-heading h2,
+  .s4sli-page .s4sli-sla-copy h2 {
+    font-size: 3rem;
+  }
+
+
+  .s4sli-page .s4sli-inshort {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .s4sli-page .s4sli-inshort-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+
+  .s4sli-page .s4sli-sla-grid,
+  .s4sli-page .s4sli-navigation-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .s4sli-page .s4sli-nav-next {
+    justify-content: space-between;
+
+    text-align: left;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .s4sli-page .s4sli-hero-copy h1 {
+    font-size: 2.8rem;
+  }
+
+
+  .s4sli-page .s4sli-dashboard-heading h2,
+  .s4sli-page .s4sli-section-heading h2,
+  .s4sli-page .s4sli-sla-copy h2 {
+    font-size: 2.55rem;
+  }
+
+
+  .s4sli-page .s4sli-hero-art {
+    transform:
+      scale(0.8);
+
+    margin-bottom: -75px;
+  }
+
+
+  .s4sli-page .s4sli-metric-card,
+  .s4sli-page .s4sli-framework-card,
+  .s4sli-page .s4sli-calculation-card,
+  .s4sli-page .s4sli-slo-card {
+    padding: 23px;
+  }
+
+
+  .s4sli-page .s4sli-target-strip {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .s4sli-page .s4sli-target-strip strong {
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   =========================================================
+   BUDGET & POSTMORTEM
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   BUDGET — PAGE
 ========================================================= */
 
 .s4budget-page {
@@ -42,9 +3851,11 @@
   --s4b-border: #eae3e8;
 
   width: 100%;
+
   overflow-x: hidden;
 
   color: var(--s4b-navy);
+
   background: #ffffff;
 
   font-family:
@@ -57,6 +3868,7 @@
     sans-serif;
 
   -webkit-font-smoothing: antialiased;
+
   text-rendering: optimizeLegibility;
 }
 
@@ -69,12 +3881,10 @@
 }
 
 
-/* =========================================================
-   SHARED WIDTH
-========================================================= */
-
 .s4budget-page .s4budget-shell {
-  width: calc(100% - 80px);
+  width:
+    calc(100% - 80px);
+
   max-width: 1240px;
 
   margin: 0 auto;
@@ -82,7 +3892,7 @@
 
 
 /* =========================================================
-   HERO
+   BUDGET — HERO
 ========================================================= */
 
 .s4budget-page .s4budget-hero {
@@ -109,14 +3919,11 @@
 }
 
 
-/* =========================================================
-   BREADCRUMB
-========================================================= */
-
 .s4budget-page .s4budget-breadcrumb {
   margin-bottom: 42px;
 
   display: flex;
+
   align-items: center;
 
   gap: 9px;
@@ -124,6 +3931,7 @@
   color: var(--s4b-muted);
 
   font-size: 0.86rem;
+
   font-weight: 700;
 }
 
@@ -140,10 +3948,6 @@
 }
 
 
-/* =========================================================
-   HERO LAYOUT
-========================================================= */
-
 .s4budget-page .s4budget-hero-layout {
   display: grid;
 
@@ -156,10 +3960,6 @@
   align-items: center;
 }
 
-
-/* =========================================================
-   HERO COPY
-========================================================= */
 
 .s4budget-page .s4budget-hero-copy {
   min-width: 0;
@@ -174,11 +3974,11 @@
   color: var(--s4b-pink);
 
   font-size: 0.82rem;
+
   font-weight: 900;
 
-  line-height: 1.4;
-
   letter-spacing: 0.15em;
+
   text-transform: uppercase;
 }
 
@@ -236,16 +4036,13 @@
 }
 
 
-/* =========================================================
-   BACK LINK
-========================================================= */
-
 .s4budget-page .s4budget-back {
   width: fit-content;
 
   margin-top: 29px;
 
   display: inline-flex;
+
   align-items: center;
 
   gap: 8px;
@@ -255,6 +4052,7 @@
   text-decoration: none;
 
   font-size: 0.9rem;
+
   font-weight: 750;
 
   transition:
@@ -266,15 +4064,13 @@
 .s4budget-page .s4budget-back:hover {
   color: var(--s4b-pink);
 
-  transform: translateX(-4px);
+  transform:
+    translateX(-4px);
 }
 
 
 /* =========================================================
-   =========================================================
-   HERO ART
-   OPTION 6 — LEARN → IMPROVE → REPEAT
-   =========================================================
+   BUDGET — HERO ART
 ========================================================= */
 
 .s4budget-page .s4budget-hero-art {
@@ -285,10 +4081,6 @@
   min-height: 430px;
 }
 
-
-/* =========================================================
-   HERO BLOBS
-========================================================= */
 
 .s4budget-page .s4budget-cycle-blob {
   position: absolute;
@@ -313,8 +4105,6 @@
   border-radius:
     52% 48% 58% 42% /
     47% 55% 45% 53%;
-
-  opacity: 0.9;
 }
 
 
@@ -338,16 +4128,13 @@
 }
 
 
-/* =========================================================
-   CYCLE CARDS
-========================================================= */
-
 .s4budget-page .s4budget-cycle-card {
   position: absolute;
 
   z-index: 5;
 
   width: 145px;
+
   min-height: 150px;
 
   padding:
@@ -358,6 +4145,7 @@
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -372,23 +4160,8 @@
   box-shadow:
     0 18px 38px
     rgba(17, 21, 56, 0.11);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
-
-.s4budget-page .s4budget-cycle-card:hover {
-  box-shadow:
-    0 24px 45px
-    rgba(17, 21, 56, 0.14);
-}
-
-
-/* =========================================================
-   CYCLE CARD POSITIONS
-========================================================= */
 
 .s4budget-page .s4budget-cycle-learn {
   left: 50%;
@@ -397,6 +4170,9 @@
   transform:
     translateX(-50%)
     rotate(1deg);
+
+  --cycle-accent: #ff3e91;
+  --cycle-soft: #fff0f6;
 }
 
 
@@ -405,6 +4181,9 @@
   bottom: 28px;
 
   transform: rotate(3deg);
+
+  --cycle-accent: #8057f5;
+  --cycle-soft: #f1ebff;
 }
 
 
@@ -413,34 +4192,11 @@
   bottom: 28px;
 
   transform: rotate(-3deg);
-}
 
-
-/* =========================================================
-   CYCLE CARD COLORS
-========================================================= */
-
-.s4budget-page .s4budget-cycle-learn {
-  --cycle-accent: #ff3e91;
-  --cycle-soft: #fff0f6;
-}
-
-
-.s4budget-page .s4budget-cycle-improve {
-  --cycle-accent: #8057f5;
-  --cycle-soft: #f1ebff;
-}
-
-
-.s4budget-page .s4budget-cycle-repeat {
   --cycle-accent: #3daa83;
   --cycle-soft: #eaf8f3;
 }
 
-
-/* =========================================================
-   CYCLE ICON
-========================================================= */
 
 .s4budget-page .s4budget-cycle-icon {
   width: 54px;
@@ -460,14 +4216,11 @@
 }
 
 
-/* =========================================================
-   CYCLE CARD TYPOGRAPHY
-========================================================= */
-
 .s4budget-page .s4budget-cycle-card > span {
   color: var(--cycle-accent);
 
   font-size: 0.51rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -480,6 +4233,7 @@
   color: var(--s4b-navy);
 
   font-size: 1rem;
+
   font-weight: 900;
 }
 
@@ -492,15 +4246,12 @@
   color: var(--s4b-muted);
 
   font-size: 0.61rem;
+
   font-weight: 600;
 
   line-height: 1.35;
 }
 
-
-/* =========================================================
-   CENTER RETROSPECTIVE LABEL
-========================================================= */
 
 .s4budget-page .s4budget-cycle-center {
   position: absolute;
@@ -521,6 +4272,7 @@
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 5px;
@@ -545,15 +4297,12 @@
   color: var(--s4b-navy);
 
   font-size: 0.48rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
 }
 
-
-/* =========================================================
-   CONNECTING ARROWS
-========================================================= */
 
 .s4budget-page .s4budget-cycle-arrow {
   position: absolute;
@@ -575,7 +4324,8 @@
   right: 92px;
   top: 157px;
 
-  transform: rotate(55deg);
+  transform:
+    rotate(55deg);
 }
 
 
@@ -599,10 +4349,6 @@
 }
 
 
-/* =========================================================
-   HERO DECORATIVE SPARKS
-========================================================= */
-
 .s4budget-page .s4budget-hero-spark {
   position: absolute;
 
@@ -621,7 +4367,8 @@
   right: 11px;
   top: 29px;
 
-  transform: rotate(18deg);
+  transform:
+    rotate(18deg);
 }
 
 
@@ -629,7 +4376,8 @@
   right: -11px;
   top: 64px;
 
-  transform: rotate(69deg);
+  transform:
+    rotate(69deg);
 }
 
 
@@ -639,12 +4387,13 @@
 
   height: 19px;
 
-  transform: rotate(103deg);
+  transform:
+    rotate(103deg);
 }
 
 
 /* =========================================================
-   OVERVIEW SECTION
+   BUDGET — OVERVIEW
 ========================================================= */
 
 .s4budget-page .s4budget-overview-section {
@@ -655,7 +4404,9 @@
 }
 
 
-.s4budget-page .s4budget-overview-heading {
+.s4budget-page .s4budget-overview-heading,
+.s4budget-page .s4budget-section-heading,
+.s4budget-page .s4budget-insights-heading {
   max-width: 850px;
 
   margin-bottom: 50px;
@@ -668,6 +4419,7 @@
   color: var(--s4b-pink);
 
   font-size: 0.73rem;
+
   font-weight: 900;
 
   letter-spacing: 0.14em;
@@ -703,8 +4455,6 @@
 .s4budget-page .s4budget-section-heading h2 strong,
 .s4budget-page .s4budget-insights-heading h2 strong {
   color: var(--s4b-pink);
-
-  font-weight: 900;
 }
 
 
@@ -722,10 +4472,6 @@
 }
 
 
-/* =========================================================
-   OVERVIEW GRID
-========================================================= */
-
 .s4budget-page .s4budget-overview-grid {
   display: grid;
 
@@ -738,10 +4484,6 @@
   align-items: stretch;
 }
 
-
-/* =========================================================
-   OVERVIEW CARDS
-========================================================= */
 
 .s4budget-page .s4budget-budget-card,
 .s4budget-page .s4budget-timeline-card {
@@ -801,6 +4543,7 @@
   color: var(--s4b-pink);
 
   font-size: 0.57rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -814,6 +4557,7 @@
   color: var(--s4b-navy);
 
   font-size: 1.4rem;
+
   font-weight: 900;
 }
 
@@ -831,7 +4575,7 @@
 
 
 /* =========================================================
-   ERROR BUDGET OBJECTIVES
+   BUDGET — OBJECTIVES
 ========================================================= */
 
 .s4budget-page .s4budget-objective {
@@ -854,6 +4598,7 @@
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 15px;
@@ -864,6 +4609,7 @@
   color: var(--s4b-pink);
 
   font-size: 0.56rem;
+
   font-weight: 900;
 
   letter-spacing: 0.09em;
@@ -881,6 +4627,7 @@
   color: var(--s4b-pink);
 
   font-size: 1.6rem;
+
   font-weight: 900;
 }
 
@@ -899,6 +4646,7 @@
   color: var(--s4b-navy);
 
   font-size: 1.08rem;
+
   font-weight: 900;
 }
 
@@ -913,10 +4661,6 @@
   line-height: 1.62;
 }
 
-
-/* =========================================================
-   ERROR BUDGET METER
-========================================================= */
 
 .s4budget-page .s4budget-budget-meter {
   height: 10px;
@@ -977,6 +4721,7 @@
   color: var(--s4b-muted);
 
   font-size: 0.53rem;
+
   font-weight: 900;
 
   letter-spacing: 0.08em;
@@ -987,6 +4732,7 @@
   color: var(--s4b-navy);
 
   font-size: 0.8rem;
+
   font-weight: 900;
 
   text-align: right;
@@ -994,7 +4740,7 @@
 
 
 /* =========================================================
-   TIMELINE
+   BUDGET — TIMELINE
 ========================================================= */
 
 .s4budget-page .s4budget-timeline {
@@ -1006,7 +4752,8 @@
   display: grid;
 
   grid-template-columns:
-    29px minmax(0, 1fr);
+    29px
+    minmax(0, 1fr);
 
   gap: 14px;
 }
@@ -1079,6 +4826,7 @@
   color: var(--s4b-purple);
 
   font-size: 0.56rem;
+
   font-weight: 900;
 
   letter-spacing: 0.07em;
@@ -1089,6 +4837,7 @@
   color: var(--s4b-muted);
 
   font-size: 0.61rem;
+
   font-weight: 700;
 }
 
@@ -1100,6 +4849,7 @@
   color: var(--s4b-navy);
 
   font-size: 0.98rem;
+
   font-weight: 900;
 }
 
@@ -1116,7 +4866,7 @@
 
 
 /* =========================================================
-   POSTMORTEM INSIGHTS
+   BUDGET — INSIGHTS
 ========================================================= */
 
 .s4budget-page .s4budget-insights-section {
@@ -1129,13 +4879,6 @@
       #fff7fb,
       #f7f3ff
     );
-}
-
-
-.s4budget-page .s4budget-insights-heading {
-  max-width: 900px;
-
-  margin-bottom: 48px;
 }
 
 
@@ -1210,6 +4953,7 @@
   color: var(--insight-accent);
 
   font-size: 0.59rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -1223,6 +4967,7 @@
   color: var(--s4b-navy);
 
   font-size: 1.25rem;
+
   font-weight: 900;
 
   line-height: 1.2;
@@ -1241,7 +4986,7 @@
 
 
 /* =========================================================
-   CONTRIBUTING CAUSES
+   BUDGET — CAUSES
 ========================================================= */
 
 .s4budget-page .s4budget-causes {
@@ -1270,6 +5015,7 @@
   color: var(--s4b-purple);
 
   font-size: 0.62rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -1283,6 +5029,7 @@
   color: var(--s4b-navy);
 
   font-size: 1.65rem;
+
   font-weight: 900;
 
   line-height: 1.15;
@@ -1318,7 +5065,8 @@
   display: grid;
 
   grid-template-columns:
-    42px minmax(0, 1fr);
+    42px
+    minmax(0, 1fr);
 
   gap: 12px;
 
@@ -1340,11 +5088,13 @@
 
   color: var(--s4b-purple);
 
-  background: var(--s4b-purple-soft);
+  background:
+    var(--s4b-purple-soft);
 
   border-radius: 10px;
 
   font-size: 0.68rem;
+
   font-weight: 900;
 }
 
@@ -1361,7 +5111,7 @@
 
 
 /* =========================================================
-   ACTION ITEMS
+   BUDGET — ACTIONS
 ========================================================= */
 
 .s4budget-page .s4budget-actions-section {
@@ -1369,13 +5119,6 @@
     115px 0;
 
   background: #ffffff;
-}
-
-
-.s4budget-page .s4budget-section-heading {
-  max-width: 850px;
-
-  margin-bottom: 48px;
 }
 
 
@@ -1393,8 +5136,10 @@
 }
 
 
-.s4budget-page .s4budget-actions-header,
-.s4budget-page .s4budget-action-row {
+.s4budget-page
+.s4budget-actions-header,
+.s4budget-page
+.s4budget-action-row {
   display: grid;
 
   grid-template-columns:
@@ -1421,6 +5166,7 @@
     rgba(255, 255, 255, 0.72);
 
   font-size: 0.58rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -1440,8 +5186,7 @@
 }
 
 
-.s4budget-page
-.s4budget-action-row:nth-child(odd) {
+.s4budget-page .s4budget-action-row:nth-child(odd) {
   background: #fffafb;
 }
 
@@ -1472,6 +5217,7 @@
   border-radius: 10px;
 
   font-size: 0.66rem;
+
   font-weight: 900;
 }
 
@@ -1480,6 +5226,7 @@
   color: var(--s4b-navy);
 
   font-size: 0.85rem;
+
   font-weight: 850;
 }
 
@@ -1495,6 +5242,7 @@
   color: var(--s4b-muted);
 
   font-size: 0.86rem;
+
   font-weight: 700;
 }
 
@@ -1510,7 +5258,7 @@
 
 
 /* =========================================================
-   ERROR BUDGET POLICY
+   BUDGET — POLICY
 ========================================================= */
 
 .s4budget-page .s4budget-policy-section {
@@ -1540,6 +5288,7 @@
   color: var(--s4b-purple);
 
   font-size: 0.73rem;
+
   font-weight: 900;
 
   letter-spacing: 0.14em;
@@ -1571,8 +5320,6 @@
 
 .s4budget-page .s4budget-policy-heading h2 strong {
   color: var(--s4b-pink);
-
-  font-weight: 900;
 }
 
 
@@ -1646,6 +5393,7 @@
   color: var(--policy-accent);
 
   font-size: 0.58rem;
+
   font-weight: 900;
 
   letter-spacing: 0.09em;
@@ -1659,6 +5407,7 @@
   color: var(--s4b-navy);
 
   font-size: 1.45rem;
+
   font-weight: 900;
 }
 
@@ -1674,6 +5423,7 @@
   border-radius: 12px;
 
   font-size: 1.25rem;
+
   font-weight: 900;
 }
 
@@ -1693,6 +5443,7 @@
   color: var(--policy-accent);
 
   font-size: 0.56rem;
+
   font-weight: 900;
 
   letter-spacing: 0.08em;
@@ -1712,10 +5463,7 @@
 
 
 /* =========================================================
-   =========================================================
-   ESCALATION PATH
-   PRIORITY GAUGE
-   =========================================================
+   BUDGET — ESCALATION
 ========================================================= */
 
 .s4budget-page .s4budget-escalation-section {
@@ -1735,10 +5483,6 @@
 }
 
 
-/* =========================================================
-   ESCALATION TOP
-========================================================= */
-
 .s4budget-page .s4budget-escalation-top {
   margin-bottom: 48px;
 
@@ -1754,16 +5498,15 @@
 }
 
 
-/* =========================================================
-   ESCALATION HEADING
-========================================================= */
-
-.s4budget-page .s4budget-escalation-heading {
+.s4budget-page
+.s4budget-escalation-heading {
   max-width: 700px;
 }
 
 
-.s4budget-page .s4budget-escalation-heading > span {
+.s4budget-page
+.s4budget-escalation-heading
+> span {
   display: block;
 
   margin-bottom: 9px;
@@ -1771,6 +5514,7 @@
   color: #ff78b1;
 
   font-size: 0.7rem;
+
   font-weight: 900;
 
   letter-spacing: 0.14em;
@@ -1779,7 +5523,9 @@
 }
 
 
-.s4budget-page .s4budget-escalation-heading h2 {
+.s4budget-page
+.s4budget-escalation-heading
+h2 {
   max-width: 680px;
 
   margin: 0;
@@ -1801,16 +5547,16 @@
 }
 
 
-.s4budget-page .s4budget-escalation-heading h2 strong {
-  display: inline;
-
+.s4budget-page
+.s4budget-escalation-heading
+h2 strong {
   color: #ffad42;
-
-  font-weight: 900;
 }
 
 
-.s4budget-page .s4budget-escalation-heading p {
+.s4budget-page
+.s4budget-escalation-heading
+p {
   max-width: 620px;
 
   margin:
@@ -1826,11 +5572,12 @@
 
 
 /* =========================================================
-   PRIORITY VISUAL
+   BUDGET — PRIORITY GAUGE
 ========================================================= */
 
 .s4budget-page .s4budget-priority-visual {
   width: 330px;
+
   min-height: 205px;
 
   padding:
@@ -1856,7 +5603,8 @@
 }
 
 
-.s4budget-page .s4budget-priority-label {
+.s4budget-page
+.s4budget-priority-label {
   display: block;
 
   margin-bottom: 10px;
@@ -1865,6 +5613,7 @@
     rgba(255, 255, 255, 0.57);
 
   font-size: 0.53rem;
+
   font-weight: 900;
 
   letter-spacing: 0.13em;
@@ -1873,11 +5622,8 @@
 }
 
 
-/* =========================================================
-   GAUGE WINDOW
-========================================================= */
-
-.s4budget-page .s4budget-priority-gauge {
+.s4budget-page
+.s4budget-priority-gauge {
   position: relative;
 
   width: 240px;
@@ -1890,11 +5636,8 @@
 }
 
 
-/* =========================================================
-   GAUGE ARC
-========================================================= */
-
-.s4budget-page .s4budget-priority-arc {
+.s4budget-page
+.s4budget-priority-arc {
   position: absolute;
 
   width: 240px;
@@ -1924,7 +5667,8 @@
 }
 
 
-.s4budget-page .s4budget-priority-arc-inner {
+.s4budget-page
+.s4budget-priority-arc-inner {
   position: absolute;
 
   width: 178px;
@@ -1942,11 +5686,8 @@
 }
 
 
-/* =========================================================
-   GAUGE NEEDLE
-========================================================= */
-
-.s4budget-page .s4budget-priority-needle {
+.s4budget-page
+.s4budget-priority-needle {
   position: absolute;
 
   z-index: 4;
@@ -1966,14 +5707,11 @@
   background: #ffffff;
 
   border-radius: 999px;
-
-  box-shadow:
-    0 0 9px
-    rgba(255, 255, 255, 0.25);
 }
 
 
-.s4budget-page .s4budget-priority-center {
+.s4budget-page
+.s4budget-priority-center {
   position: absolute;
 
   z-index: 5;
@@ -1996,11 +5734,8 @@
 }
 
 
-/* =========================================================
-   GAUGE LABELS
-========================================================= */
-
-.s4budget-page .s4budget-priority-scale {
+.s4budget-page
+.s4budget-priority-scale {
   margin-top: 7px;
 
   display: grid;
@@ -2012,6 +5747,7 @@
     rgba(255, 255, 255, 0.42);
 
   font-size: 0.48rem;
+
   font-weight: 900;
 
   letter-spacing: 0.08em;
@@ -2040,7 +5776,7 @@ span:last-child {
 
 
 /* =========================================================
-   SEVERITY GRID
+   BUDGET — SEVERITY CARDS
 ========================================================= */
 
 .s4budget-page .s4budget-severity-grid {
@@ -2053,18 +5789,14 @@ span:last-child {
 }
 
 
-/* =========================================================
-   SEVERITY CARDS
-========================================================= */
-
 .s4budget-page .s4budget-severity-card {
   position: relative;
 
   min-width: 0;
+
   min-height: 305px;
 
-  padding:
-    25px;
+  padding: 25px;
 
   display: flex;
 
@@ -2092,33 +5824,24 @@ span:last-child {
 
 .s4budget-page .s4budget-severity-pink {
   --severity-accent: #ff67aa;
-
-  --severity-soft:
-    rgba(255, 62, 145, 0.15);
+  --severity-soft: rgba(255, 62, 145, 0.15);
 }
 
 
 .s4budget-page .s4budget-severity-orange {
   --severity-accent: #ffb149;
-
-  --severity-soft:
-    rgba(245, 154, 57, 0.15);
+  --severity-soft: rgba(245, 154, 57, 0.15);
 }
 
 
 .s4budget-page .s4budget-severity-purple {
   --severity-accent: #a68aff;
-
-  --severity-soft:
-    rgba(128, 87, 245, 0.18);
+  --severity-soft: rgba(128, 87, 245, 0.18);
 }
 
 
-/* =========================================================
-   SEVERITY TOP
-========================================================= */
-
-.s4budget-page .s4budget-severity-card-top {
+.s4budget-page
+.s4budget-severity-card-top {
   display: flex;
 
   align-items: center;
@@ -2145,13 +5868,8 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-severity-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-
-.s4budget-page .s4budget-severity-label {
+.s4budget-page
+.s4budget-severity-label {
   display: inline-flex;
 
   width: fit-content;
@@ -2166,15 +5884,14 @@ span:last-child {
   border-radius: 999px;
 
   font-size: 0.57rem;
+
   font-weight: 900;
 }
 
 
-/* =========================================================
-   SEVERITY TITLE
-========================================================= */
-
-.s4budget-page .s4budget-severity-card h3 {
+.s4budget-page
+.s4budget-severity-card
+h3 {
   min-height: 55px;
 
   margin:
@@ -2183,6 +5900,7 @@ span:last-child {
   color: #ffffff;
 
   font-size: 1.13rem;
+
   font-weight: 900;
 
   line-height: 1.28;
@@ -2191,11 +5909,8 @@ span:last-child {
 }
 
 
-/* =========================================================
-   SEVERITY RESPONSE INFO
-========================================================= */
-
-.s4budget-page .s4budget-severity-info {
+.s4budget-page
+.s4budget-severity-info {
   margin-top: auto;
 
   display: grid;
@@ -2207,12 +5922,14 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-severity-info > div {
+.s4budget-page
+.s4budget-severity-info
+> div {
   min-width: 0;
+
   min-height: 105px;
 
-  padding:
-    14px;
+  padding: 14px;
 
   color: var(--severity-accent);
 
@@ -2227,13 +5944,9 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-severity-info svg {
-  width: 18px;
-  height: 18px;
-}
-
-
-.s4budget-page .s4budget-severity-info span {
+.s4budget-page
+.s4budget-severity-info
+span {
   display: block;
 
   margin-top: 9px;
@@ -2242,13 +5955,16 @@ span:last-child {
     rgba(255, 255, 255, 0.48);
 
   font-size: 0.47rem;
+
   font-weight: 900;
 
   letter-spacing: 0.07em;
 }
 
 
-.s4budget-page .s4budget-severity-info strong {
+.s4budget-page
+.s4budget-severity-info
+strong {
   display: block;
 
   margin-top: 6px;
@@ -2256,6 +5972,7 @@ span:last-child {
   color: #ffffff;
 
   font-size: 0.74rem;
+
   font-weight: 800;
 
   line-height: 1.4;
@@ -2263,7 +5980,7 @@ span:last-child {
 
 
 /* =========================================================
-   INCIDENT ROLES
+   BUDGET — ROLES
 ========================================================= */
 
 .s4budget-page .s4budget-roles {
@@ -2284,10 +6001,13 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-roles-heading > span {
+.s4budget-page
+.s4budget-roles-heading
+> span {
   color: #ff7eb4;
 
   font-size: 0.62rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
@@ -2296,20 +6016,25 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-roles-heading h3 {
+.s4budget-page
+.s4budget-roles-heading
+h3 {
   margin:
     7px 0 9px;
 
   color: #ffffff;
 
   font-size: 1.7rem;
+
   font-weight: 900;
 
   line-height: 1.2;
 }
 
 
-.s4budget-page .s4budget-roles-heading p {
+.s4budget-page
+.s4budget-roles-heading
+p {
   margin: 0;
 
   color:
@@ -2321,10 +6046,6 @@ span:last-child {
 }
 
 
-/* =========================================================
-   INCIDENT ROLE GRID
-========================================================= */
-
 .s4budget-page .s4budget-role-grid {
   display: grid;
 
@@ -2335,7 +6056,9 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-role-grid article {
+.s4budget-page
+.s4budget-role-grid
+article {
   min-height: 185px;
 
   padding: 23px;
@@ -2374,28 +6097,36 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-role-grid span {
+.s4budget-page
+.s4budget-role-grid
+span {
   color: #ff8abb;
 
   font-size: 0.55rem;
+
   font-weight: 900;
 
   letter-spacing: 0.09em;
 }
 
 
-.s4budget-page .s4budget-role-grid h4 {
+.s4budget-page
+.s4budget-role-grid
+h4 {
   margin:
     5px 0 7px;
 
   color: #ffffff;
 
   font-size: 1rem;
+
   font-weight: 900;
 }
 
 
-.s4budget-page .s4budget-role-grid p {
+.s4budget-page
+.s4budget-role-grid
+p {
   margin: 0;
 
   color:
@@ -2408,10 +6139,11 @@ span:last-child {
 
 
 /* =========================================================
-   BOTTOM NAVIGATION
+   BUDGET — NAVIGATION
 ========================================================= */
 
-.s4budget-page .s4budget-navigation-section {
+.s4budget-page
+.s4budget-navigation-section {
   padding:
     70px 0
     90px;
@@ -2420,7 +6152,8 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-navigation-grid {
+.s4budget-page
+.s4budget-navigation-grid {
   display: grid;
 
   grid-template-columns:
@@ -2464,6 +6197,17 @@ span:last-child {
 }
 
 
+.s4budget-page
+.s4budget-nav-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(17, 21, 56, 0.07);
+}
+
+
 .s4budget-page .s4budget-nav-home {
   justify-content: flex-end;
 
@@ -2478,17 +6222,9 @@ span:last-child {
 }
 
 
-.s4budget-page .s4budget-nav-card:hover {
-  transform:
-    translateY(-4px);
-
-  box-shadow:
-    0 14px 30px
-    rgba(17, 21, 56, 0.07);
-}
-
-
-.s4budget-page .s4budget-nav-card > svg {
+.s4budget-page
+.s4budget-nav-card
+> svg {
   flex-shrink: 0;
 
   color: var(--s4b-pink);
@@ -2496,29 +6232,37 @@ span:last-child {
 
 
 .s4budget-page
-.s4budget-nav-home > svg {
+.s4budget-nav-home
+> svg {
   color: var(--s4b-purple);
 }
 
 
-.s4budget-page .s4budget-nav-card span {
+.s4budget-page
+.s4budget-nav-card
+span {
   display: block;
 
   color: var(--s4b-pink);
 
   font-size: 0.57rem;
+
   font-weight: 900;
 
   letter-spacing: 0.1em;
 }
 
 
-.s4budget-page .s4budget-nav-home span {
+.s4budget-page
+.s4budget-nav-home
+span {
   color: var(--s4b-purple);
 }
 
 
-.s4budget-page .s4budget-nav-card strong {
+.s4budget-page
+.s4budget-nav-card
+strong {
   display: block;
 
   margin-top: 5px;
@@ -2526,17 +6270,19 @@ span:last-child {
   color: var(--s4b-navy);
 
   font-size: 1rem;
+
   font-weight: 900;
 }
 
 
 /* =========================================================
-   TABLET
+   BUDGET — RESPONSIVE
 ========================================================= */
 
 @media (max-width: 1050px) {
 
-  .s4budget-page .s4budget-hero-layout {
+  .s4budget-page
+  .s4budget-hero-layout {
     grid-template-columns:
       minmax(0, 1fr)
       390px;
@@ -2545,47 +6291,22 @@ span:last-child {
   }
 
 
-  /* HERO CYCLE */
-
-  .s4budget-page .s4budget-cycle-improve {
-    right: 5px;
-  }
-
-
-  .s4budget-page .s4budget-cycle-repeat {
-    left: 5px;
-  }
-
-
-  .s4budget-page .s4budget-arrow-learn-improve {
-    right: 66px;
-  }
-
-
-  .s4budget-page .s4budget-arrow-repeat-learn {
-    left: 66px;
-  }
-
-
-  /* OVERVIEW */
-
-  .s4budget-page .s4budget-overview-grid {
+  .s4budget-page
+  .s4budget-overview-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* CAUSES */
-
-  .s4budget-page .s4budget-causes {
+  .s4budget-page
+  .s4budget-causes {
     grid-template-columns: 1fr;
 
     gap: 30px;
   }
 
 
-  /* ESCALATION */
-
-  .s4budget-page .s4budget-escalation-top {
+  .s4budget-page
+  .s4budget-escalation-top {
     grid-template-columns:
       minmax(0, 1fr)
       300px;
@@ -2594,12 +6315,14 @@ span:last-child {
   }
 
 
-  .s4budget-page .s4budget-priority-visual {
+  .s4budget-page
+  .s4budget-priority-visual {
     width: 300px;
   }
 
 
-  .s4budget-page .s4budget-priority-gauge {
+  .s4budget-page
+  .s4budget-priority-gauge {
     transform:
       scale(0.9);
 
@@ -2612,28 +6335,26 @@ span:last-child {
 }
 
 
-/* =========================================================
-   SMALL TABLET
-========================================================= */
-
 @media (max-width: 850px) {
 
   .s4budget-page .s4budget-shell {
-    width: calc(100% - 48px);
+    width:
+      calc(100% - 48px);
   }
 
 
-  /* HERO */
-
-  .s4budget-page .s4budget-hero-layout {
+  .s4budget-page
+  .s4budget-hero-layout {
     grid-template-columns: 1fr;
 
     gap: 30px;
   }
 
 
-  .s4budget-page .s4budget-hero-art {
+  .s4budget-page
+  .s4budget-hero-art {
     width: 100%;
+
     max-width: 520px;
 
     margin:
@@ -2641,24 +6362,22 @@ span:last-child {
   }
 
 
-  /* INSIGHTS */
-
-  .s4budget-page .s4budget-insights-grid {
+  .s4budget-page
+  .s4budget-insights-grid,
+  .s4budget-page
+  .s4budget-policy-grid,
+  .s4budget-page
+  .s4budget-severity-grid,
+  .s4budget-page
+  .s4budget-role-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* POLICY */
-
-  .s4budget-page .s4budget-policy-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ACTIONS */
-
-  .s4budget-page .s4budget-actions-header,
-  .s4budget-page .s4budget-action-row {
+  .s4budget-page
+  .s4budget-actions-header,
+  .s4budget-page
+  .s4budget-action-row {
     grid-template-columns:
       minmax(0, 1.5fr)
       minmax(120px, 0.6fr)
@@ -2666,83 +6385,69 @@ span:last-child {
   }
 
 
-  /* ESCALATION */
-
-  .s4budget-page .s4budget-escalation-top {
+  .s4budget-page
+  .s4budget-escalation-top {
     grid-template-columns: 1fr;
 
     gap: 35px;
   }
 
 
-  .s4budget-page .s4budget-priority-visual {
+  .s4budget-page
+  .s4budget-priority-visual {
     width: 100%;
+
     max-width: 330px;
   }
 
 
-  .s4budget-page .s4budget-severity-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .s4budget-page .s4budget-severity-card {
+  .s4budget-page
+  .s4budget-severity-card {
     min-height: auto;
   }
 
 
-  .s4budget-page .s4budget-severity-card h3 {
+  .s4budget-page
+  .s4budget-severity-card
+  h3 {
     min-height: auto;
-  }
-
-
-  /* ROLES */
-
-  .s4budget-page .s4budget-role-grid {
-    grid-template-columns: 1fr;
   }
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media (max-width: 600px) {
 
   .s4budget-page .s4budget-shell {
-    width: calc(100% - 40px);
+    width:
+      calc(100% - 40px);
   }
 
 
-  /* HERO */
-
-  .s4budget-page .s4budget-hero {
+  .s4budget-page
+  .s4budget-hero {
     padding-top: 35px;
   }
 
 
-  .s4budget-page .s4budget-breadcrumb {
-    margin-bottom: 30px;
-
-    font-size: 0.78rem;
-  }
-
-
-  .s4budget-page .s4budget-hero-copy h1 {
+  .s4budget-page
+  .s4budget-hero-copy
+  h1 {
     font-size: 3.3rem;
   }
 
 
-  .s4budget-page .s4budget-hero-copy > p {
+  .s4budget-page
+  .s4budget-hero-copy
+  > p {
     font-size: 1rem;
 
     line-height: 1.72;
   }
 
 
-  .s4budget-page .s4budget-hero-art {
+  .s4budget-page
+  .s4budget-hero-art {
     min-height: 410px;
 
     transform:
@@ -2755,78 +6460,51 @@ span:last-child {
   }
 
 
-  .s4budget-page .s4budget-cycle-card {
+  .s4budget-page
+  .s4budget-cycle-card {
     width: 135px;
 
     min-height: 142px;
   }
 
 
-  .s4budget-page .s4budget-cycle-improve {
-    right: 5px;
-  }
-
-
-  .s4budget-page .s4budget-cycle-repeat {
-    left: 5px;
-  }
-
-
-  /* SECTIONS */
-
-  .s4budget-page .s4budget-overview-section,
-  .s4budget-page .s4budget-insights-section,
-  .s4budget-page .s4budget-actions-section,
-  .s4budget-page .s4budget-policy-section {
+  .s4budget-page
+  .s4budget-overview-section,
+  .s4budget-page
+  .s4budget-insights-section,
+  .s4budget-page
+  .s4budget-actions-section,
+  .s4budget-page
+  .s4budget-policy-section {
     padding:
       90px 0;
   }
 
 
-  /* HEADINGS */
-
-  .s4budget-page .s4budget-overview-heading h2,
-  .s4budget-page .s4budget-insights-heading h2,
-  .s4budget-page .s4budget-section-heading h2,
-  .s4budget-page .s4budget-policy-heading h2 {
+  .s4budget-page
+  .s4budget-overview-heading
+  h2,
+  .s4budget-page
+  .s4budget-insights-heading
+  h2,
+  .s4budget-page
+  .s4budget-section-heading
+  h2,
+  .s4budget-page
+  .s4budget-policy-heading
+  h2 {
     font-size: 3rem;
   }
 
 
-  .s4budget-page .s4budget-overview-heading > p,
-  .s4budget-page .s4budget-section-heading > p,
-  .s4budget-page .s4budget-policy-heading p {
-    font-size: 0.96rem;
-  }
-
-
-  /* ERROR BUDGET */
-
-  .s4budget-page .s4budget-objective {
-    padding: 18px;
-  }
-
-
-  .s4budget-page .s4budget-budget-detail {
-    flex-direction: column;
-
-    gap: 4px;
-  }
-
-
-  .s4budget-page .s4budget-budget-detail strong {
-    text-align: left;
-  }
-
-
-  /* ACTION ITEMS */
-
-  .s4budget-page .s4budget-actions-header {
+  .s4budget-page
+  .s4budget-actions-header {
     display: none;
   }
 
 
-  .s4budget-page .s4budget-action-row {
+  .s4budget-page
+  .s4budget-action-row {
     padding: 18px;
 
     grid-template-columns: 1fr;
@@ -2835,54 +6513,63 @@ span:last-child {
   }
 
 
-  .s4budget-page .s4budget-action-owner,
-  .s4budget-page .s4budget-action-date {
+  .s4budget-page
+  .s4budget-action-owner,
+  .s4budget-page
+  .s4budget-action-date {
     padding-left: 49px;
   }
 
 
-  /* ESCALATION */
-
-  .s4budget-page .s4budget-escalation-section {
+  .s4budget-page
+  .s4budget-escalation-section {
     padding:
       85px 0;
   }
 
 
-  .s4budget-page .s4budget-escalation-heading h2 {
+  .s4budget-page
+  .s4budget-escalation-heading
+  h2 {
     font-size: 3rem;
   }
 
 
-  .s4budget-page .s4budget-escalation-heading p {
+  .s4budget-page
+  .s4budget-escalation-heading
+  p {
     font-size: 0.92rem;
   }
 
 
-  .s4budget-page .s4budget-priority-visual {
+  .s4budget-page
+  .s4budget-priority-visual {
     margin:
       0 auto;
   }
 
 
-  .s4budget-page .s4budget-severity-info {
+  .s4budget-page
+  .s4budget-severity-info {
     grid-template-columns: 1fr;
   }
 
 
-  .s4budget-page .s4budget-severity-info > div {
+  .s4budget-page
+  .s4budget-severity-info
+  > div {
     min-height: 90px;
   }
 
 
-  /* NAVIGATION */
-
-  .s4budget-page .s4budget-navigation-grid {
+  .s4budget-page
+  .s4budget-navigation-grid {
     grid-template-columns: 1fr;
   }
 
 
-  .s4budget-page .s4budget-nav-home {
+  .s4budget-page
+  .s4budget-nav-home {
     justify-content: space-between;
 
     text-align: left;
@@ -2891,20 +6578,17 @@ span:last-child {
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
 @media (max-width: 430px) {
 
-  /* HERO */
-
-  .s4budget-page .s4budget-hero-copy h1 {
+  .s4budget-page
+  .s4budget-hero-copy
+  h1 {
     font-size: 2.8rem;
   }
 
 
-  .s4budget-page .s4budget-hero-art {
+  .s4budget-page
+  .s4budget-hero-art {
     transform:
       scale(0.8);
 
@@ -2912,43 +6596,37 @@ span:last-child {
   }
 
 
-  /* SECTION HEADINGS */
-
-  .s4budget-page .s4budget-overview-heading h2,
-  .s4budget-page .s4budget-insights-heading h2,
-  .s4budget-page .s4budget-section-heading h2,
-  .s4budget-page .s4budget-policy-heading h2 {
+  .s4budget-page
+  .s4budget-overview-heading
+  h2,
+  .s4budget-page
+  .s4budget-insights-heading
+  h2,
+  .s4budget-page
+  .s4budget-section-heading
+  h2,
+  .s4budget-page
+  .s4budget-policy-heading
+  h2 {
     font-size: 2.5rem;
   }
 
 
-  /* CARDS */
-
-  .s4budget-page .s4budget-budget-card,
-  .s4budget-page .s4budget-timeline-card,
-  .s4budget-page .s4budget-policy-card {
-    padding: 23px;
-  }
-
-
-  .s4budget-page .s4budget-causes {
-    padding: 25px;
-  }
-
-
-  /* ESCALATION */
-
-  .s4budget-page .s4budget-escalation-heading h2 {
+  .s4budget-page
+  .s4budget-escalation-heading
+  h2 {
     font-size: 2.55rem;
   }
 
 
-  .s4budget-page .s4budget-priority-visual {
+  .s4budget-page
+  .s4budget-priority-visual {
     width: 100%;
   }
 
 
-  .s4budget-page .s4budget-priority-gauge {
+  .s4budget-page
+  .s4budget-priority-gauge {
     transform:
       scale(0.82);
 

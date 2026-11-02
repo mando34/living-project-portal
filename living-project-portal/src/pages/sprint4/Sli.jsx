@@ -15,11 +15,13 @@ import {
   Target,
 } from "lucide-react";
 
-import "../sprint4/Sprint4SubPages.css";
+import "./Sprint4SubPages.css";
 
 
 function SLI() {
+
   return (
+
     <main className="s4sli-page">
 
       {/* ==================================================
@@ -36,7 +38,7 @@ function SLI() {
               Sprint 4
             </Link>
 
-            <ArrowRight size={14} />
+            <span>/</span>
 
             <span>
               Service Levels
@@ -57,9 +59,9 @@ function SLI() {
 
 
               <h1>
-                Service Levels
+                Service Level
                 <span>
-                  for <strong>Festivo.</strong>
+                  Indicators (SLI)
                 </span>
               </h1>
 
@@ -68,11 +70,10 @@ function SLI() {
 
 
               <p>
-                Festivo uses Service Level Indicators, Service
-                Level Objectives, and Service Level Agreements
-                to measure application performance, establish
-                reliability targets, and define what happens
-                when service expectations are not met.
+                Key measures that tell us how reliably Festivo
+                delivers a good experience, including service
+                availability, information freshness, and the
+                targets we aim to meet.
               </p>
 
 
@@ -80,17 +81,17 @@ function SLI() {
                 to="/sprint-4"
                 className="s4sli-back"
               >
-                <ArrowLeft size={16} />
+
+                <ArrowLeft size={18} />
 
                 Back to Sprint 4
+
               </Link>
 
             </div>
 
 
-            {/* ==================================================
-                HERO GAUGE
-            ================================================== */}
+            {/* RIGHT — GAUGE */}
 
             <div className="s4sli-hero-art">
 
@@ -104,9 +105,9 @@ function SLI() {
                 </span>
 
 
-                <div className="s4sli-gauge-window">
+                <div className="s4sli-gauge">
 
-                  <div className="s4sli-gauge-ring">
+                  <div className="s4sli-gauge-arc">
 
                     <div className="s4sli-gauge-inner"></div>
 
@@ -121,29 +122,40 @@ function SLI() {
 
 
                 <strong>
-                  Measure. Target. Commit.
+                  Reliability Targets
                 </strong>
 
 
-                <span className="s4sli-gauge-subtitle">
-                  SLI → SLO → SLA
-                </span>
+                <p>
+                  Measuring availability and information
+                  freshness against defined objectives.
+                </p>
 
               </div>
 
 
               <div className="s4sli-check-badge">
 
-                <CheckCircle2 size={34} />
+                <CheckCircle2 size={21} />
+
+                <div>
+
+                  <span>
+                    TARGETS
+                  </span>
+
+                  <strong>
+                    Defined
+                  </strong>
+
+                </div>
 
               </div>
 
 
-              <div className="s4sli-art-spark s4sli-spark-1"></div>
-
-              <div className="s4sli-art-spark s4sli-spark-2"></div>
-
-              <div className="s4sli-art-spark s4sli-spark-3"></div>
+              <div className="s4sli-spark s4sli-spark-1"></div>
+              <div className="s4sli-spark s4sli-spark-2"></div>
+              <div className="s4sli-spark s4sli-spark-3"></div>
 
             </div>
 
@@ -155,52 +167,267 @@ function SLI() {
 
 
       {/* ==================================================
-          SLI / SLO / SLA CONCEPT OVERVIEW
+          METRIC DASHBOARD
+          ORIGINAL OPTION 2
       ================================================== */}
 
-      <section className="s4sli-concepts-section">
+      <section className="s4sli-dashboard-section">
 
         <div className="s4sli-shell">
 
-          <div className="s4sli-concepts-heading">
+          <div className="s4sli-dashboard-heading">
 
             <span>
-              THE SERVICE LEVEL FRAMEWORK
+              THE FESTIVO SLIs
             </span>
 
 
             <h2>
-              Measure it.
+              Reliability at a
               <strong>
-                {" "}Target it. Commit to it.
+                {" "}glance.
               </strong>
             </h2>
 
 
             <p>
-              These three concepts work together to define how
-              Festivo evaluates and manages service reliability.
+              These measures give the team a clear way to
+              evaluate whether Festivo is meeting the level
+              of service expected by its users.
             </p>
 
           </div>
 
 
-          <div className="s4sli-concept-grid">
+          <div className="s4sli-dashboard-grid">
 
-            {/* ==================================================
-                SLI
-            ================================================== */}
+            {/* AVAILABILITY */}
 
-            <article className="s4sli-concept-card s4sli-concept-pink">
+            <article className="s4sli-metric-card s4sli-metric-pink">
 
-              <div className="s4sli-concept-number">
+              <div className="s4sli-metric-top">
+
+                <div className="s4sli-metric-icon">
+
+                  <Server size={28} />
+
+                </div>
+
+
+                <span>
+                  SLI 01
+                </span>
+
+              </div>
+
+
+              <h3>
+                Availability
+              </h3>
+
+
+              <p>
+                Measures how often Festivo's core services
+                are operational and accessible when users
+                attempt to use them.
+              </p>
+
+
+              <div className="s4sli-target-strip">
+
+                <span>
+                  TARGET
+                </span>
+
+                <strong>
+                  ≥ 99%
+                </strong>
+
+              </div>
+
+            </article>
+
+
+            {/* FRESHNESS */}
+
+            <article className="s4sli-metric-card s4sli-metric-purple">
+
+              <div className="s4sli-metric-top">
+
+                <div className="s4sli-metric-icon">
+
+                  <RefreshCw size={28} />
+
+                </div>
+
+
+                <span>
+                  SLI 02
+                </span>
+
+              </div>
+
+
+              <h3>
+                Information Freshness
+              </h3>
+
+
+              <p>
+                Measures whether event information updates
+                become visible to guests quickly enough to
+                keep the Festivo experience current.
+              </p>
+
+
+              <div className="s4sli-target-strip">
+
+                <span>
+                  TARGET
+                </span>
+
+                <strong>
+                  ≥ 95% within 30 sec
+                </strong>
+
+              </div>
+
+            </article>
+
+
+            {/* TARGETS */}
+
+            <article className="s4sli-metric-card s4sli-metric-orange">
+
+              <div className="s4sli-metric-top">
+
+                <div className="s4sli-metric-icon">
+
+                  <Target size={28} />
+
+                </div>
+
+
+                <span>
+                  OBJECTIVES
+                </span>
+
+              </div>
+
+
+              <h3>
+                Service-Level Targets
+              </h3>
+
+
+              <p>
+                The SLIs become measurable objectives that
+                define what acceptable Festivo reliability
+                should look like during each sprint.
+              </p>
+
+
+              <div className="s4sli-target-strip">
+
+                <span>
+                  TARGETS
+                </span>
+
+                <strong>
+                  Defined per SLI
+                </strong>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          {/* ORIGINAL DARK INFO STRIP */}
+
+          <div className="s4sli-inshort">
+
+            <div className="s4sli-inshort-title">
+
+              <Target size={24} />
+
+              <div>
+
+                <span>
+                  IN SHORT
+                </span>
+
+                <strong>
+                  Why SLIs matter
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div className="s4sli-inshort-divider"></div>
+
+
+            <p>
+              SLIs give us a measurable way to evaluate
+              Festivo's reliability, set clear goals, and
+              know when to take action if service quality drops.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* ==================================================
+          SLI → SLO → SLA
+      ================================================== */}
+
+      <section className="s4sli-framework-section">
+
+        <div className="s4sli-shell">
+
+          <div className="s4sli-section-heading">
+
+            <span>
+              SERVICE LEVEL FRAMEWORK
+            </span>
+
+
+            <h2>
+              From measurement to
+              <strong>
+                {" "}commitment.
+              </strong>
+            </h2>
+
+
+            <p>
+              Festivo uses SLIs to measure service quality,
+              SLOs to establish internal targets, and SLAs
+              when those expectations become commitments
+              to vendors or other external parties.
+            </p>
+
+          </div>
+
+
+          <div className="s4sli-framework-grid">
+
+            <article className="s4sli-framework-card s4sli-framework-pink">
+
+              <div className="s4sli-framework-number">
                 01
               </div>
 
 
-              <div className="s4sli-concept-icon">
+              <div className="s4sli-framework-icon">
 
-                <Gauge size={30} />
+                <Activity size={27} />
 
               </div>
 
@@ -216,40 +443,28 @@ function SLI() {
 
 
               <p>
-                The measurable value used to evaluate how well
-                Festivo is performing.
+                The actual measurement used to evaluate
+                service reliability.
               </p>
 
 
-              <div className="s4sli-concept-summary">
-
-                <strong>
-                  What do we measure?
-                </strong>
-
-                <span>
-                  Availability & Information Freshness
-                </span>
-
-              </div>
+              <strong>
+                Availability + Information Freshness
+              </strong>
 
             </article>
 
 
-            {/* ==================================================
-                SLO
-            ================================================== */}
+            <article className="s4sli-framework-card s4sli-framework-purple">
 
-            <article className="s4sli-concept-card s4sli-concept-purple">
-
-              <div className="s4sli-concept-number">
+              <div className="s4sli-framework-number">
                 02
               </div>
 
 
-              <div className="s4sli-concept-icon">
+              <div className="s4sli-framework-icon">
 
-                <Target size={30} />
+                <Target size={27} />
 
               </div>
 
@@ -265,40 +480,28 @@ function SLI() {
 
 
               <p>
-                The specific performance target that Festivo
-                aims to achieve for each SLI.
+                The internal reliability goal Festivo aims
+                to achieve for each indicator.
               </p>
 
 
-              <div className="s4sli-concept-summary">
-
-                <strong>
-                  What are our targets?
-                </strong>
-
-                <span>
-                  99% availability & 95% freshness
-                </span>
-
-              </div>
+              <strong>
+                99% Availability · 95% Freshness
+              </strong>
 
             </article>
 
 
-            {/* ==================================================
-                SLA
-            ================================================== */}
+            <article className="s4sli-framework-card s4sli-framework-orange">
 
-            <article className="s4sli-concept-card s4sli-concept-orange">
-
-              <div className="s4sli-concept-number">
+              <div className="s4sli-framework-number">
                 03
               </div>
 
 
-              <div className="s4sli-concept-icon">
+              <div className="s4sli-framework-icon">
 
-                <FileCheck2 size={30} />
+                <FileCheck2 size={27} />
 
               </div>
 
@@ -314,22 +517,14 @@ function SLI() {
 
 
               <p>
-                The service commitment and possible consequence
-                when agreed reliability expectations are not met.
+                A formal service commitment, particularly
+                for vendors paying to advertise on Festivo.
               </p>
 
 
-              <div className="s4sli-concept-summary">
-
-                <strong>
-                  Who does it affect?
-                </strong>
-
-                <span>
-                  Vendors advertising through Festivo
-                </span>
-
-              </div>
+              <strong>
+                Commitment + consequence
+              </strong>
 
             </article>
 
@@ -341,206 +536,48 @@ function SLI() {
 
 
       {/* ==================================================
-          FESTIVO'S SLIs
+          HOW THE SLIs ARE CALCULATED
       ================================================== */}
 
-      <section className="s4sli-metrics-section">
+      <section className="s4sli-calculation-section">
 
         <div className="s4sli-shell">
 
           <div className="s4sli-section-heading">
 
             <span>
-              FESTIVO'S SERVICE LEVEL INDICATORS
+              SLI DETAILS
             </span>
 
 
             <h2>
-              The two signals
+              What we measure
               <strong>
-                {" "}we monitor.
+                {" "}and how.
               </strong>
             </h2>
 
 
             <p>
-              Festivo focuses on two indicators that directly
-              affect whether users can reliably access the
-              platform and receive current event information.
+              Each indicator uses a repeatable calculation
+              so reliability can be evaluated consistently
+              from sprint to sprint.
             </p>
 
           </div>
 
 
-          <div className="s4sli-overview-grid s4sli-two-column-grid">
+          <div className="s4sli-calculation-grid">
 
-            {/* ==================================================
-                AVAILABILITY
-            ================================================== */}
+            {/* AVAILABILITY */}
 
-            <article className="s4sli-overview-card s4sli-card-pink">
+            <article className="s4sli-calculation-card s4sli-calc-pink">
 
-              <div className="s4sli-overview-icon">
+              <div className="s4sli-calculation-header">
 
-                <Server size={30} />
+                <div>
 
-              </div>
-
-
-              <span className="s4sli-card-label">
-                SLI 01
-              </span>
-
-
-              <h2>
-                Availability
-              </h2>
-
-
-              <p>
-                Measures the percentage of time Festivo is
-                accessible and functioning properly. Users need
-                reliable access to create events, manage guest
-                lists, and view important information.
-              </p>
-
-
-              <div className="s4sli-target-chip">
-
-                <span>
-                  SLO TARGET
-                </span>
-
-                <strong>
-                  ≥ 99%
-                </strong>
-
-              </div>
-
-            </article>
-
-
-            {/* ==================================================
-                INFORMATION FRESHNESS
-            ================================================== */}
-
-            <article className="s4sli-overview-card s4sli-card-purple">
-
-              <div className="s4sli-overview-icon">
-
-                <RefreshCw size={30} />
-
-              </div>
-
-
-              <span className="s4sli-card-label">
-                SLI 02
-              </span>
-
-
-              <h2>
-                Information Freshness
-              </h2>
-
-
-              <p>
-                Measures how quickly changes made by event
-                organizers appear on guest-facing pages,
-                including dates, locations, schedules, and
-                other important event details.
-              </p>
-
-
-              <div className="s4sli-target-chip">
-
-                <span>
-                  SLO TARGET
-                </span>
-
-                <strong>
-                  ≥ 95% within 30s
-                </strong>
-
-              </div>
-
-            </article>
-
-          </div>
-
-
-          {/* ==================================================
-              SUMMARY
-          ================================================== */}
-
-          <div className="s4sli-summary-strip">
-
-            <div className="s4sli-summary-icon">
-
-              <Target size={26} />
-
-            </div>
-
-
-            <strong>
-              The relationship
-            </strong>
-
-
-            <div className="s4sli-summary-divider"></div>
-
-
-            <p>
-              The SLI tells the team what to measure. The SLO
-              defines the target Festivo wants to achieve. The
-              SLA turns those service expectations into a
-              commitment for affected vendor partners.
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ==================================================
-          DETAILED SLI MEASUREMENTS
-      ================================================== */}
-
-      <section className="s4sli-details-section">
-
-        <div className="s4sli-shell">
-
-          <div className="s4sli-section-heading">
-
-            <span>
-              HOW THE SLIs ARE CALCULATED
-            </span>
-
-
-            <h2>
-              Turning performance
-              <strong>
-                {" "}into measurable data.
-              </strong>
-            </h2>
-
-          </div>
-
-
-          <div className="s4sli-indicator-grid">
-
-            {/* ==================================================
-                AVAILABILITY DETAIL
-            ================================================== */}
-
-            <article className="s4sli-indicator-card s4sli-indicator-pink">
-
-              <div className="s4sli-indicator-top">
-
-                <div className="s4sli-indicator-icon">
-
-                  <Server size={31} />
+                  <Server size={27} />
 
                 </div>
 
@@ -548,11 +585,11 @@ function SLI() {
                 <div>
 
                   <span>
-                    SLI 01
+                    AVAILABILITY
                   </span>
 
                   <h3>
-                    Availability
+                    Successful service checks
                   </h3>
 
                 </div>
@@ -560,56 +597,34 @@ function SLI() {
               </div>
 
 
-              <p className="s4sli-indicator-intro">
-                Availability is measured by monitoring whether
-                the application successfully responds to
-                requests during a defined measurement period.
-              </p>
-
-
               <div className="s4sli-formula">
 
                 <span>
-                  AVAILABILITY (%)
+                  FORMULA
                 </span>
-
 
                 <strong>
                   Successful availability checks
+                  <br />
+                  ÷ Total availability checks × 100
                 </strong>
-
-
-                <div className="s4sli-formula-line"></div>
-
-
-                <strong>
-                  Total availability checks
-                </strong>
-
-
-                <small>
-                  × 100
-                </small>
 
               </div>
 
 
               <div className="s4sli-measurement-box">
 
-                <Activity size={21} />
-
+                <Clock3 size={20} />
 
                 <div>
 
                   <span>
-                    WHY IT MATTERS
+                    SLO TARGET
                   </span>
 
-
                   <p>
-                    Users rely on Festivo to organize events,
-                    manage guests, and access important event
-                    information whenever they need it.
+                    Festivo should maintain at least
+                    99% availability.
                   </p>
 
                 </div>
@@ -619,17 +634,15 @@ function SLI() {
             </article>
 
 
-            {/* ==================================================
-                FRESHNESS DETAIL
-            ================================================== */}
+            {/* FRESHNESS */}
 
-            <article className="s4sli-indicator-card s4sli-indicator-purple">
+            <article className="s4sli-calculation-card s4sli-calc-purple">
 
-              <div className="s4sli-indicator-top">
+              <div className="s4sli-calculation-header">
 
-                <div className="s4sli-indicator-icon">
+                <div>
 
-                  <RefreshCw size={31} />
+                  <RefreshCw size={27} />
 
                 </div>
 
@@ -637,11 +650,11 @@ function SLI() {
                 <div>
 
                   <span>
-                    SLI 02
+                    INFORMATION FRESHNESS
                   </span>
 
                   <h3>
-                    Information Freshness
+                    Updates visible within 30 seconds
                   </h3>
 
                 </div>
@@ -649,56 +662,34 @@ function SLI() {
               </div>
 
 
-              <p className="s4sli-indicator-intro">
-                Freshness is measured by tracking the time from
-                when an organizer saves an event update until
-                the change becomes visible to guests.
-              </p>
-
-
               <div className="s4sli-formula">
 
                 <span>
-                  INFORMATION FRESHNESS (%)
+                  FORMULA
                 </span>
-
 
                 <strong>
                   Updates reflected within 30 seconds
+                  <br />
+                  ÷ Total event information updates × 100
                 </strong>
-
-
-                <div className="s4sli-formula-line"></div>
-
-
-                <strong>
-                  Total event information updates
-                </strong>
-
-
-                <small>
-                  × 100
-                </small>
 
               </div>
 
 
               <div className="s4sli-measurement-box">
 
-                <Clock3 size={21} />
-
+                <Clock3 size={20} />
 
                 <div>
 
                   <span>
-                    WHY IT MATTERS
+                    SLO TARGET
                   </span>
 
-
                   <p>
-                    Guests need current information about
-                    schedules, locations, dates, and other
-                    event details without unnecessary delays.
+                    At least 95% of guest-facing updates
+                    should appear within 30 seconds.
                   </p>
 
                 </div>
@@ -715,152 +706,102 @@ function SLI() {
 
 
       {/* ==================================================
-          SERVICE LEVEL OBJECTIVES
+          SLO TARGETS
       ================================================== */}
 
       <section className="s4sli-slo-section">
 
         <div className="s4sli-shell">
 
-          <div className="s4sli-slo-heading">
+          <div className="s4sli-section-heading">
 
             <span>
-              SERVICE LEVEL OBJECTIVES · SLO
+              SERVICE LEVEL OBJECTIVES
             </span>
 
 
             <h2>
-              The reliability targets
+              The targets Festivo
               <strong>
-                {" "}Festivo aims to meet.
+                {" "}aims to meet.
               </strong>
             </h2>
-
-
-            <p>
-              SLOs establish the expected level of performance.
-              The team compares actual SLI measurements against
-              these targets to determine whether corrective
-              action is necessary.
-            </p>
 
           </div>
 
 
           <div className="s4sli-slo-grid">
 
-            {/* ==================================================
-                AVAILABILITY SLO
-            ================================================== */}
-
             <article className="s4sli-slo-card s4sli-slo-pink">
 
               <div className="s4sli-slo-circle">
-
-                <span>
-                  ≥
-                </span>
 
                 <strong>
                   99%
                 </strong>
 
+                <span>
+                  AVAILABILITY
+                </span>
+
               </div>
 
 
-              <div className="s4sli-slo-copy">
+              <div>
 
-                <span>
-                  AVAILABILITY OBJECTIVE
+                <span className="s4sli-slo-label">
+                  OBJECTIVE 01
                 </span>
 
 
                 <h3>
-                  Maintain reliable access.
+                  Keep Festivo accessible.
                 </h3>
 
 
                 <p>
-                  Festivo aims to maintain at least 99%
-                  application availability so users can
-                  reliably access event planning and guest
-                  management features.
+                  Core Festivo services should remain
+                  available at least 99% of the time during
+                  the measurement window.
                 </p>
-
-
-                <div className="s4sli-action-note">
-
-                  <ShieldCheck size={20} />
-
-
-                  <p>
-                    If availability falls below 99%, the team
-                    will investigate the cause and determine
-                    which improvements are necessary to restore
-                    reliable service.
-                  </p>
-
-                </div>
 
               </div>
 
             </article>
 
 
-            {/* ==================================================
-                FRESHNESS SLO
-            ================================================== */}
-
             <article className="s4sli-slo-card s4sli-slo-purple">
 
               <div className="s4sli-slo-circle">
-
-                <span>
-                  ≥
-                </span>
 
                 <strong>
                   95%
                 </strong>
 
-                <small>
-                  within 30s
-                </small>
+                <span>
+                  WITHIN 30 SEC
+                </span>
 
               </div>
 
 
-              <div className="s4sli-slo-copy">
+              <div>
 
-                <span>
-                  INFORMATION FRESHNESS OBJECTIVE
+                <span className="s4sli-slo-label">
+                  OBJECTIVE 02
                 </span>
 
 
                 <h3>
-                  Keep information current.
+                  Keep event information current.
                 </h3>
 
 
                 <p>
-                  At least 95% of event information updates
-                  should appear on guest-facing pages within
-                  30 seconds after being saved.
+                  At least 95% of event-information updates
+                  should appear on guest-facing experiences
+                  within 30 seconds.
                 </p>
-
-
-                <div className="s4sli-action-note">
-
-                  <Clock3 size={20} />
-
-
-                  <p>
-                    Updates taking longer than 30 seconds count
-                    as unsuccessful measurements. This
-                    objective is measured each sprint.
-                  </p>
-
-                </div>
 
               </div>
 
@@ -874,7 +815,7 @@ function SLI() {
 
 
       {/* ==================================================
-          SERVICE LEVEL AGREEMENTS
+          SLA
       ================================================== */}
 
       <section className="s4sli-sla-section">
@@ -883,138 +824,141 @@ function SLI() {
 
           <div className="s4sli-sla-layout">
 
-            {/* LEFT */}
-
             <div className="s4sli-sla-copy">
 
               <span>
-                SERVICE LEVEL AGREEMENTS · SLA
+                SERVICE LEVEL AGREEMENT
               </span>
 
 
               <h2>
-                Reliability becomes a
+                When targets become
                 <strong>
-                  {" "}service commitment.
+                  {" "}commitments.
                 </strong>
               </h2>
 
 
               <p>
-                Festivo's SLA primarily focuses on vendors and
-                companies that pay to advertise their services
-                and promotions through the platform. These
-                partners depend on Festivo remaining available
-                and reliably displaying their information.
+                Festivo's SLA would mainly apply to vendors
+                or companies paying to advertise through
+                the platform. The agreement uses the same
+                availability and information-freshness
+                targets defined by the SLOs.
               </p>
 
             </div>
 
 
-            {/* RIGHT */}
-
-            <div className="s4sli-sla-cards">
-
-              {/* SERVICE COMMITMENT */}
+            <div className="s4sli-sla-grid">
 
               <article>
 
                 <div className="s4sli-sla-icon">
 
-                  <Target size={23} />
+                  <Store size={24} />
 
                 </div>
 
 
-                <div>
-
-                  <span>
-                    SERVICE COMMITMENT
-                  </span>
+                <span>
+                  WHO IT APPLIES TO
+                </span>
 
 
-                  <h3>
-                    The SLOs define the expected service.
-                  </h3>
+                <h3>
+                  Advertising vendors
+                </h3>
 
 
-                  <p>
-                    Festivo aims to maintain 99% availability
-                    and ensure that 95% of event information
-                    updates appear within 30 seconds.
-                  </p>
-
-                </div>
+                <p>
+                  Businesses paying for Festivo advertising
+                  are the primary audience for a formal
+                  service agreement.
+                </p>
 
               </article>
 
 
-              {/* CONSEQUENCES */}
-
               <article>
 
                 <div className="s4sli-sla-icon">
 
-                  <Store size={23} />
+                  <Gauge size={24} />
 
                 </div>
 
 
-                <div>
-
-                  <span>
-                    IF SERVICE LEVELS ARE MISSED
-                  </span>
+                <span>
+                  COMMITMENTS
+                </span>
 
 
-                  <h3>
-                    Affected vendors may receive compensation.
-                  </h3>
+                <h3>
+                  Same reliability targets
+                </h3>
 
 
-                  <p>
-                    A small discount or service credit may be
-                    applied toward advertising fees depending
-                    on how long the issue lasted and how much
-                    it affected vendor advertisements.
-                  </p>
-
-                </div>
+                <p>
+                  The SLA uses 99% availability and 95%
+                  freshness within 30 seconds.
+                </p>
 
               </article>
 
 
-              {/* MONITORING */}
+              <article>
+
+                <div className="s4sli-sla-icon">
+
+                  <ShieldCheck size={24} />
+
+                </div>
+
+
+                <span>
+                  IF TARGETS ARE MISSED
+                </span>
+
+
+                <h3>
+                  Service credit
+                </h3>
+
+
+                <p>
+                  Affected vendors may receive a small
+                  discount or service credit based on the
+                  duration and impact of the issue.
+                </p>
+
+              </article>
+
 
               <article>
 
                 <div className="s4sli-sla-icon">
 
-                  <Activity size={23} />
+                  <Activity size={24} />
 
                 </div>
 
 
-                <div>
-
-                  <span>
-                    MONITORING & EVALUATION
-                  </span>
+                <span>
+                  MONITORING
+                </span>
 
 
-                  <h3>
-                    Compare actual performance with the SLOs.
-                  </h3>
+                <h3>
+                  Compare actual vs. target
+                </h3>
 
 
-                  <p>
-                    If a target is not met, the team
-                    investigates the issue and determines
-                    whether affected vendors should receive
-                    compensation.
-                  </p>
-
-                </div>
+                <p>
+                  The team evaluates actual service
+                  performance against the SLOs to decide
+                  corrective action or compensation.
+                </p>
 
               </article>
 
@@ -1028,7 +972,7 @@ function SLI() {
 
 
       {/* ==================================================
-          BOTTOM NAVIGATION
+          NAVIGATION
       ================================================== */}
 
       <section className="s4sli-navigation-section">
@@ -1039,14 +983,10 @@ function SLI() {
 
             <Link
               to="/sprint-4/delivery-metrics"
-              className="s4sli-nav-card s4sli-nav-previous"
+              className="s4sli-nav-card"
             >
 
-              <ArrowLeft
-                size={24}
-                className="s4sli-nav-arrow"
-              />
-
+              <ArrowLeft size={21} />
 
               <div>
 
@@ -1071,7 +1011,7 @@ function SLI() {
               <div>
 
                 <span>
-                  NEXT IN SPRINT 4
+                  NEXT
                 </span>
 
                 <strong>
@@ -1081,10 +1021,7 @@ function SLI() {
               </div>
 
 
-              <ArrowRight
-                size={24}
-                className="s4sli-nav-arrow"
-              />
+              <ArrowRight size={21} />
 
             </Link>
 
@@ -1095,7 +1032,9 @@ function SLI() {
       </section>
 
     </main>
+
   );
+
 }
 
 

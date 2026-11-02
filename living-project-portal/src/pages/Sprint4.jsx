@@ -588,7 +588,7 @@ function Sprint4() {
           <div className="s4-sketch-image-frame s4-sketch-search-frame">
 
             <img
-              src="../public/documents/sprint-4/Sketch 5.png"
+              src="/documents/sprint-4/Sketch 5.png"
               alt="Festivo vendor search sketch"
               className="s4-sketch-search-image"
             />
@@ -612,7 +612,7 @@ function Sprint4() {
             <div className="s4-sketch-image-frame s4-sketch-send-frame">
 
               <img
-                src="../public/documents/sprint-4/Sketch 2.jpg"
+                src="/documents/sprint-4/Sketch 2.jpg"
                 alt="Festivo RSVP send sketch"
                 className="s4-sketch-send-image"
               />
@@ -623,7 +623,7 @@ function Sprint4() {
             <div className="s4-sketch-image-frame">
 
               <img
-                src="../public/documents/sprint-4/Sketch 3.jpg"
+                src="/documents/sprint-4/Sketch 3.jpg"
                 alt="Festivo RSVP receive sketch"
               />
 
@@ -646,7 +646,7 @@ function Sprint4() {
           <div className="s4-sketch-image-frame">
 
             <img
-              src="../public/documents/sprint-4/Sketch 4.png"
+              src="/documents/sprint-4/Sketch 4.png"
               alt="Festivo vendor detail sketch"
             />
 
@@ -667,7 +667,7 @@ function Sprint4() {
           <div className="s4-sketch-image-frame">
 
             <img
-              src="../public/documents/sprint-4/Sketch 1.png"
+              src="/documents/sprint-4/Sketch 1.png"
               alt="Festivo itinerary sketch"
             />
 
