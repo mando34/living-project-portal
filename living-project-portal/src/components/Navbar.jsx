@@ -7,6 +7,7 @@ import {
   BarChart3,
   Sparkles,
   PartyPopper,
+  Gauge,
 } from "lucide-react";
 
 import "../styles/Navbar.css";
@@ -161,6 +162,28 @@ function Navbar() {
 
             <span>
               Sprint 3
+            </span>
+
+          </NavLink>
+
+          {/* SPRINT 4 */}
+
+          <NavLink
+            to="/sprint-4"
+            className={({ isActive }) =>
+              `navbar-link ${
+                isActive ? "navbar-link-active" : ""
+              }`
+            }
+          >
+
+            <Gauge
+              size={19}
+              strokeWidth={2}
+            />
+
+            <span>
+              Sprint 4
             </span>
 
           </NavLink>
