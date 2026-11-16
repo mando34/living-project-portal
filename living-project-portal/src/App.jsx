@@ -9,6 +9,7 @@ import Sprint1 from "./pages/Sprint1";
 import Sprint2 from "./pages/Sprint2";
 import Sprint3 from "./pages/Sprint3";
 import Sprint4 from "./pages/Sprint4";
+import Sprint5 from "./pages/Sprint5";
 import NotFound from "./pages/NotFound";
 import ProjectCharter from "./pages/sprint1/ProjectCharter";
 import BusinessStrategy from "./pages/sprint1/BusinessStrategy";
@@ -22,6 +23,9 @@ import CandidateRiskEntries from "./pages/sprint3/CanidateRiskEntries";
 import DeliveryMetrics from "./pages/sprint4/DeliveryMetrics";
 import SLI from "./pages/sprint4/Sli";
 import BudgetPostmortem from "./pages/sprint4/BudgetPostmortem";
+import WireframesFeedback from "./pages/sprint5/WireframesFeedback";
+import FigmaDesigns from "./pages/sprint5/FigmaDesigns";
+import CrisisResponse from "./pages/sprint5/CrisisResponse";
 
 
 function App() {
@@ -53,6 +57,11 @@ function App() {
           <Route path="/sprint-4/delivery-metrics" element={<DeliveryMetrics />}/>
           <Route path="/sprint-4/sli" element={<SLI />}/>
           <Route path="/sprint-4/budget-postmortem" element={<BudgetPostmortem />}/>
+
+          <Route path="/sprint-5" element={<Sprint5 />} />
+          <Route path="/sprint-5/wireframes-feedback" element={<WireframesFeedback />}/>
+          <Route path="/sprint-5/figma-designs" element={<FigmaDesigns />}/>
+          <Route path="/sprint-5/crisis-response" element={<CrisisResponse />}/>
 
           <Route path="*" element={<NotFound />} />
           

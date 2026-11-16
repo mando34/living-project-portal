@@ -188,6 +188,27 @@ function Navbar() {
 
           </NavLink>
 
+          {/* SPRINT 5 */}
+          <NavLink
+            to="/sprint-5"
+            className={({ isActive }) =>
+              `navbar-link ${
+                isActive ? "navbar-link-active" : ""
+              }`
+            }
+          >
+
+            <Gauge
+              size={19}
+              strokeWidth={2}
+            />
+
+            <span>
+              Sprint 5
+            </span>
+
+          </NavLink>
+
         </nav>
 
       </div>

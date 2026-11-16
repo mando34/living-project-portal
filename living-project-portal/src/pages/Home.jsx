@@ -460,6 +460,38 @@ function Home() {
 
   </Link>
 
+  <Link
+    to="/sprint-5"
+    className="journey-card"
+  >
+
+    <div className="journey-number">
+      05
+    </div>
+
+    <div>
+
+      <span className="journey-label">
+        SPRINT FIVE
+      </span>
+
+      <h3>
+        Design, Feedback & Resilience
+      </h3>
+
+      <p>
+        Turning user feedback into refined Festivo designs while preparing the 
+        project to respond to operational, staffing, and reliability challenges.
+      </p>
+
+    </div>
+
+    <span className="journey-arrow">
+      →
+    </span>
+
+  </Link>
+
 </div>
 
         </div>
