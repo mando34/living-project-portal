@@ -94,7 +94,7 @@ function CrisisResponse() {
               </p>
 
               <a
-                href="/docs/sprint5/Festivo-Crisis-Response-Memo.pdf"
+                href="/documents/sprint-5/Festivo_Crisis_Response_Memo_Team+7.pdf"
                 download
                 className="s5crisis-memo-button"
               >
